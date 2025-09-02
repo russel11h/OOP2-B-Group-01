@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36301.6 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "login", "login\login.csproj", "{73F2BE3A-CB69-4613-8EC8-DA800D388652}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TTT", "TTT\TTT.csproj", "{E016C18E-0299-49EE-AE2E-2B8BE9A35375}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73F2BE3A-CB69-4613-8EC8-DA800D388652}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73F2BE3A-CB69-4613-8EC8-DA800D388652}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73F2BE3A-CB69-4613-8EC8-DA800D388652}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73F2BE3A-CB69-4613-8EC8-DA800D388652}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E016C18E-0299-49EE-AE2E-2B8BE9A35375}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E016C18E-0299-49EE-AE2E-2B8BE9A35375}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E016C18E-0299-49EE-AE2E-2B8BE9A35375}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E016C18E-0299-49EE-AE2E-2B8BE9A35375}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A52EF9B6-8DB0-4BE8-A1FE-1755499EC965}
+	EndGlobalSection
+EndGlobal
