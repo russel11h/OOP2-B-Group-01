@@ -39,5 +39,10 @@ namespace TTT
             login.Show();
             this.Hide();
         }
+
+        private void tb_username_email_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

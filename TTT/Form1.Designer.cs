@@ -39,11 +39,12 @@
             this.lblregistration = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel_login = new System.Windows.Forms.Panel();
-            this.tbname = new System.Windows.Forms.TextBox();
             this.lblforgetpassword = new System.Windows.Forms.LinkLabel();
+            this.tbname = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel_login.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -51,6 +52,7 @@
             // lbl_login_username
             // 
             this.lbl_login_username.AutoSize = true;
+            this.lbl_login_username.BackColor = System.Drawing.Color.Transparent;
             this.lbl_login_username.Font = new System.Drawing.Font("Monospac821 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_login_username.Location = new System.Drawing.Point(93, 44);
             this.lbl_login_username.Name = "lbl_login_username";
@@ -100,6 +102,7 @@
             // btnlogin
             // 
             this.btnlogin.BackColor = System.Drawing.Color.Purple;
+            this.btnlogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnlogin.Font = new System.Drawing.Font("Monospac821 BT", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnlogin.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.btnlogin.Location = new System.Drawing.Point(135, 215);
@@ -123,6 +126,7 @@
             // lblregistration
             // 
             this.lblregistration.AutoSize = true;
+            this.lblregistration.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblregistration.Location = new System.Drawing.Point(266, 279);
             this.lblregistration.Name = "lblregistration";
             this.lblregistration.Size = new System.Drawing.Size(79, 16);
@@ -145,6 +149,7 @@
             // 
             this.panel_login.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panel_login.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel_login.Controls.Add(this.button1);
             this.panel_login.Controls.Add(this.lblforgetpassword);
             this.panel_login.Controls.Add(this.tbname);
             this.panel_login.Controls.Add(this.label3);
@@ -156,22 +161,16 @@
             this.panel_login.Controls.Add(this.lblnameerror);
             this.panel_login.Controls.Add(this.btnlogin);
             this.panel_login.Controls.Add(this.lblpasserror);
-            this.panel_login.Location = new System.Drawing.Point(12, 150);
+            this.panel_login.Location = new System.Drawing.Point(3, 150);
             this.panel_login.Name = "panel_login";
-            this.panel_login.Size = new System.Drawing.Size(391, 353);
+            this.panel_login.Size = new System.Drawing.Size(391, 350);
             this.panel_login.TabIndex = 13;
             this.panel_login.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // tbname
-            // 
-            this.tbname.Location = new System.Drawing.Point(98, 71);
-            this.tbname.Name = "tbname";
-            this.tbname.Size = new System.Drawing.Size(262, 22);
-            this.tbname.TabIndex = 2;
             // 
             // lblforgetpassword
             // 
             this.lblforgetpassword.AutoSize = true;
+            this.lblforgetpassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblforgetpassword.Location = new System.Drawing.Point(266, 309);
             this.lblforgetpassword.Name = "lblforgetpassword";
             this.lblforgetpassword.Size = new System.Drawing.Size(112, 16);
@@ -180,21 +179,29 @@
             this.lblforgetpassword.Text = "Forget_password";
             this.lblforgetpassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblforgetpassword_LinkClicked);
             // 
+            // tbname
+            // 
+            this.tbname.Location = new System.Drawing.Point(98, 71);
+            this.tbname.Name = "tbname";
+            this.tbname.Size = new System.Drawing.Size(262, 22);
+            this.tbname.TabIndex = 2;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Gill Sans Ultra Bold Condensed", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Blue;
             this.label1.Location = new System.Drawing.Point(189, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(742, 62);
+            this.label1.Size = new System.Drawing.Size(714, 60);
             this.label1.TabIndex = 8;
             this.label1.Text = "Travel and Ticket Mangement System";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 2);
             this.pictureBox1.Name = "pictureBox1";
@@ -203,15 +210,26 @@
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(285, 205);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Move";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1000, 600);
+            this.ClientSize = new System.Drawing.Size(982, 553);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel_login);
             this.Controls.Add(this.pictureBox1);
+            this.MaximumSize = new System.Drawing.Size(1000, 600);
             this.MinimumSize = new System.Drawing.Size(1000, 600);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -240,6 +258,7 @@
         private System.Windows.Forms.TextBox tbname;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
 

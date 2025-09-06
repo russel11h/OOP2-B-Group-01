@@ -69,7 +69,7 @@
             this.lblregistration.ForeColor = System.Drawing.SystemColors.Highlight;
             this.lblregistration.Location = new System.Drawing.Point(359, 33);
             this.lblregistration.Name = "lblregistration";
-            this.lblregistration.Size = new System.Drawing.Size(334, 52);
+            this.lblregistration.Size = new System.Drawing.Size(334, 51);
             this.lblregistration.TabIndex = 0;
             this.lblregistration.Text = "Registration";
             this.lblregistration.Click += new System.EventHandler(this.label1_Click);
@@ -117,6 +117,7 @@
             // rbmale
             // 
             this.rbmale.AutoSize = true;
+            this.rbmale.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rbmale.Location = new System.Drawing.Point(194, 260);
             this.rbmale.Name = "rbmale";
             this.rbmale.Size = new System.Drawing.Size(58, 20);
@@ -138,6 +139,7 @@
             // rbfemale
             // 
             this.rbfemale.AutoSize = true;
+            this.rbfemale.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rbfemale.Location = new System.Drawing.Point(292, 260);
             this.rbfemale.Name = "rbfemale";
             this.rbfemale.Size = new System.Drawing.Size(74, 20);
@@ -224,8 +226,9 @@
             // 
             // bsubmit
             // 
-            this.bsubmit.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.bsubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bsubmit.BackColor = System.Drawing.Color.Purple;
+            this.bsubmit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bsubmit.Font = new System.Drawing.Font("Monospac821 BT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bsubmit.ForeColor = System.Drawing.Color.Transparent;
             this.bsubmit.Location = new System.Drawing.Point(181, 456);
             this.bsubmit.Name = "bsubmit";
@@ -287,6 +290,7 @@
             // breg_to_login
             // 
             this.breg_to_login.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.breg_to_login.Cursor = System.Windows.Forms.Cursors.Hand;
             this.breg_to_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.breg_to_login.Location = new System.Drawing.Point(3, 457);
             this.breg_to_login.Name = "breg_to_login";
@@ -332,8 +336,10 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(3, 9);
+            this.pictureBox1.MaximumSize = new System.Drawing.Size(1000, 600);
+            this.pictureBox1.MinimumSize = new System.Drawing.Size(1000, 600);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(982, 545);
+            this.pictureBox1.Size = new System.Drawing.Size(1000, 600);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 27;
             this.pictureBox1.TabStop = false;
@@ -347,6 +353,7 @@
             this.Controls.Add(this.lblregistration);
             this.Controls.Add(this.panel_registration);
             this.Controls.Add(this.pictureBox1);
+            this.MaximumSize = new System.Drawing.Size(1000, 600);
             this.MinimumSize = new System.Drawing.Size(1000, 600);
             this.Name = "registration";
             this.Text = "registration";
