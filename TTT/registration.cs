@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,22 @@ namespace TTT
    
     public partial class registration : Form
     {
+        public void connect()
+        {
+            string Connectionstring = @"Data Source=RASEL\SQLEXPRESS;Integrated Security=True;";
+            SqlConnection conn = new SqlConnection(Connectionstring);
+            conn.Open();
+            // string query = "INSERT INTO registration (username, password, sur_name, given_name, email, gender, passport_number, phone_number, address) VALUES ('" + tbusername.Text + "', '" + tbpassword.Text + "', '" + tbsurname.Text + "', '" + tbgivenname.Text + "', '" + tbemail.Text + "', '" + (rbmale.Checked ? "Male" : (rbfemale.Checked ? "Female" : "Not Selected")) + "', '" + tbpassportnumber.Text + "', '" + tbphonenumber.Text + "', '" + comboboxaddress.Text + "')";
+            string query = "INSERT INTO registration (username, password, sur_name, given_name, email, gender, passport_number, phone_number, address) " +
+                "VALUES ('russel23', '12345', 'Hossain', 'Russel', 'russel@test.com', 'Male', 'P1234567', '01710000001', 'Dhaka')";
+
+
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.ExecuteNonQuery();
+
+            
+        }
+
         public registration()
         {
             InitializeComponent();
