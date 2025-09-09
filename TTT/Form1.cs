@@ -106,8 +106,8 @@ namespace TTT
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Home_page h = new Home_page();
-            h.Show();
+            dataview d = new dataview();
+            d.Show();
             Visible = false;
 
             

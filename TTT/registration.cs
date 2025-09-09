@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using TTT.TTT;
 
 namespace TTT
@@ -17,13 +18,13 @@ namespace TTT
     {
         public void connect()
         {
-            string Connectionstring = @"Data Source=RASEL\SQLEXPRESS;Integrated Security=True;";
+            string Connectionstring = @"Data Source=RASEL\SQLEXPRESS;Initial Catalog=TMS;Integrated Security=True;";
             SqlConnection conn = new SqlConnection(Connectionstring);
             conn.Open();
-            // string query = "INSERT INTO registration (username, password, sur_name, given_name, email, gender, passport_number, phone_number, address) VALUES ('" + tbusername.Text + "', '" + tbpassword.Text + "', '" + tbsurname.Text + "', '" + tbgivenname.Text + "', '" + tbemail.Text + "', '" + (rbmale.Checked ? "Male" : (rbfemale.Checked ? "Female" : "Not Selected")) + "', '" + tbpassportnumber.Text + "', '" + tbphonenumber.Text + "', '" + comboboxaddress.Text + "')";
-            string query = "INSERT INTO registration (username, password, sur_name, given_name, email, gender, passport_number, phone_number, address) " +
-                "VALUES ('russel23', '12345', 'Hossain', 'Russel', 'russel@test.com', 'Male', 'P1234567', '01710000001', 'Dhaka')";
 
+            //string query = "insert into reg(user_name,pass) values('rrrrrrr','123456789')";
+            string query = "insert into regst (user_name, password, surname, givenname, email, gender, passport, phone, address) " +
+               "VALUES ('" + tbusername.Text + "','" + tbpassword.Text + "','" + tbsurname.Text + "','" + tbgivenname.Text + "','" + tbemail.Text + "','" + (rbmale.Checked ? "Male" : (rbfemale.Checked ? "Female" : "Not Selected")) + "','" + tbpassportnumber.Text + "','" + tbphonenumber.Text + "','" + comboboxaddress.Text + "')";
 
             SqlCommand cmd = new SqlCommand(query, conn);
             cmd.ExecuteNonQuery();
@@ -87,6 +88,7 @@ namespace TTT
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information
             );
+            connect();// hefuwhediugiudgu;hkjshegksuedhgvui;hdsiu
 
             Form1 f = new Form1();
             f.Show();

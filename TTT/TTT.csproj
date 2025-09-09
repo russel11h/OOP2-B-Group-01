@@ -52,6 +52,12 @@
     <Compile Include="create_new_password.Designer.cs">
       <DependentUpon>create_new_password.cs</DependentUpon>
     </Compile>
+    <Compile Include="dataview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dataview.Designer.cs">
+      <DependentUpon>dataview.cs</DependentUpon>
+    </Compile>
     <Compile Include="forget_pass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     </Compile>
     <EmbeddedResource Include="create_new_password.resx">
       <DependentUpon>create_new_password.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dataview.resx">
+      <DependentUpon>dataview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forget_pass.resx">
       <DependentUpon>forget_pass.cs</DependentUpon>
