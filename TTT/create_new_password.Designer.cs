@@ -140,6 +140,7 @@
             this.MinimumSize = new System.Drawing.Size(1000, 600);
             this.Name = "create_new_password";
             this.Text = "create_new_password";
+            this.Load += new System.EventHandler(this.create_new_password_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
