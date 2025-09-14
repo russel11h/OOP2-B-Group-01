@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
@@ -21,8 +22,6 @@ namespace TTT
 
         private void btnlogin_Click(object sender, EventArgs e)
         {
-            
-
             // Clear previous error messages first
             lblnameerror.Text = "";
             lblpasserror.Text = "";
@@ -40,10 +39,22 @@ namespace TTT
                 hasError = true;
             }
 
-            // If no error, then check credentials
             if (!hasError)
             {
-                if (UserData.USERNAME == tbname.Text && UserData.PASSWORD == tbpass.Text)
+                string connectionString = @"Data Source=RASEL\SQLEXPRESS;Initial Catalog=TMS;Integrated Security=True;";
+                SqlConnection conn = new SqlConnection(connectionString);
+                conn.Open();
+
+                string query = "SELECT * FROM regst WHERE user_name = @username AND password = @password";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@username", tbname.Text);
+                cmd.Parameters.AddWithValue("@password", tbpass.Text);
+
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adp.Fill(ds);
+
+                if (ds.Tables[0].Rows.Count > 0)
                 {
                     MessageBox.Show("Login Successful");
                     Home_page home = new Home_page();
@@ -52,10 +63,13 @@ namespace TTT
                 }
                 else
                 {
-                    MessageBox.Show("Invalid");
+                    MessageBox.Show("Invalid Username or Password");
                 }
+
+                conn.Close();
             }
         }
+
 
         private void label1_Click(object sender, EventArgs e)
         {

@@ -44,7 +44,16 @@ namespace TTT
 
         private void bsubmit_Click(object sender, EventArgs e)
         {
-            if(tbusername.Text =="")
+            lblerrorusername.Text = "";
+            lblerrorpass.Text = "";
+            lblerrorsurname.Text = "";
+            lblerrorgivenname.Text = "";
+            lblerroremail.Text = "";
+            lblerrorpassport.Text = "";
+            lblerrornumber.Text = "";
+
+
+            if (tbusername.Text =="")
             {
                 lblerrorusername.Text = "please enter username";
             }
@@ -58,8 +67,10 @@ namespace TTT
             }
             if (tbgivenname.Text == "")
                 lblerrorgivenname.Text = "Please enter Given name";
+
             if (tbemail.Text=="")
                 lblerroremail.Text = "Please enter Email";
+
             if (tbpassportnumber.Text=="")
             {
                 lblerrorpassport.Text= "Please enter Passport number";
@@ -108,7 +119,7 @@ namespace TTT
 
 
 
-                UserData.USERNAME = tbusername.Text;
+            UserData.USERNAME = tbusername.Text;
             UserData.PASSWORD = tbpassword.Text;
             UserData.EMAIL = tbemail.Text;
 
