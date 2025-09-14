@@ -107,6 +107,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="registration.resx">
       <DependentUpon>registration.cs</DependentUpon>
@@ -123,6 +124,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\log in page.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\log in page1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\log in page2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\log in page3.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

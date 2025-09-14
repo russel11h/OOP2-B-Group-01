@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(forget_pass));
             this.lblusername_email = new System.Windows.Forms.Label();
             this.lblregistration = new System.Windows.Forms.Label();
             this.tb_username_email = new System.Windows.Forms.TextBox();
@@ -57,7 +56,7 @@
             this.lblregistration.ForeColor = System.Drawing.Color.Blue;
             this.lblregistration.Location = new System.Drawing.Point(187, 44);
             this.lblregistration.Name = "lblregistration";
-            this.lblregistration.Size = new System.Drawing.Size(452, 43);
+            this.lblregistration.Size = new System.Drawing.Size(439, 42);
             this.lblregistration.TabIndex = 22;
             this.lblregistration.Text = "Recover Your Account";
             // 
@@ -112,7 +111,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::TTT.Properties.Resources.log_in_page2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(982, 553);
             this.Controls.Add(this.panel1);
@@ -121,6 +120,7 @@
             this.MinimumSize = new System.Drawing.Size(1000, 600);
             this.Name = "forget_pass";
             this.Text = "forget_pass";
+            this.Load += new System.EventHandler(this.forget_pass_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

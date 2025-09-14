@@ -44,5 +44,10 @@ namespace TTT
         {
 
         }
+
+        private void forget_pass_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
