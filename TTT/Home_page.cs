@@ -28,5 +28,10 @@ namespace TTT
         {
 
         }
+
+        private void bhome_deleteac_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -137,5 +137,17 @@
   <ItemGroup>
     <None Include="Resources\log in page3.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\data view.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

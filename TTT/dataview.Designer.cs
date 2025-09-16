@@ -34,127 +34,147 @@
             this.bdata_edit = new System.Windows.Forms.Button();
             this.lbldatausername = new System.Windows.Forms.Label();
             this.bdata_delete = new System.Windows.Forms.Button();
-            this.bdata_refresh = new System.Windows.Forms.Button();
             this.lbldata_number = new System.Windows.Forms.Label();
             this.tdata_number = new System.Windows.Forms.TextBox();
-            this.bdata_search = new System.Windows.Forms.Button();
             this.tdata_search = new System.Windows.Forms.TextBox();
+            this.bdata_search = new System.Windows.Forms.Button();
+            this.bdata_refresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(37, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(528, 118);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(870, 239);
+            this.dataGridView1.Size = new System.Drawing.Size(234, 382);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btshow
             // 
-            this.btshow.Location = new System.Drawing.Point(416, 275);
+            this.btshow.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btshow.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btshow.Location = new System.Drawing.Point(17, 356);
             this.btshow.Name = "btshow";
-            this.btshow.Size = new System.Drawing.Size(75, 23);
+            this.btshow.Size = new System.Drawing.Size(222, 41);
             this.btshow.TabIndex = 1;
-            this.btshow.Text = "show";
+            this.btshow.Text = "View Data";
             this.btshow.UseVisualStyleBackColor = true;
             this.btshow.Click += new System.EventHandler(this.btshow_Click);
             // 
             // tdata_username
             // 
-            this.tdata_username.Location = new System.Drawing.Point(605, 349);
+            this.tdata_username.Location = new System.Drawing.Point(12, 118);
             this.tdata_username.Name = "tdata_username";
-            this.tdata_username.Size = new System.Drawing.Size(235, 22);
+            this.tdata_username.Size = new System.Drawing.Size(222, 22);
             this.tdata_username.TabIndex = 2;
             // 
             // bdata_edit
             // 
+            this.bdata_edit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bdata_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bdata_edit.Location = new System.Drawing.Point(605, 418);
+            this.bdata_edit.Location = new System.Drawing.Point(17, 403);
             this.bdata_edit.Name = "bdata_edit";
-            this.bdata_edit.Size = new System.Drawing.Size(75, 23);
+            this.bdata_edit.Size = new System.Drawing.Size(222, 44);
             this.bdata_edit.TabIndex = 3;
-            this.bdata_edit.Text = "Edit";
+            this.bdata_edit.Text = "Edit Account";
             this.bdata_edit.UseVisualStyleBackColor = true;
             this.bdata_edit.Click += new System.EventHandler(this.bdata_edit_Click);
             // 
             // lbldatausername
             // 
             this.lbldatausername.AutoSize = true;
-            this.lbldatausername.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbldatausername.Location = new System.Drawing.Point(511, 352);
+            this.lbldatausername.BackColor = System.Drawing.Color.Transparent;
+            this.lbldatausername.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldatausername.Location = new System.Drawing.Point(12, 88);
             this.lbldatausername.Name = "lbldatausername";
-            this.lbldatausername.Size = new System.Drawing.Size(87, 19);
+            this.lbldatausername.Size = new System.Drawing.Size(125, 27);
             this.lbldatausername.TabIndex = 4;
-            this.lbldatausername.Text = "User Name:";
+            this.lbldatausername.Text = "User Name";
             this.lbldatausername.Click += new System.EventHandler(this.label1_Click);
             // 
             // bdata_delete
             // 
+            this.bdata_delete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bdata_delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bdata_delete.Location = new System.Drawing.Point(686, 418);
+            this.bdata_delete.Location = new System.Drawing.Point(17, 453);
             this.bdata_delete.Name = "bdata_delete";
-            this.bdata_delete.Size = new System.Drawing.Size(75, 23);
+            this.bdata_delete.Size = new System.Drawing.Size(222, 47);
             this.bdata_delete.TabIndex = 5;
-            this.bdata_delete.Text = "Delete";
+            this.bdata_delete.Text = "Delete Account";
             this.bdata_delete.UseVisualStyleBackColor = true;
-            // 
-            // bdata_refresh
-            // 
-            this.bdata_refresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bdata_refresh.Location = new System.Drawing.Point(767, 418);
-            this.bdata_refresh.Name = "bdata_refresh";
-            this.bdata_refresh.Size = new System.Drawing.Size(75, 23);
-            this.bdata_refresh.TabIndex = 6;
-            this.bdata_refresh.Text = "Refresh";
-            this.bdata_refresh.UseVisualStyleBackColor = true;
-            this.bdata_refresh.Click += new System.EventHandler(this.bdata_refresh_Click);
+            this.bdata_delete.Click += new System.EventHandler(this.bdata_delete_Click);
             // 
             // lbldata_number
             // 
             this.lbldata_number.AutoSize = true;
-            this.lbldata_number.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbldata_number.Location = new System.Drawing.Point(484, 387);
+            this.lbldata_number.BackColor = System.Drawing.Color.Transparent;
+            this.lbldata_number.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldata_number.Location = new System.Drawing.Point(12, 154);
             this.lbldata_number.Name = "lbldata_number";
-            this.lbldata_number.Size = new System.Drawing.Size(114, 19);
+            this.lbldata_number.Size = new System.Drawing.Size(165, 27);
             this.lbldata_number.TabIndex = 7;
-            this.lbldata_number.Text = "Phone Number:";
+            this.lbldata_number.Text = "Phone Number";
             // 
             // tdata_number
             // 
-            this.tdata_number.Location = new System.Drawing.Point(605, 384);
+            this.tdata_number.Location = new System.Drawing.Point(12, 184);
             this.tdata_number.Name = "tdata_number";
-            this.tdata_number.Size = new System.Drawing.Size(235, 22);
+            this.tdata_number.Size = new System.Drawing.Size(216, 22);
             this.tdata_number.TabIndex = 8;
-            // 
-            // bdata_search
-            // 
-            this.bdata_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bdata_search.Location = new System.Drawing.Point(832, 275);
-            this.bdata_search.Name = "bdata_search";
-            this.bdata_search.Size = new System.Drawing.Size(75, 23);
-            this.bdata_search.TabIndex = 9;
-            this.bdata_search.Text = "Search";
-            this.bdata_search.UseVisualStyleBackColor = true;
-            this.bdata_search.Click += new System.EventHandler(this.bdata_search_Click);
             // 
             // tdata_search
             // 
+            this.tdata_search.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.tdata_search.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tdata_search.Location = new System.Drawing.Point(591, 276);
+            this.tdata_search.Location = new System.Drawing.Point(528, 61);
             this.tdata_search.Name = "tdata_search";
             this.tdata_search.Size = new System.Drawing.Size(235, 22);
             this.tdata_search.TabIndex = 10;
             this.tdata_search.TextChanged += new System.EventHandler(this.tdata_search_TextChanged);
             // 
+            // bdata_search
+            // 
+            this.bdata_search.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.bdata_search.BackgroundImage = global::TTT.Properties.Resources.Search_black;
+            this.bdata_search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bdata_search.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bdata_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bdata_search.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.bdata_search.Location = new System.Drawing.Point(769, 53);
+            this.bdata_search.Name = "bdata_search";
+            this.bdata_search.Size = new System.Drawing.Size(48, 38);
+            this.bdata_search.TabIndex = 9;
+            this.bdata_search.UseVisualStyleBackColor = false;
+            this.bdata_search.Click += new System.EventHandler(this.bdata_search_Click);
+            // 
+            // bdata_refresh
+            // 
+            this.bdata_refresh.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.bdata_refresh.BackgroundImage = global::TTT.Properties.Resources.Refresh;
+            this.bdata_refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bdata_refresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bdata_refresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bdata_refresh.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.bdata_refresh.Location = new System.Drawing.Point(855, 53);
+            this.bdata_refresh.Name = "bdata_refresh";
+            this.bdata_refresh.Size = new System.Drawing.Size(43, 38);
+            this.bdata_refresh.TabIndex = 6;
+            this.bdata_refresh.UseVisualStyleBackColor = false;
+            this.bdata_refresh.Click += new System.EventHandler(this.bdata_refresh_Click);
+            // 
             // dataview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackgroundImage = global::TTT.Properties.Resources.data_view;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1004, 545);
             this.Controls.Add(this.tdata_search);
             this.Controls.Add(this.bdata_search);
@@ -167,6 +187,7 @@
             this.Controls.Add(this.tdata_username);
             this.Controls.Add(this.btshow);
             this.Controls.Add(this.dataGridView1);
+            this.DoubleBuffered = true;
             this.Name = "dataview";
             this.Text = "dataview";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

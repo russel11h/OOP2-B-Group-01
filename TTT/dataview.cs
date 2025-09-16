@@ -100,8 +100,30 @@ namespace TTT
 
         }
 
+        private void bdata_delete_Click(object sender, EventArgs e)
+        {
+            if (tdata_username.Text == "")
+            {
+                MessageBox.Show("Please select a row first:");
+            }
+            else
+            {
+                string connectionString = @"Data Source=RASEL\SQLEXPRESS;Initial Catalog=TMS;Integrated Security=True;";
+                SqlConnection conn = new SqlConnection(connectionString);
+                conn.Open();
+
+                string query = "DELETE FROM regst WHERE user_name = '" + tdata_username.Text + "'";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.ExecuteNonQuery();
+
+                show();
+                clear();
+                conn.Close();
+            }
+        }
+
     }
-    
+
 
 }
 

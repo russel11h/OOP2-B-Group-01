@@ -34,6 +34,7 @@
             this.breg_to_login = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.button1 = new System.Windows.Forms.Button();
+            this.bhome_deleteac = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_welcome
@@ -50,7 +51,7 @@
             // 
             this.breg_to_login.BackColor = System.Drawing.Color.Transparent;
             this.breg_to_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.breg_to_login.Location = new System.Drawing.Point(184, 91);
+            this.breg_to_login.Location = new System.Drawing.Point(1, -1);
             this.breg_to_login.Name = "breg_to_login";
             this.breg_to_login.Size = new System.Drawing.Size(75, 42);
             this.breg_to_login.TabIndex = 28;
@@ -83,12 +84,25 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // bhome_deleteac
+            // 
+            this.bhome_deleteac.BackColor = System.Drawing.Color.Transparent;
+            this.bhome_deleteac.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bhome_deleteac.Location = new System.Drawing.Point(1, 374);
+            this.bhome_deleteac.Name = "bhome_deleteac";
+            this.bhome_deleteac.Size = new System.Drawing.Size(260, 57);
+            this.bhome_deleteac.TabIndex = 31;
+            this.bhome_deleteac.Text = "Delete Account";
+            this.bhome_deleteac.UseVisualStyleBackColor = false;
+            this.bhome_deleteac.Click += new System.EventHandler(this.bhome_deleteac_Click);
+            // 
             // Home_page
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(982, 553);
+            this.Controls.Add(this.bhome_deleteac);
             this.Controls.Add(this.breg_to_login);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lbl_welcome);
@@ -107,5 +121,6 @@
         private System.Windows.Forms.Button breg_to_login;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bhome_deleteac;
     }
 }

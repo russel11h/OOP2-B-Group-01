@@ -66,6 +66,7 @@
             // 
             this.tb_newpassword.Location = new System.Drawing.Point(20, 62);
             this.tb_newpassword.Name = "tb_newpassword";
+            this.tb_newpassword.PasswordChar = '*';
             this.tb_newpassword.Size = new System.Drawing.Size(272, 22);
             this.tb_newpassword.TabIndex = 24;
             // 
@@ -83,6 +84,7 @@
             // 
             this.tb_confirm_pass.Location = new System.Drawing.Point(20, 143);
             this.tb_confirm_pass.Name = "tb_confirm_pass";
+            this.tb_confirm_pass.PasswordChar = '*';
             this.tb_confirm_pass.Size = new System.Drawing.Size(272, 22);
             this.tb_confirm_pass.TabIndex = 26;
             // 
