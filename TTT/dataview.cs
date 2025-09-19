@@ -122,6 +122,10 @@ namespace TTT
             }
         }
 
+        private void dataview_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 

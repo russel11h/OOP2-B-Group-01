@@ -60,6 +60,7 @@
             this.lblerrorusername = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel_registration.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -84,7 +85,7 @@
             // 
             this.lblsurname.AutoSize = true;
             this.lblsurname.Font = new System.Drawing.Font("Monospac821 BT", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblsurname.Location = new System.Drawing.Point(66, 152);
+            this.lblsurname.Location = new System.Drawing.Point(66, 131);
             this.lblsurname.Name = "lblsurname";
             this.lblsurname.Size = new System.Drawing.Size(109, 20);
             this.lblsurname.TabIndex = 1;
@@ -94,7 +95,7 @@
             // 
             this.lblemail.AutoSize = true;
             this.lblemail.Font = new System.Drawing.Font("Monospac821 BT", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblemail.Location = new System.Drawing.Point(86, 248);
+            this.lblemail.Location = new System.Drawing.Point(86, 227);
             this.lblemail.Name = "lblemail";
             this.lblemail.Size = new System.Drawing.Size(89, 20);
             this.lblemail.TabIndex = 3;
@@ -104,7 +105,7 @@
             // 
             this.lblpassportnumber.AutoSize = true;
             this.lblpassportnumber.Font = new System.Drawing.Font("Monospac821 BT", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblpassportnumber.Location = new System.Drawing.Point(-4, 322);
+            this.lblpassportnumber.Location = new System.Drawing.Point(-4, 301);
             this.lblpassportnumber.Name = "lblpassportnumber";
             this.lblpassportnumber.Size = new System.Drawing.Size(179, 20);
             this.lblpassportnumber.TabIndex = 4;
@@ -114,7 +115,7 @@
             // 
             this.rbmale.AutoSize = true;
             this.rbmale.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rbmale.Location = new System.Drawing.Point(188, 293);
+            this.rbmale.Location = new System.Drawing.Point(188, 272);
             this.rbmale.Name = "rbmale";
             this.rbmale.Size = new System.Drawing.Size(58, 20);
             this.rbmale.TabIndex = 5;
@@ -126,7 +127,7 @@
             // 
             this.lblgender.AutoSize = true;
             this.lblgender.Font = new System.Drawing.Font("Monospac821 BT", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblgender.Location = new System.Drawing.Point(86, 295);
+            this.lblgender.Location = new System.Drawing.Point(86, 274);
             this.lblgender.Name = "lblgender";
             this.lblgender.Size = new System.Drawing.Size(89, 20);
             this.lblgender.TabIndex = 6;
@@ -136,7 +137,7 @@
             // 
             this.rbfemale.AutoSize = true;
             this.rbfemale.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rbfemale.Location = new System.Drawing.Point(266, 295);
+            this.rbfemale.Location = new System.Drawing.Point(266, 274);
             this.rbfemale.Name = "rbfemale";
             this.rbfemale.Size = new System.Drawing.Size(74, 20);
             this.rbfemale.TabIndex = 7;
@@ -148,7 +149,7 @@
             // 
             this.lblphonenumber.AutoSize = true;
             this.lblphonenumber.Font = new System.Drawing.Font("Monospac821 BT", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblphonenumber.Location = new System.Drawing.Point(26, 365);
+            this.lblphonenumber.Location = new System.Drawing.Point(26, 344);
             this.lblphonenumber.Name = "lblphonenumber";
             this.lblphonenumber.Size = new System.Drawing.Size(149, 20);
             this.lblphonenumber.TabIndex = 9;
@@ -158,7 +159,7 @@
             // 
             this.lbladdress.AutoSize = true;
             this.lbladdress.Font = new System.Drawing.Font("Monospac821 BT", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbladdress.Location = new System.Drawing.Point(76, 418);
+            this.lbladdress.Location = new System.Drawing.Point(76, 397);
             this.lbladdress.Name = "lbladdress";
             this.lbladdress.Size = new System.Drawing.Size(99, 20);
             this.lbladdress.TabIndex = 10;
@@ -166,7 +167,7 @@
             // 
             // tbsurname
             // 
-            this.tbsurname.Location = new System.Drawing.Point(181, 154);
+            this.tbsurname.Location = new System.Drawing.Point(181, 133);
             this.tbsurname.Name = "tbsurname";
             this.tbsurname.Size = new System.Drawing.Size(174, 22);
             this.tbsurname.TabIndex = 11;
@@ -174,7 +175,7 @@
             // 
             // tbgivenname
             // 
-            this.tbgivenname.Location = new System.Drawing.Point(181, 199);
+            this.tbgivenname.Location = new System.Drawing.Point(181, 178);
             this.tbgivenname.Name = "tbgivenname";
             this.tbgivenname.Size = new System.Drawing.Size(174, 22);
             this.tbgivenname.TabIndex = 12;
@@ -182,7 +183,7 @@
             // 
             // tbemail
             // 
-            this.tbemail.Location = new System.Drawing.Point(181, 247);
+            this.tbemail.Location = new System.Drawing.Point(181, 226);
             this.tbemail.Name = "tbemail";
             this.tbemail.Size = new System.Drawing.Size(174, 22);
             this.tbemail.TabIndex = 13;
@@ -190,14 +191,14 @@
             // 
             // tbpassportnumber
             // 
-            this.tbpassportnumber.Location = new System.Drawing.Point(181, 319);
+            this.tbpassportnumber.Location = new System.Drawing.Point(181, 298);
             this.tbpassportnumber.Name = "tbpassportnumber";
             this.tbpassportnumber.Size = new System.Drawing.Size(174, 22);
             this.tbpassportnumber.TabIndex = 14;
             // 
             // tbphonenumber
             // 
-            this.tbphonenumber.Location = new System.Drawing.Point(181, 364);
+            this.tbphonenumber.Location = new System.Drawing.Point(181, 343);
             this.tbphonenumber.Name = "tbphonenumber";
             this.tbphonenumber.Size = new System.Drawing.Size(174, 22);
             this.tbphonenumber.TabIndex = 15;
@@ -214,7 +215,7 @@
             "Mamymansingh",
             "Khulna",
             "Sylhet"});
-            this.comboboxaddress.Location = new System.Drawing.Point(181, 415);
+            this.comboboxaddress.Location = new System.Drawing.Point(181, 394);
             this.comboboxaddress.Name = "comboboxaddress";
             this.comboboxaddress.Size = new System.Drawing.Size(174, 24);
             this.comboboxaddress.TabIndex = 16;
@@ -226,7 +227,7 @@
             this.bsubmit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bsubmit.Font = new System.Drawing.Font("Monospac821 BT", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bsubmit.ForeColor = System.Drawing.Color.Transparent;
-            this.bsubmit.Location = new System.Drawing.Point(181, 456);
+            this.bsubmit.Location = new System.Drawing.Point(181, 435);
             this.bsubmit.Name = "bsubmit";
             this.bsubmit.Size = new System.Drawing.Size(159, 43);
             this.bsubmit.TabIndex = 19;
@@ -238,7 +239,7 @@
             // 
             this.lblusername.AutoSize = true;
             this.lblusername.Font = new System.Drawing.Font("Monospac821 BT", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblusername.Location = new System.Drawing.Point(66, 45);
+            this.lblusername.Location = new System.Drawing.Point(66, 24);
             this.lblusername.Name = "lblusername";
             this.lblusername.Size = new System.Drawing.Size(109, 20);
             this.lblusername.TabIndex = 20;
@@ -248,7 +249,7 @@
             // 
             this.lblpassword.AutoSize = true;
             this.lblpassword.Font = new System.Drawing.Font("Monospac821 BT", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblpassword.Location = new System.Drawing.Point(76, 94);
+            this.lblpassword.Location = new System.Drawing.Point(76, 73);
             this.lblpassword.Name = "lblpassword";
             this.lblpassword.Size = new System.Drawing.Size(99, 20);
             this.lblpassword.TabIndex = 21;
@@ -256,7 +257,7 @@
             // 
             // tbusername
             // 
-            this.tbusername.Location = new System.Drawing.Point(181, 44);
+            this.tbusername.Location = new System.Drawing.Point(181, 23);
             this.tbusername.Name = "tbusername";
             this.tbusername.Size = new System.Drawing.Size(174, 22);
             this.tbusername.TabIndex = 22;
@@ -264,7 +265,7 @@
             // 
             // tbpassword
             // 
-            this.tbpassword.Location = new System.Drawing.Point(181, 93);
+            this.tbpassword.Location = new System.Drawing.Point(181, 72);
             this.tbpassword.Name = "tbpassword";
             this.tbpassword.Size = new System.Drawing.Size(174, 22);
             this.tbpassword.TabIndex = 23;
@@ -276,7 +277,7 @@
             this.lblgeneralinfo.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblgeneralinfo.Font = new System.Drawing.Font("Monospac821 BT", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblgeneralinfo.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblgeneralinfo.Location = new System.Drawing.Point(31, 124);
+            this.lblgeneralinfo.Location = new System.Drawing.Point(31, 103);
             this.lblgeneralinfo.Name = "lblgeneralinfo";
             this.lblgeneralinfo.Size = new System.Drawing.Size(139, 20);
             this.lblgeneralinfo.TabIndex = 24;
@@ -288,7 +289,7 @@
             this.breg_to_login.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.breg_to_login.Cursor = System.Windows.Forms.Cursors.Hand;
             this.breg_to_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.breg_to_login.Location = new System.Drawing.Point(3, 457);
+            this.breg_to_login.Location = new System.Drawing.Point(3, 436);
             this.breg_to_login.Name = "breg_to_login";
             this.breg_to_login.Size = new System.Drawing.Size(75, 42);
             this.breg_to_login.TabIndex = 25;
@@ -329,9 +330,9 @@
             this.panel_registration.Controls.Add(this.tbsurname);
             this.panel_registration.Controls.Add(this.tbemail);
             this.panel_registration.Controls.Add(this.tbgivenname);
-            this.panel_registration.Location = new System.Drawing.Point(12, 42);
+            this.panel_registration.Location = new System.Drawing.Point(12, 98);
             this.panel_registration.Name = "panel_registration";
-            this.panel_registration.Size = new System.Drawing.Size(389, 512);
+            this.panel_registration.Size = new System.Drawing.Size(389, 501);
             this.panel_registration.TabIndex = 26;
             this.panel_registration.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -341,7 +342,7 @@
             this.lblerrornumber.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblerrornumber.Font = new System.Drawing.Font("Microsoft Uighur", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblerrornumber.ForeColor = System.Drawing.Color.Red;
-            this.lblerrornumber.Location = new System.Drawing.Point(184, 389);
+            this.lblerrornumber.Location = new System.Drawing.Point(184, 368);
             this.lblerrornumber.Name = "lblerrornumber";
             this.lblerrornumber.Size = new System.Drawing.Size(0, 20);
             this.lblerrornumber.TabIndex = 29;
@@ -353,7 +354,7 @@
             this.lblerrorpassport.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblerrorpassport.Font = new System.Drawing.Font("Microsoft Uighur", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblerrorpassport.ForeColor = System.Drawing.Color.Red;
-            this.lblerrorpassport.Location = new System.Drawing.Point(184, 344);
+            this.lblerrorpassport.Location = new System.Drawing.Point(184, 323);
             this.lblerrorpassport.Name = "lblerrorpassport";
             this.lblerrorpassport.Size = new System.Drawing.Size(0, 20);
             this.lblerrorpassport.TabIndex = 32;
@@ -365,7 +366,7 @@
             this.lblerroremail.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblerroremail.Font = new System.Drawing.Font("Microsoft Uighur", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblerroremail.ForeColor = System.Drawing.Color.Red;
-            this.lblerroremail.Location = new System.Drawing.Point(184, 272);
+            this.lblerroremail.Location = new System.Drawing.Point(184, 251);
             this.lblerroremail.Name = "lblerroremail";
             this.lblerroremail.Size = new System.Drawing.Size(0, 20);
             this.lblerroremail.TabIndex = 29;
@@ -376,7 +377,7 @@
             this.lblerrorgivenname.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblerrorgivenname.Font = new System.Drawing.Font("Microsoft Uighur", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblerrorgivenname.ForeColor = System.Drawing.Color.Red;
-            this.lblerrorgivenname.Location = new System.Drawing.Point(184, 224);
+            this.lblerrorgivenname.Location = new System.Drawing.Point(184, 203);
             this.lblerrorgivenname.Name = "lblerrorgivenname";
             this.lblerrorgivenname.Size = new System.Drawing.Size(0, 20);
             this.lblerrorgivenname.TabIndex = 31;
@@ -387,7 +388,7 @@
             this.lblerrorsurname.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblerrorsurname.Font = new System.Drawing.Font("Microsoft Uighur", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblerrorsurname.ForeColor = System.Drawing.Color.Red;
-            this.lblerrorsurname.Location = new System.Drawing.Point(184, 176);
+            this.lblerrorsurname.Location = new System.Drawing.Point(184, 155);
             this.lblerrorsurname.Name = "lblerrorsurname";
             this.lblerrorsurname.Size = new System.Drawing.Size(0, 20);
             this.lblerrorsurname.TabIndex = 30;
@@ -398,7 +399,7 @@
             this.lblerrorpass.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblerrorpass.Font = new System.Drawing.Font("Microsoft Uighur", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblerrorpass.ForeColor = System.Drawing.Color.Red;
-            this.lblerrorpass.Location = new System.Drawing.Point(184, 118);
+            this.lblerrorpass.Location = new System.Drawing.Point(184, 97);
             this.lblerrorpass.Name = "lblerrorpass";
             this.lblerrorpass.Size = new System.Drawing.Size(0, 20);
             this.lblerrorpass.TabIndex = 29;
@@ -409,7 +410,7 @@
             this.lblerrorusername.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblerrorusername.Font = new System.Drawing.Font("Microsoft Uighur", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblerrorusername.ForeColor = System.Drawing.Color.Red;
-            this.lblerrorusername.Location = new System.Drawing.Point(184, 69);
+            this.lblerrorusername.Location = new System.Drawing.Point(184, 48);
             this.lblerrorusername.Name = "lblerrorusername";
             this.lblerrorusername.Size = new System.Drawing.Size(0, 20);
             this.lblerrorusername.TabIndex = 28;
@@ -419,7 +420,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Monospac821 BT", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(56, 202);
+            this.label2.Location = new System.Drawing.Point(56, 181);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(119, 20);
             this.label2.TabIndex = 2;
@@ -428,7 +429,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::TTT.Properties.Resources.log_in_page;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(-11, -12);
             this.pictureBox1.MaximumSize = new System.Drawing.Size(1000, 600);
             this.pictureBox1.MinimumSize = new System.Drawing.Size(1000, 600);
             this.pictureBox1.Name = "pictureBox1";
@@ -438,18 +439,36 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(952, 23);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(37, 33);
+            this.button2.TabIndex = 32;
+            this.button2.Text = "X";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(982, 553);
+            this.ClientSize = new System.Drawing.Size(1000, 600);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.lblregistration);
             this.Controls.Add(this.panel_registration);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximumSize = new System.Drawing.Size(1000, 600);
             this.MinimumSize = new System.Drawing.Size(1000, 600);
             this.Name = "registration";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "registration";
             this.panel_registration.ResumeLayout(false);
             this.panel_registration.PerformLayout();
@@ -493,5 +512,6 @@
         private System.Windows.Forms.Label lblerrorpass;
         private System.Windows.Forms.Label lblerrorusername;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button2;
     }
 }

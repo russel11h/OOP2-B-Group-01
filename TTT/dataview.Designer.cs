@@ -190,6 +190,7 @@
             this.DoubleBuffered = true;
             this.Name = "dataview";
             this.Text = "dataview";
+            this.Load += new System.EventHandler(this.dataview_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

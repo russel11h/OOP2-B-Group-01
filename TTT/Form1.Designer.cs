@@ -44,6 +44,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel_login.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -160,9 +161,9 @@
             this.panel_login.Controls.Add(this.lblnameerror);
             this.panel_login.Controls.Add(this.btnlogin);
             this.panel_login.Controls.Add(this.lblpasserror);
-            this.panel_login.Location = new System.Drawing.Point(3, 150);
+            this.panel_login.Location = new System.Drawing.Point(12, 150);
             this.panel_login.Name = "panel_login";
-            this.panel_login.Size = new System.Drawing.Size(391, 350);
+            this.panel_login.Size = new System.Drawing.Size(391, 397);
             this.panel_login.TabIndex = 13;
             this.panel_login.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -214,24 +215,42 @@
             this.pictureBox1.Image = global::TTT.Properties.Resources.log_in_page1;
             this.pictureBox1.Location = new System.Drawing.Point(0, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1001, 599);
+            this.pictureBox1.Size = new System.Drawing.Size(1002, 599);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(947, 12);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(37, 33);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "X";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(982, 553);
+            this.ClientSize = new System.Drawing.Size(1000, 600);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel_login);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximumSize = new System.Drawing.Size(1000, 600);
             this.MinimumSize = new System.Drawing.Size(1000, 600);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.panel_login.ResumeLayout(false);
             this.panel_login.PerformLayout();
@@ -259,6 +278,7 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

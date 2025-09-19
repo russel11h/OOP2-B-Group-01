@@ -6,10 +6,12 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TTT.TTT;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace TTT
 {
@@ -56,8 +58,13 @@ namespace TTT
 
                 if (ds.Tables[0].Rows.Count > 0)
                 {
-                    MessageBox.Show("Login Successful");
-                    Home_page home = new Home_page();
+                    MessageBox.Show("Login Successfulllll");
+
+                    // Get the username from the textbox
+                    string username = tbname.Text;
+
+
+                    Home home = new Home(username);
                     home.Show();
                     this.Hide();
                 }
@@ -65,6 +72,7 @@ namespace TTT
                 {
                     MessageBox.Show("Invalid Username or Password");
                 }
+
 
                 conn.Close();
             }
@@ -120,9 +128,9 @@ namespace TTT
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dataview d = new dataview();
-            d.Show();
-            Visible = false;
+           // Home home = new Home(username);
+           // d.Show();
+            //Visible = false;
 
             
         }
@@ -131,5 +139,12 @@ namespace TTT
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
     }
+   
 }

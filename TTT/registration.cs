@@ -195,6 +195,11 @@ namespace TTT
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
     namespace TTT
     {
