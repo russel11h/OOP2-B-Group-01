@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,34 @@ namespace TTT
         {
             InitializeComponent();
             this.loggedInUsername = username; // Store the username
-            lhname.Text = this.loggedInUsername; // Assuming 'lhname' is the label for the username
+            LoadUserData(); 
+        }
+        private void LoadUserData()
+        {
+            string connectionString = @"Data Source=RASEL\SQLEXPRESS;Initial Catalog=TMS;Integrated Security=True;";
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+
+            // Construct the query to select the givenname and surname
+            string query = "SELECT givenname, surname FROM regst WHERE user_name = @username";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@username", loggedInUsername);
+
+            SqlDataAdapter adp = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            adp.Fill(ds);
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                // Get the givenname and surname from the first row of the DataTable
+                string givenName = ds.Tables[0].Rows[0]["givenname"].ToString();
+                string surName = ds.Tables[0].Rows[0]["surname"].ToString();
+
+                // Concatenate and display the full name in the label
+                lhname.Text = givenName + " " + surName;
+            }
+
+            conn.Close();
         }
 
         private void bhx_Click(object sender, EventArgs e)
