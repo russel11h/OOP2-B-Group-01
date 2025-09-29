@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Book_Ticket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Book_Ticket.Designer.cs">
+      <DependentUpon>Book_Ticket.cs</DependentUpon>
+    </Compile>
     <Compile Include="create_new_password.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     <Compile Include="registration.Designer.cs">
       <DependentUpon>registration.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Book_Ticket.resx">
+      <DependentUpon>Book_Ticket.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="create_new_password.resx">
       <DependentUpon>create_new_password.cs</DependentUpon>
     </EmbeddedResource>
@@ -178,6 +187,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\From Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\From Search1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\To.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Journey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Journey Black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\From pannel use.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Place Marker.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

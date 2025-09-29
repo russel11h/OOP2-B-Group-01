@@ -93,6 +93,36 @@ namespace TTT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap From_pannel_use {
+            get {
+                object obj = ResourceManager.GetObject("From pannel use", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap From_Search {
+            get {
+                object obj = ResourceManager.GetObject("From Search", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap From_Search1 {
+            get {
+                object obj = ResourceManager.GetObject("From Search1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Home {
             get {
                 object obj = ResourceManager.GetObject("Home", resourceCulture);
@@ -133,6 +163,26 @@ namespace TTT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Journey {
+            get {
+                object obj = ResourceManager.GetObject("Journey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Journey_Black {
+            get {
+                object obj = ResourceManager.GetObject("Journey Black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap log_in_page {
             get {
                 object obj = ResourceManager.GetObject("log in page", resourceCulture);
@@ -166,6 +216,16 @@ namespace TTT.Properties {
         internal static System.Drawing.Bitmap log_in_page3 {
             get {
                 object obj = ResourceManager.GetObject("log in page3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Place_Marker {
+            get {
+                object obj = ResourceManager.GetObject("Place Marker", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -226,6 +286,16 @@ namespace TTT.Properties {
         internal static System.Drawing.Bitmap Statistics_Report {
             get {
                 object obj = ResourceManager.GetObject("Statistics Report", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap To {
+            get {
+                object obj = ResourceManager.GetObject("To", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

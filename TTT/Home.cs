@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -105,6 +106,78 @@ namespace TTT
         private void lhname_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void panel_Book_Hote_Paint(object sender, PaintEventArgs e)
+        {
+            Panel p = sender as Panel;
+            int radius = 30;
+
+            GraphicsPath path = new GraphicsPath();
+            path.StartFigure();
+            path.AddArc(new Rectangle(0, 0, radius, radius), 180, 90);
+            path.AddLine(radius, 0, p.Width - radius, 0);
+            path.AddArc(new Rectangle(p.Width - radius, 0, radius, radius), 270, 90);
+            path.AddLine(p.Width, radius, p.Width, p.Height - radius);
+            path.AddArc(new Rectangle(p.Width - radius, p.Height - radius, radius, radius), 0, 90);
+            path.AddLine(p.Width - radius, p.Height, radius, p.Height);
+            path.AddArc(new Rectangle(0, p.Height - radius, radius, radius), 90, 90);
+            path.CloseFigure();
+
+            p.Region = new Region(path);
+        }
+
+        private void label_databasefrom_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void panel_Book_Transport_Paint(object sender, PaintEventArgs e)
+        {
+            string connectionString = @"Data Source=RASEL\SQLEXPRESS;Initial Catalog=TMS;Integrated Security=True;";
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+
+            // Get the first row's details
+            string query = "SELECT TOP 1 From_City, To_City, Departure_Time, Arrival_Time, Price_eco FROM plane_details ORDER BY Transport_No";
+            SqlCommand cmd = new SqlCommand(query, conn);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read()) // Read the first row
+            {
+                // Set the labels
+                label_databasefrom.Text = reader["From_City"].ToString();
+                label_databaseto.Text = reader["To_City"].ToString();
+                label_databasetime.Text = reader["Departure_Time"].ToString() + " → " + reader["Arrival_Time"].ToString();
+                label_databaseprice.Text = reader["Price_eco"].ToString();
+            }
+
+            reader.Close();
+            conn.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void panel_Book_Ticket_Paint(object sender, PaintEventArgs e)
+        {
+            Panel p = sender as Panel;
+            int radius = 30;
+
+            GraphicsPath path = new GraphicsPath();
+            path.StartFigure();
+            path.AddArc(new Rectangle(0, 0, radius, radius), 180, 90);
+            path.AddLine(radius, 0, p.Width - radius, 0);
+            path.AddArc(new Rectangle(p.Width - radius, 0, radius, radius), 270, 90);
+            path.AddLine(p.Width, radius, p.Width, p.Height - radius);
+            path.AddArc(new Rectangle(p.Width - radius, p.Height - radius, radius, radius), 0, 90);
+            path.AddLine(p.Width - radius, p.Height, radius, p.Height);
+            path.AddArc(new Rectangle(0, p.Height - radius, radius, radius), 90, 90);
+            path.CloseFigure();
+
+            p.Region = new Region(path);
         }
     }
 }
