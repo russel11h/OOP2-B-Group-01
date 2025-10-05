@@ -31,48 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.phleft = new System.Windows.Forms.Panel();
             this.lhname = new System.Windows.Forms.Label();
-            this.phtop = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.bhx = new System.Windows.Forms.Button();
-            this.panel_Book_Ticket = new System.Windows.Forms.Panel();
-            this.panel_Book_Hote = new System.Windows.Forms.Panel();
-            this.textBox_from = new System.Windows.Forms.TextBox();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
-            this.label_from = new System.Windows.Forms.Label();
-            this.label_to = new System.Windows.Forms.Label();
-            this.textBox_to = new System.Windows.Forms.TextBox();
-            this.button_search = new System.Windows.Forms.Button();
-            this.panel_T1 = new System.Windows.Forms.Panel();
-            this.panel_T2 = new System.Windows.Forms.Panel();
-            this.panel_T4 = new System.Windows.Forms.Panel();
-            this.panel_T5 = new System.Windows.Forms.Panel();
-            this.panel_T3 = new System.Windows.Forms.Panel();
-            this.panel_T6 = new System.Windows.Forms.Panel();
-            this.panel_Book_Transport = new System.Windows.Forms.Panel();
-            this.panel_T9 = new System.Windows.Forms.Panel();
-            this.panel_T8 = new System.Windows.Forms.Panel();
-            this.panel_T7 = new System.Windows.Forms.Panel();
-            this.panel_T12 = new System.Windows.Forms.Panel();
-            this.panel_T11 = new System.Windows.Forms.Panel();
-            this.panel_T10 = new System.Windows.Forms.Panel();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.label_databasefrom = new System.Windows.Forms.Label();
-            this.label_databaseto = new System.Windows.Forms.Label();
-            this.label_p_from = new System.Windows.Forms.Label();
-            this.label_p_to = new System.Windows.Forms.Label();
-            this.pictureBox_p_to = new System.Windows.Forms.PictureBox();
-            this.pictureBoxPanel_from = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox_to = new System.Windows.Forms.PictureBox();
-            this.pictureBox_from = new System.Windows.Forms.PictureBox();
             this.picbox_profile = new System.Windows.Forms.PictureBox();
             this.bnSettings = new System.Windows.Forms.Button();
             this.bnReports = new System.Windows.Forms.Button();
@@ -80,24 +38,60 @@
             this.bnCustomers = new System.Windows.Forms.Button();
             this.bnbookticket = new System.Windows.Forms.Button();
             this.bnhome = new System.Windows.Forms.Button();
-            this.label_databasetime = new System.Windows.Forms.Label();
-            this.label_p_price = new System.Windows.Forms.Label();
+            this.phtop = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.bhx = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel_Book_Ticket = new System.Windows.Forms.Panel();
+            this.panel_Book_Hote = new System.Windows.Forms.Panel();
+            this.button_search = new System.Windows.Forms.Button();
+            this.pictureBox_to = new System.Windows.Forms.PictureBox();
+            this.label_to = new System.Windows.Forms.Label();
+            this.textBox_to = new System.Windows.Forms.TextBox();
+            this.pictureBox_from = new System.Windows.Forms.PictureBox();
+            this.label_from = new System.Windows.Forms.Label();
+            this.textBox_from = new System.Windows.Forms.TextBox();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
+            this.panel_T1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label_databaseprice = new System.Windows.Forms.Label();
+            this.label_p_price = new System.Windows.Forms.Label();
+            this.label_databasetime = new System.Windows.Forms.Label();
+            this.pictureBox_p_to = new System.Windows.Forms.PictureBox();
+            this.pictureBoxPanel_from = new System.Windows.Forms.PictureBox();
+            this.label_p_to = new System.Windows.Forms.Label();
+            this.label_p_from = new System.Windows.Forms.Label();
+            this.label_databaseto = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label_databasefrom = new System.Windows.Forms.Label();
+            this.panel_T2 = new System.Windows.Forms.Panel();
+            this.panel_T3 = new System.Windows.Forms.Panel();
+            this.panel_T4 = new System.Windows.Forms.Panel();
+            this.panel_Book_Transport = new System.Windows.Forms.Panel();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.panel18 = new System.Windows.Forms.Panel();
             this.phleft.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbox_profile)).BeginInit();
             this.phtop.SuspendLayout();
-            this.panel_Book_Ticket.SuspendLayout();
-            this.panel_Book_Hote.SuspendLayout();
-            this.panel_T1.SuspendLayout();
-            this.panel_Book_Transport.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel15.SuspendLayout();
-            this.panel17.SuspendLayout();
+            this.panel_Book_Ticket.SuspendLayout();
+            this.panel_Book_Hote.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_to)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_from)).BeginInit();
+            this.panel_T1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_p_to)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPanel_from)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_to)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_from)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbox_profile)).BeginInit();
+            this.panel_Book_Transport.SuspendLayout();
+            this.panel17.SuspendLayout();
             this.SuspendLayout();
             // 
             // phleft
@@ -132,438 +126,6 @@
             this.lhname.Text = "Rasel Hossain";
             this.lhname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lhname.Click += new System.EventHandler(this.lhname_Click);
-            // 
-            // phtop
-            // 
-            this.phtop.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.phtop.Controls.Add(this.panel13);
-            this.phtop.Controls.Add(this.bhx);
-            this.phtop.Controls.Add(this.panel1);
-            this.phtop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.phtop.Location = new System.Drawing.Point(261, 0);
-            this.phtop.Name = "phtop";
-            this.phtop.Size = new System.Drawing.Size(848, 51);
-            this.phtop.TabIndex = 1;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.panel1.Location = new System.Drawing.Point(111, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 51);
-            this.panel1.TabIndex = 2;
-            // 
-            // bhx
-            // 
-            this.bhx.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bhx.FlatAppearance.BorderSize = 0;
-            this.bhx.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bhx.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bhx.Location = new System.Drawing.Point(799, 12);
-            this.bhx.Name = "bhx";
-            this.bhx.Size = new System.Drawing.Size(37, 33);
-            this.bhx.TabIndex = 2;
-            this.bhx.Text = "X";
-            this.bhx.UseVisualStyleBackColor = true;
-            this.bhx.Click += new System.EventHandler(this.bhx_Click);
-            // 
-            // panel_Book_Ticket
-            // 
-            this.panel_Book_Ticket.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.panel_Book_Ticket.Controls.Add(this.panel_Book_Hote);
-            this.panel_Book_Ticket.Location = new System.Drawing.Point(261, 57);
-            this.panel_Book_Ticket.Name = "panel_Book_Ticket";
-            this.panel_Book_Ticket.Size = new System.Drawing.Size(848, 261);
-            this.panel_Book_Ticket.TabIndex = 2;
-            this.panel_Book_Ticket.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Book_Ticket_Paint);
-            // 
-            // panel_Book_Hote
-            // 
-            this.panel_Book_Hote.BackColor = System.Drawing.Color.White;
-            this.panel_Book_Hote.Controls.Add(this.button_search);
-            this.panel_Book_Hote.Controls.Add(this.pictureBox_to);
-            this.panel_Book_Hote.Controls.Add(this.label_to);
-            this.panel_Book_Hote.Controls.Add(this.textBox_to);
-            this.panel_Book_Hote.Controls.Add(this.pictureBox_from);
-            this.panel_Book_Hote.Controls.Add(this.label_from);
-            this.panel_Book_Hote.Controls.Add(this.textBox_from);
-            this.panel_Book_Hote.Location = new System.Drawing.Point(111, 14);
-            this.panel_Book_Hote.Name = "panel_Book_Hote";
-            this.panel_Book_Hote.Size = new System.Drawing.Size(615, 225);
-            this.panel_Book_Hote.TabIndex = 3;
-            this.panel_Book_Hote.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Book_Hote_Paint);
-            // 
-            // textBox_from
-            // 
-            this.textBox_from.BackColor = System.Drawing.Color.White;
-            this.textBox_from.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox_from.Location = new System.Drawing.Point(157, 52);
-            this.textBox_from.Name = "textBox_from";
-            this.textBox_from.Size = new System.Drawing.Size(296, 22);
-            this.textBox_from.TabIndex = 0;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // imageList2
-            // 
-            this.imageList2.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList2.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // label_from
-            // 
-            this.label_from.AutoSize = true;
-            this.label_from.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_from.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_from.Location = new System.Drawing.Point(180, 25);
-            this.label_from.Name = "label_from";
-            this.label_from.Size = new System.Drawing.Size(58, 23);
-            this.label_from.TabIndex = 1;
-            this.label_from.Text = "From";
-            this.label_from.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label_to
-            // 
-            this.label_to.AutoSize = true;
-            this.label_to.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_to.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_to.Location = new System.Drawing.Point(182, 92);
-            this.label_to.Name = "label_to";
-            this.label_to.Size = new System.Drawing.Size(31, 23);
-            this.label_to.TabIndex = 4;
-            this.label_to.Text = "To";
-            this.label_to.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // textBox_to
-            // 
-            this.textBox_to.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox_to.Location = new System.Drawing.Point(159, 119);
-            this.textBox_to.Name = "textBox_to";
-            this.textBox_to.Size = new System.Drawing.Size(296, 22);
-            this.textBox_to.TabIndex = 3;
-            // 
-            // button_search
-            // 
-            this.button_search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button_search.FlatAppearance.BorderSize = 0;
-            this.button_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_search.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_search.ForeColor = System.Drawing.Color.White;
-            this.button_search.Location = new System.Drawing.Point(157, 161);
-            this.button_search.Name = "button_search";
-            this.button_search.Size = new System.Drawing.Size(298, 33);
-            this.button_search.TabIndex = 6;
-            this.button_search.Text = "Search";
-            this.button_search.UseVisualStyleBackColor = false;
-            // 
-            // panel_T1
-            // 
-            this.panel_T1.BackColor = System.Drawing.Color.White;
-            this.panel_T1.Controls.Add(this.label_databaseprice);
-            this.panel_T1.Controls.Add(this.label_p_price);
-            this.panel_T1.Controls.Add(this.label_databasetime);
-            this.panel_T1.Controls.Add(this.pictureBox_p_to);
-            this.panel_T1.Controls.Add(this.pictureBoxPanel_from);
-            this.panel_T1.Controls.Add(this.label_p_to);
-            this.panel_T1.Controls.Add(this.label_p_from);
-            this.panel_T1.Controls.Add(this.label_databaseto);
-            this.panel_T1.Controls.Add(this.pictureBox1);
-            this.panel_T1.Controls.Add(this.label_databasefrom);
-            this.panel_T1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel_T1.Location = new System.Drawing.Point(22, 12);
-            this.panel_T1.Name = "panel_T1";
-            this.panel_T1.Size = new System.Drawing.Size(251, 157);
-            this.panel_T1.TabIndex = 3;
-            // 
-            // panel_T2
-            // 
-            this.panel_T2.BackColor = System.Drawing.Color.White;
-            this.panel_T2.Location = new System.Drawing.Point(295, 12);
-            this.panel_T2.Name = "panel_T2";
-            this.panel_T2.Size = new System.Drawing.Size(251, 157);
-            this.panel_T2.TabIndex = 4;
-            // 
-            // panel_T4
-            // 
-            this.panel_T4.BackColor = System.Drawing.Color.White;
-            this.panel_T4.Location = new System.Drawing.Point(22, 180);
-            this.panel_T4.Name = "panel_T4";
-            this.panel_T4.Size = new System.Drawing.Size(251, 157);
-            this.panel_T4.TabIndex = 5;
-            // 
-            // panel_T5
-            // 
-            this.panel_T5.BackColor = System.Drawing.Color.White;
-            this.panel_T5.Location = new System.Drawing.Point(295, 180);
-            this.panel_T5.Name = "panel_T5";
-            this.panel_T5.Size = new System.Drawing.Size(251, 157);
-            this.panel_T5.TabIndex = 6;
-            // 
-            // panel_T3
-            // 
-            this.panel_T3.BackColor = System.Drawing.Color.White;
-            this.panel_T3.Location = new System.Drawing.Point(572, 12);
-            this.panel_T3.Name = "panel_T3";
-            this.panel_T3.Size = new System.Drawing.Size(251, 157);
-            this.panel_T3.TabIndex = 4;
-            // 
-            // panel_T6
-            // 
-            this.panel_T6.BackColor = System.Drawing.Color.White;
-            this.panel_T6.Location = new System.Drawing.Point(572, 180);
-            this.panel_T6.Name = "panel_T6";
-            this.panel_T6.Size = new System.Drawing.Size(251, 157);
-            this.panel_T6.TabIndex = 7;
-            // 
-            // panel_Book_Transport
-            // 
-            this.panel_Book_Transport.AutoScroll = true;
-            this.panel_Book_Transport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.panel_Book_Transport.Controls.Add(this.panel_T12);
-            this.panel_Book_Transport.Controls.Add(this.panel_T9);
-            this.panel_Book_Transport.Controls.Add(this.panel_T10);
-            this.panel_Book_Transport.Controls.Add(this.panel_T11);
-            this.panel_Book_Transport.Controls.Add(this.panel_T6);
-            this.panel_Book_Transport.Controls.Add(this.panel_T8);
-            this.panel_Book_Transport.Controls.Add(this.panel_T7);
-            this.panel_Book_Transport.Controls.Add(this.panel_T3);
-            this.panel_Book_Transport.Controls.Add(this.panel_T5);
-            this.panel_Book_Transport.Controls.Add(this.panel_T4);
-            this.panel_Book_Transport.Controls.Add(this.panel_T2);
-            this.panel_Book_Transport.Controls.Add(this.panel_T1);
-            this.panel_Book_Transport.Location = new System.Drawing.Point(261, 324);
-            this.panel_Book_Transport.Name = "panel_Book_Transport";
-            this.panel_Book_Transport.Size = new System.Drawing.Size(848, 306);
-            this.panel_Book_Transport.TabIndex = 3;
-            this.panel_Book_Transport.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Book_Transport_Paint);
-            // 
-            // panel_T9
-            // 
-            this.panel_T9.BackColor = System.Drawing.Color.White;
-            this.panel_T9.Location = new System.Drawing.Point(572, 353);
-            this.panel_T9.Name = "panel_T9";
-            this.panel_T9.Size = new System.Drawing.Size(251, 157);
-            this.panel_T9.TabIndex = 7;
-            // 
-            // panel_T8
-            // 
-            this.panel_T8.BackColor = System.Drawing.Color.White;
-            this.panel_T8.Location = new System.Drawing.Point(295, 353);
-            this.panel_T8.Name = "panel_T8";
-            this.panel_T8.Size = new System.Drawing.Size(251, 157);
-            this.panel_T8.TabIndex = 6;
-            // 
-            // panel_T7
-            // 
-            this.panel_T7.BackColor = System.Drawing.Color.White;
-            this.panel_T7.Location = new System.Drawing.Point(22, 353);
-            this.panel_T7.Name = "panel_T7";
-            this.panel_T7.Size = new System.Drawing.Size(251, 157);
-            this.panel_T7.TabIndex = 5;
-            // 
-            // panel_T12
-            // 
-            this.panel_T12.BackColor = System.Drawing.Color.White;
-            this.panel_T12.Location = new System.Drawing.Point(572, 533);
-            this.panel_T12.Name = "panel_T12";
-            this.panel_T12.Size = new System.Drawing.Size(251, 157);
-            this.panel_T12.TabIndex = 10;
-            // 
-            // panel_T11
-            // 
-            this.panel_T11.BackColor = System.Drawing.Color.White;
-            this.panel_T11.Location = new System.Drawing.Point(295, 533);
-            this.panel_T11.Name = "panel_T11";
-            this.panel_T11.Size = new System.Drawing.Size(251, 157);
-            this.panel_T11.TabIndex = 9;
-            // 
-            // panel_T10
-            // 
-            this.panel_T10.BackColor = System.Drawing.Color.White;
-            this.panel_T10.Location = new System.Drawing.Point(22, 533);
-            this.panel_T10.Name = "panel_T10";
-            this.panel_T10.Size = new System.Drawing.Size(251, 157);
-            this.panel_T10.TabIndex = 8;
-            // 
-            // panel13
-            // 
-            this.panel13.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel13.Controls.Add(this.panel15);
-            this.panel13.Controls.Add(this.button1);
-            this.panel13.Controls.Add(this.panel14);
-            this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel13.Location = new System.Drawing.Point(0, 0);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(848, 51);
-            this.panel13.TabIndex = 3;
-            // 
-            // button1
-            // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(799, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(37, 33);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "X";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // panel14
-            // 
-            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.panel14.Location = new System.Drawing.Point(111, 0);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(200, 51);
-            this.panel14.TabIndex = 2;
-            // 
-            // panel15
-            // 
-            this.panel15.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel15.Controls.Add(this.button2);
-            this.panel15.Controls.Add(this.panel16);
-            this.panel15.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel15.Location = new System.Drawing.Point(0, 0);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(848, 51);
-            this.panel15.TabIndex = 4;
-            // 
-            // button2
-            // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(799, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(37, 33);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "X";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // panel16
-            // 
-            this.panel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.panel16.Location = new System.Drawing.Point(111, 0);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(200, 51);
-            this.panel16.TabIndex = 2;
-            // 
-            // panel17
-            // 
-            this.panel17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.panel17.Controls.Add(this.panel18);
-            this.panel17.Location = new System.Drawing.Point(261, 629);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(848, 32);
-            this.panel17.TabIndex = 3;
-            // 
-            // panel18
-            // 
-            this.panel18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel18.Location = new System.Drawing.Point(826, 0);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(22, 38);
-            this.panel18.TabIndex = 3;
-            // 
-            // label_databasefrom
-            // 
-            this.label_databasefrom.AutoSize = true;
-            this.label_databasefrom.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_databasefrom.ForeColor = System.Drawing.Color.Red;
-            this.label_databasefrom.Location = new System.Drawing.Point(23, 65);
-            this.label_databasefrom.Name = "label_databasefrom";
-            this.label_databasefrom.Size = new System.Drawing.Size(16, 16);
-            this.label_databasefrom.TabIndex = 0;
-            this.label_databasefrom.Text = "D";
-            this.label_databasefrom.Click += new System.EventHandler(this.label_databasefrom_Click);
-            // 
-            // label_databaseto
-            // 
-            this.label_databaseto.AutoSize = true;
-            this.label_databaseto.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_databaseto.ForeColor = System.Drawing.Color.Red;
-            this.label_databaseto.Location = new System.Drawing.Point(172, 65);
-            this.label_databaseto.Name = "label_databaseto";
-            this.label_databaseto.Size = new System.Drawing.Size(59, 16);
-            this.label_databaseto.TabIndex = 2;
-            this.label_databaseto.Text = "Gazipur";
-            // 
-            // label_p_from
-            // 
-            this.label_p_from.AutoSize = true;
-            this.label_p_from.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_p_from.Location = new System.Drawing.Point(31, 28);
-            this.label_p_from.Name = "label_p_from";
-            this.label_p_from.Size = new System.Drawing.Size(42, 16);
-            this.label_p_from.TabIndex = 3;
-            this.label_p_from.Text = "From:";
-            // 
-            // label_p_to
-            // 
-            this.label_p_to.AutoSize = true;
-            this.label_p_to.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_p_to.Location = new System.Drawing.Point(192, 28);
-            this.label_p_to.Name = "label_p_to";
-            this.label_p_to.Size = new System.Drawing.Size(25, 16);
-            this.label_p_to.TabIndex = 4;
-            this.label_p_to.Text = "To:";
-            // 
-            // pictureBox_p_to
-            // 
-            this.pictureBox_p_to.Image = global::TTT.Properties.Resources.Place_Marker;
-            this.pictureBox_p_to.Location = new System.Drawing.Point(156, 15);
-            this.pictureBox_p_to.Name = "pictureBox_p_to";
-            this.pictureBox_p_to.Size = new System.Drawing.Size(30, 35);
-            this.pictureBox_p_to.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_p_to.TabIndex = 6;
-            this.pictureBox_p_to.TabStop = false;
-            // 
-            // pictureBoxPanel_from
-            // 
-            this.pictureBoxPanel_from.Image = global::TTT.Properties.Resources.From_pannel_use;
-            this.pictureBoxPanel_from.Location = new System.Drawing.Point(3, 15);
-            this.pictureBoxPanel_from.Name = "pictureBoxPanel_from";
-            this.pictureBoxPanel_from.Size = new System.Drawing.Size(30, 35);
-            this.pictureBoxPanel_from.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxPanel_from.TabIndex = 5;
-            this.pictureBoxPanel_from.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::TTT.Properties.Resources.Journey_Black;
-            this.pictureBox1.Location = new System.Drawing.Point(100, 41);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(52, 40);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox_to
-            // 
-            this.pictureBox_to.Image = global::TTT.Properties.Resources.To;
-            this.pictureBox_to.Location = new System.Drawing.Point(159, 90);
-            this.pictureBox_to.Name = "pictureBox_to";
-            this.pictureBox_to.Size = new System.Drawing.Size(25, 23);
-            this.pictureBox_to.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_to.TabIndex = 5;
-            this.pictureBox_to.TabStop = false;
-            // 
-            // pictureBox_from
-            // 
-            this.pictureBox_from.Image = global::TTT.Properties.Resources.From_Search;
-            this.pictureBox_from.Location = new System.Drawing.Point(157, 23);
-            this.pictureBox_from.Name = "pictureBox_from";
-            this.pictureBox_from.Size = new System.Drawing.Size(25, 23);
-            this.pictureBox_from.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_from.TabIndex = 2;
-            this.pictureBox_from.TabStop = false;
             // 
             // picbox_profile
             // 
@@ -684,38 +246,413 @@
             this.bnhome.UseVisualStyleBackColor = true;
             this.bnhome.Click += new System.EventHandler(this.bnhome_Click);
             // 
-            // label_databasetime
+            // phtop
             // 
-            this.label_databasetime.AutoSize = true;
-            this.label_databasetime.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_databasetime.ForeColor = System.Drawing.Color.Black;
-            this.label_databasetime.Location = new System.Drawing.Point(5, 97);
-            this.label_databasetime.Name = "label_databasetime";
-            this.label_databasetime.Size = new System.Drawing.Size(37, 16);
-            this.label_databasetime.TabIndex = 7;
-            this.label_databasetime.Text = "Time";
+            this.phtop.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.phtop.Controls.Add(this.panel13);
+            this.phtop.Controls.Add(this.bhx);
+            this.phtop.Controls.Add(this.panel1);
+            this.phtop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.phtop.Location = new System.Drawing.Point(261, 0);
+            this.phtop.Name = "phtop";
+            this.phtop.Size = new System.Drawing.Size(848, 51);
+            this.phtop.TabIndex = 1;
             // 
-            // label_p_price
+            // panel13
             // 
-            this.label_p_price.AutoSize = true;
-            this.label_p_price.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_p_price.ForeColor = System.Drawing.Color.Black;
-            this.label_p_price.Location = new System.Drawing.Point(50, 129);
-            this.label_p_price.Name = "label_p_price";
-            this.label_p_price.Size = new System.Drawing.Size(43, 16);
-            this.label_p_price.TabIndex = 8;
-            this.label_p_price.Text = "Price:";
+            this.panel13.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel13.Controls.Add(this.panel15);
+            this.panel13.Controls.Add(this.button1);
+            this.panel13.Controls.Add(this.panel14);
+            this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel13.Location = new System.Drawing.Point(0, 0);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(848, 51);
+            this.panel13.TabIndex = 3;
+            // 
+            // panel15
+            // 
+            this.panel15.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel15.Controls.Add(this.button2);
+            this.panel15.Controls.Add(this.panel16);
+            this.panel15.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel15.Location = new System.Drawing.Point(0, 0);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(848, 51);
+            this.panel15.TabIndex = 4;
+            // 
+            // button2
+            // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(799, 12);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(37, 33);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "X";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // panel16
+            // 
+            this.panel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.panel16.Location = new System.Drawing.Point(111, 0);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(200, 51);
+            this.panel16.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(799, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(37, 33);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "X";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.panel14.Location = new System.Drawing.Point(111, 0);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(200, 51);
+            this.panel14.TabIndex = 2;
+            // 
+            // bhx
+            // 
+            this.bhx.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bhx.FlatAppearance.BorderSize = 0;
+            this.bhx.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bhx.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bhx.Location = new System.Drawing.Point(799, 12);
+            this.bhx.Name = "bhx";
+            this.bhx.Size = new System.Drawing.Size(37, 33);
+            this.bhx.TabIndex = 2;
+            this.bhx.Text = "X";
+            this.bhx.UseVisualStyleBackColor = true;
+            this.bhx.Click += new System.EventHandler(this.bhx_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.panel1.Location = new System.Drawing.Point(111, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 51);
+            this.panel1.TabIndex = 2;
+            // 
+            // panel_Book_Ticket
+            // 
+            this.panel_Book_Ticket.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.panel_Book_Ticket.Controls.Add(this.panel_Book_Hote);
+            this.panel_Book_Ticket.Location = new System.Drawing.Point(261, 57);
+            this.panel_Book_Ticket.Name = "panel_Book_Ticket";
+            this.panel_Book_Ticket.Size = new System.Drawing.Size(848, 261);
+            this.panel_Book_Ticket.TabIndex = 2;
+            this.panel_Book_Ticket.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Book_Ticket_Paint);
+            // 
+            // panel_Book_Hote
+            // 
+            this.panel_Book_Hote.BackColor = System.Drawing.Color.White;
+            this.panel_Book_Hote.Controls.Add(this.button_search);
+            this.panel_Book_Hote.Controls.Add(this.pictureBox_to);
+            this.panel_Book_Hote.Controls.Add(this.label_to);
+            this.panel_Book_Hote.Controls.Add(this.textBox_to);
+            this.panel_Book_Hote.Controls.Add(this.pictureBox_from);
+            this.panel_Book_Hote.Controls.Add(this.label_from);
+            this.panel_Book_Hote.Controls.Add(this.textBox_from);
+            this.panel_Book_Hote.Location = new System.Drawing.Point(111, 14);
+            this.panel_Book_Hote.Name = "panel_Book_Hote";
+            this.panel_Book_Hote.Size = new System.Drawing.Size(615, 225);
+            this.panel_Book_Hote.TabIndex = 3;
+            this.panel_Book_Hote.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Book_Hote_Paint);
+            // 
+            // button_search
+            // 
+            this.button_search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button_search.FlatAppearance.BorderSize = 0;
+            this.button_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_search.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_search.ForeColor = System.Drawing.Color.White;
+            this.button_search.Location = new System.Drawing.Point(157, 161);
+            this.button_search.Name = "button_search";
+            this.button_search.Size = new System.Drawing.Size(298, 33);
+            this.button_search.TabIndex = 6;
+            this.button_search.Text = "Search";
+            this.button_search.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox_to
+            // 
+            this.pictureBox_to.Image = global::TTT.Properties.Resources.To;
+            this.pictureBox_to.Location = new System.Drawing.Point(159, 90);
+            this.pictureBox_to.Name = "pictureBox_to";
+            this.pictureBox_to.Size = new System.Drawing.Size(25, 23);
+            this.pictureBox_to.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_to.TabIndex = 5;
+            this.pictureBox_to.TabStop = false;
+            // 
+            // label_to
+            // 
+            this.label_to.AutoSize = true;
+            this.label_to.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_to.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label_to.Location = new System.Drawing.Point(182, 92);
+            this.label_to.Name = "label_to";
+            this.label_to.Size = new System.Drawing.Size(31, 23);
+            this.label_to.TabIndex = 4;
+            this.label_to.Text = "To";
+            this.label_to.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox_to
+            // 
+            this.textBox_to.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox_to.Location = new System.Drawing.Point(159, 119);
+            this.textBox_to.Name = "textBox_to";
+            this.textBox_to.Size = new System.Drawing.Size(296, 22);
+            this.textBox_to.TabIndex = 3;
+            // 
+            // pictureBox_from
+            // 
+            this.pictureBox_from.Image = global::TTT.Properties.Resources.From_Search;
+            this.pictureBox_from.Location = new System.Drawing.Point(157, 23);
+            this.pictureBox_from.Name = "pictureBox_from";
+            this.pictureBox_from.Size = new System.Drawing.Size(25, 23);
+            this.pictureBox_from.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_from.TabIndex = 2;
+            this.pictureBox_from.TabStop = false;
+            // 
+            // label_from
+            // 
+            this.label_from.AutoSize = true;
+            this.label_from.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_from.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label_from.Location = new System.Drawing.Point(180, 25);
+            this.label_from.Name = "label_from";
+            this.label_from.Size = new System.Drawing.Size(58, 23);
+            this.label_from.TabIndex = 1;
+            this.label_from.Text = "From";
+            this.label_from.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox_from
+            // 
+            this.textBox_from.BackColor = System.Drawing.Color.White;
+            this.textBox_from.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox_from.Location = new System.Drawing.Point(157, 52);
+            this.textBox_from.Name = "textBox_from";
+            this.textBox_from.Size = new System.Drawing.Size(296, 22);
+            this.textBox_from.TabIndex = 0;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // imageList2
+            // 
+            this.imageList2.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList2.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // panel_T1
+            // 
+            this.panel_T1.BackColor = System.Drawing.Color.White;
+            this.panel_T1.Controls.Add(this.pictureBox2);
+            this.panel_T1.Controls.Add(this.label_databaseprice);
+            this.panel_T1.Controls.Add(this.label_p_price);
+            this.panel_T1.Controls.Add(this.label_databasetime);
+            this.panel_T1.Controls.Add(this.pictureBox_p_to);
+            this.panel_T1.Controls.Add(this.pictureBoxPanel_from);
+            this.panel_T1.Controls.Add(this.label_p_to);
+            this.panel_T1.Controls.Add(this.label_p_from);
+            this.panel_T1.Controls.Add(this.label_databaseto);
+            this.panel_T1.Controls.Add(this.pictureBox1);
+            this.panel_T1.Controls.Add(this.label_databasefrom);
+            this.panel_T1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel_T1.Location = new System.Drawing.Point(22, 12);
+            this.panel_T1.Name = "panel_T1";
+            this.panel_T1.Size = new System.Drawing.Size(779, 157);
+            this.panel_T1.TabIndex = 3;
+            this.panel_T1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_T1_Paint);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::TTT.Properties.Resources.plane2;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(189, 154);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 10;
+            this.pictureBox2.TabStop = false;
             // 
             // label_databaseprice
             // 
             this.label_databaseprice.AutoSize = true;
             this.label_databaseprice.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_databaseprice.ForeColor = System.Drawing.Color.Red;
-            this.label_databaseprice.Location = new System.Drawing.Point(105, 129);
+            this.label_databaseprice.Location = new System.Drawing.Point(399, 129);
             this.label_databaseprice.Name = "label_databaseprice";
             this.label_databaseprice.Size = new System.Drawing.Size(49, 19);
             this.label_databaseprice.TabIndex = 9;
             this.label_databaseprice.Text = "0000";
+            // 
+            // label_p_price
+            // 
+            this.label_p_price.AutoSize = true;
+            this.label_p_price.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_p_price.ForeColor = System.Drawing.Color.Black;
+            this.label_p_price.Location = new System.Drawing.Point(344, 129);
+            this.label_p_price.Name = "label_p_price";
+            this.label_p_price.Size = new System.Drawing.Size(43, 16);
+            this.label_p_price.TabIndex = 8;
+            this.label_p_price.Text = "Price:";
+            // 
+            // label_databasetime
+            // 
+            this.label_databasetime.AutoSize = true;
+            this.label_databasetime.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_databasetime.ForeColor = System.Drawing.Color.Black;
+            this.label_databasetime.Location = new System.Drawing.Point(218, 98);
+            this.label_databasetime.Name = "label_databasetime";
+            this.label_databasetime.Size = new System.Drawing.Size(37, 16);
+            this.label_databasetime.TabIndex = 7;
+            this.label_databasetime.Text = "Time";
+            // 
+            // pictureBox_p_to
+            // 
+            this.pictureBox_p_to.Image = global::TTT.Properties.Resources.Place_Marker;
+            this.pictureBox_p_to.Location = new System.Drawing.Point(584, 28);
+            this.pictureBox_p_to.Name = "pictureBox_p_to";
+            this.pictureBox_p_to.Size = new System.Drawing.Size(30, 35);
+            this.pictureBox_p_to.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_p_to.TabIndex = 6;
+            this.pictureBox_p_to.TabStop = false;
+            // 
+            // pictureBoxPanel_from
+            // 
+            this.pictureBoxPanel_from.Image = global::TTT.Properties.Resources.From_pannel_use;
+            this.pictureBoxPanel_from.Location = new System.Drawing.Point(221, 28);
+            this.pictureBoxPanel_from.Name = "pictureBoxPanel_from";
+            this.pictureBoxPanel_from.Size = new System.Drawing.Size(30, 35);
+            this.pictureBoxPanel_from.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxPanel_from.TabIndex = 5;
+            this.pictureBoxPanel_from.TabStop = false;
+            // 
+            // label_p_to
+            // 
+            this.label_p_to.AutoSize = true;
+            this.label_p_to.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_p_to.Location = new System.Drawing.Point(620, 41);
+            this.label_p_to.Name = "label_p_to";
+            this.label_p_to.Size = new System.Drawing.Size(25, 16);
+            this.label_p_to.TabIndex = 4;
+            this.label_p_to.Text = "To:";
+            // 
+            // label_p_from
+            // 
+            this.label_p_from.AutoSize = true;
+            this.label_p_from.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_p_from.Location = new System.Drawing.Point(249, 41);
+            this.label_p_from.Name = "label_p_from";
+            this.label_p_from.Size = new System.Drawing.Size(42, 16);
+            this.label_p_from.TabIndex = 3;
+            this.label_p_from.Text = "From:";
+            // 
+            // label_databaseto
+            // 
+            this.label_databaseto.AutoSize = true;
+            this.label_databaseto.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_databaseto.ForeColor = System.Drawing.Color.Red;
+            this.label_databaseto.Location = new System.Drawing.Point(651, 41);
+            this.label_databaseto.Name = "label_databaseto";
+            this.label_databaseto.Size = new System.Drawing.Size(59, 16);
+            this.label_databaseto.TabIndex = 2;
+            this.label_databaseto.Text = "Gazipur";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::TTT.Properties.Resources.Journey_Black;
+            this.pictureBox1.Location = new System.Drawing.Point(417, 28);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(52, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label_databasefrom
+            // 
+            this.label_databasefrom.AutoSize = true;
+            this.label_databasefrom.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_databasefrom.ForeColor = System.Drawing.Color.Red;
+            this.label_databasefrom.Location = new System.Drawing.Point(297, 41);
+            this.label_databasefrom.Name = "label_databasefrom";
+            this.label_databasefrom.Size = new System.Drawing.Size(16, 16);
+            this.label_databasefrom.TabIndex = 0;
+            this.label_databasefrom.Text = "D";
+            this.label_databasefrom.Click += new System.EventHandler(this.label_databasefrom_Click);
+            // 
+            // panel_T2
+            // 
+            this.panel_T2.BackColor = System.Drawing.Color.White;
+            this.panel_T2.Location = new System.Drawing.Point(22, 180);
+            this.panel_T2.Name = "panel_T2";
+            this.panel_T2.Size = new System.Drawing.Size(779, 157);
+            this.panel_T2.TabIndex = 5;
+            this.panel_T2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_T2_Paint);
+            // 
+            // panel_T3
+            // 
+            this.panel_T3.BackColor = System.Drawing.Color.White;
+            this.panel_T3.Location = new System.Drawing.Point(22, 357);
+            this.panel_T3.Name = "panel_T3";
+            this.panel_T3.Size = new System.Drawing.Size(779, 179);
+            this.panel_T3.TabIndex = 6;
+            this.panel_T3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_T3_Paint);
+            // 
+            // panel_T4
+            // 
+            this.panel_T4.BackColor = System.Drawing.Color.White;
+            this.panel_T4.Location = new System.Drawing.Point(22, 556);
+            this.panel_T4.Name = "panel_T4";
+            this.panel_T4.Size = new System.Drawing.Size(779, 157);
+            this.panel_T4.TabIndex = 7;
+            this.panel_T4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_T4_Paint);
+            // 
+            // panel_Book_Transport
+            // 
+            this.panel_Book_Transport.AutoScroll = true;
+            this.panel_Book_Transport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.panel_Book_Transport.Controls.Add(this.panel_T4);
+            this.panel_Book_Transport.Controls.Add(this.panel_T3);
+            this.panel_Book_Transport.Controls.Add(this.panel_T2);
+            this.panel_Book_Transport.Controls.Add(this.panel_T1);
+            this.panel_Book_Transport.Location = new System.Drawing.Point(261, 324);
+            this.panel_Book_Transport.Name = "panel_Book_Transport";
+            this.panel_Book_Transport.Size = new System.Drawing.Size(848, 306);
+            this.panel_Book_Transport.TabIndex = 3;
+            this.panel_Book_Transport.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Book_Transport_Paint);
+            // 
+            // panel17
+            // 
+            this.panel17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.panel17.Controls.Add(this.panel18);
+            this.panel17.Location = new System.Drawing.Point(261, 629);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(848, 32);
+            this.panel17.TabIndex = 3;
+            // 
+            // panel18
+            // 
+            this.panel18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel18.Location = new System.Drawing.Point(826, 0);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(22, 38);
+            this.panel18.TabIndex = 3;
             // 
             // Home
             // 
@@ -729,28 +666,30 @@
             this.Controls.Add(this.phtop);
             this.Controls.Add(this.phleft);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.IsMdiContainer = true;
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
             this.Load += new System.EventHandler(this.Home_Load);
             this.phleft.ResumeLayout(false);
             this.phleft.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbox_profile)).EndInit();
             this.phtop.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
+            this.panel15.ResumeLayout(false);
             this.panel_Book_Ticket.ResumeLayout(false);
             this.panel_Book_Hote.ResumeLayout(false);
             this.panel_Book_Hote.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_to)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_from)).EndInit();
             this.panel_T1.ResumeLayout(false);
             this.panel_T1.PerformLayout();
-            this.panel_Book_Transport.ResumeLayout(false);
-            this.panel13.ResumeLayout(false);
-            this.panel15.ResumeLayout(false);
-            this.panel17.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_p_to)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPanel_from)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_to)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_from)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbox_profile)).EndInit();
+            this.panel_Book_Transport.ResumeLayout(false);
+            this.panel17.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -788,17 +727,9 @@
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Panel panel_T1;
         private System.Windows.Forms.Panel panel_T2;
-        private System.Windows.Forms.Panel panel_T4;
-        private System.Windows.Forms.Panel panel_T5;
         private System.Windows.Forms.Panel panel_T3;
-        private System.Windows.Forms.Panel panel_T6;
+        private System.Windows.Forms.Panel panel_T4;
         private System.Windows.Forms.Panel panel_Book_Transport;
-        private System.Windows.Forms.Panel panel_T12;
-        private System.Windows.Forms.Panel panel_T9;
-        private System.Windows.Forms.Panel panel_T10;
-        private System.Windows.Forms.Panel panel_T11;
-        private System.Windows.Forms.Panel panel_T8;
-        private System.Windows.Forms.Panel panel_T7;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Panel panel18;
         private System.Windows.Forms.Label label_databasefrom;
@@ -811,5 +742,6 @@
         private System.Windows.Forms.Label label_databaseprice;
         private System.Windows.Forms.Label label_p_price;
         private System.Windows.Forms.Label label_databasetime;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

@@ -14,13 +14,15 @@ namespace TTT
 {
     public partial class Home : Form
     {
+        
+
         private string loggedInUsername; // Field to store the username
 
         public Home(string username) // Updated constructor to accept a username
         {
             InitializeComponent();
             this.loggedInUsername = username; // Store the username
-            LoadUserData(); 
+            LoadUserData();
         }
         private void LoadUserData()
         {
@@ -55,7 +57,7 @@ namespace TTT
             Application.Exit();
         }
 
-        private void change_color_by_click(Button b1,Button b2,Button b3,Button b4,Button b5,Button b6)
+        private void change_color_by_click(Button b1, Button b2, Button b3, Button b4, Button b5, Button b6)
         {
             b1.BackColor = Color.FromArgb(0, 122, 204);
             b2.BackColor = Color.FromArgb(215, 228, 242);
@@ -75,7 +77,13 @@ namespace TTT
         private void bnbookticket_Click(object sender, EventArgs e)
         {
             change_color_by_click(bnbookticket, bnhome, bnCustomers, bnTransport, bnReports, bnSettings);
+            Book_Ticket book_Ticket = new Book_Ticket();
+            book_Ticket.Show();
+            this.Hide();
+           
         }
+        
+
 
         private void bnCustomers_Click(object sender, EventArgs e)
         {
@@ -129,32 +137,44 @@ namespace TTT
 
         private void label_databasefrom_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void panel_Book_Transport_Paint(object sender, PaintEventArgs e)
         {
             string connectionString = @"Data Source=RASEL\SQLEXPRESS;Initial Catalog=TMS;Integrated Security=True;";
-            SqlConnection conn = new SqlConnection(connectionString);
-            conn.Open();
-
-            // Get the first row's details
-            string query = "SELECT TOP 1 From_City, To_City, Departure_Time, Arrival_Time, Price_eco FROM plane_details ORDER BY Transport_No";
-            SqlCommand cmd = new SqlCommand(query, conn);
-
-            SqlDataReader reader = cmd.ExecuteReader();
-            if (reader.Read()) // Read the first row
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                // Set the labels
-                label_databasefrom.Text = reader["From_City"].ToString();
-                label_databaseto.Text = reader["To_City"].ToString();
-                label_databasetime.Text = reader["Departure_Time"].ToString() + " → " + reader["Arrival_Time"].ToString();
-                label_databaseprice.Text = reader["Price_eco"].ToString();
-            }
+                conn.Open();
 
-            reader.Close();
-            conn.Close();
+                string query = @"SELECT TOP 1 From_City, To_City, Departure_Date, Departure_Only_Time, Arrival_Date, Arrival_Only_Time, Price_eco 
+                         FROM plane_details 
+                         ORDER BY Transport_No";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        label_databasefrom.Text = reader["From_City"].ToString();
+                        label_databaseto.Text = reader["To_City"].ToString();
+
+                        // Parse departure and arrival dates and times
+                        DateTime depDate = DateTime.Parse(reader["Departure_Date"].ToString());
+                        DateTime depTime = DateTime.Parse(reader["Departure_Only_Time"].ToString());
+                        DateTime arrDate = DateTime.Parse(reader["Arrival_Date"].ToString());
+                        DateTime arrTime = DateTime.Parse(reader["Arrival_Only_Time"].ToString());
+
+                        // Format and set the text with red color
+                        label_databasetime.ForeColor = Color.Red;
+                        label_databasetime.Text = $"Departure: {depDate:dd/MM/yyyy} Time: {depTime:hh:mm tt} → Arrival: {arrDate:dd/MM/yyyy} Time: {arrTime:hh:mm tt}";
+
+                        label_databaseprice.Text = reader["Price_eco"].ToString();
+                    }
+                }
+            }
         }
+
+
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -178,6 +198,26 @@ namespace TTT
             path.CloseFigure();
 
             p.Region = new Region(path);
+        }
+
+        private void panel_T1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel_T2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel_T3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel_T4_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -209,5 +209,17 @@
   <ItemGroup>
     <None Include="Resources\Place Marker.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plane.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plane1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plane r.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plane2.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
