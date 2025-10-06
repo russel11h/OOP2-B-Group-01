@@ -31,13 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.phleft = new System.Windows.Forms.Panel();
             this.lhname = new System.Windows.Forms.Label();
-            this.picbox_profile = new System.Windows.Forms.PictureBox();
-            this.bnSettings = new System.Windows.Forms.Button();
-            this.bnReports = new System.Windows.Forms.Button();
-            this.bnTransport = new System.Windows.Forms.Button();
-            this.bnCustomers = new System.Windows.Forms.Button();
-            this.bnbookticket = new System.Windows.Forms.Button();
-            this.bnhome = new System.Windows.Forms.Button();
             this.phtop = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
@@ -50,25 +43,19 @@
             this.panel_Book_Ticket = new System.Windows.Forms.Panel();
             this.panel_Book_Hote = new System.Windows.Forms.Panel();
             this.button_search = new System.Windows.Forms.Button();
-            this.pictureBox_to = new System.Windows.Forms.PictureBox();
             this.label_to = new System.Windows.Forms.Label();
             this.textBox_to = new System.Windows.Forms.TextBox();
-            this.pictureBox_from = new System.Windows.Forms.PictureBox();
             this.label_from = new System.Windows.Forms.Label();
             this.textBox_from = new System.Windows.Forms.TextBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.panel_T1 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label_databaseprice = new System.Windows.Forms.Label();
             this.label_p_price = new System.Windows.Forms.Label();
             this.label_databasetime = new System.Windows.Forms.Label();
-            this.pictureBox_p_to = new System.Windows.Forms.PictureBox();
-            this.pictureBoxPanel_from = new System.Windows.Forms.PictureBox();
             this.label_p_to = new System.Windows.Forms.Label();
             this.label_p_from = new System.Windows.Forms.Label();
             this.label_databaseto = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label_databasefrom = new System.Windows.Forms.Label();
             this.panel_T2 = new System.Windows.Forms.Panel();
             this.panel_T3 = new System.Windows.Forms.Panel();
@@ -76,33 +63,48 @@
             this.panel_Book_Transport = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
             this.panel18 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_p_to = new System.Windows.Forms.PictureBox();
+            this.pictureBoxPanel_from = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_to = new System.Windows.Forms.PictureBox();
+            this.pictureBox_from = new System.Windows.Forms.PictureBox();
+            this.bulogout = new System.Windows.Forms.Button();
+            this.picbox_profile = new System.Windows.Forms.PictureBox();
+            this.bnSettings = new System.Windows.Forms.Button();
+            this.bnReports = new System.Windows.Forms.Button();
+            this.bnTransport = new System.Windows.Forms.Button();
+            this.bnreviews = new System.Windows.Forms.Button();
+            this.bnbookticket = new System.Windows.Forms.Button();
+            this.bnhome = new System.Windows.Forms.Button();
             this.phleft.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picbox_profile)).BeginInit();
             this.phtop.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel_Book_Ticket.SuspendLayout();
             this.panel_Book_Hote.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_to)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_from)).BeginInit();
             this.panel_T1.SuspendLayout();
+            this.panel_Book_Transport.SuspendLayout();
+            this.panel17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_p_to)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPanel_from)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel_Book_Transport.SuspendLayout();
-            this.panel17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_to)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_from)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbox_profile)).BeginInit();
             this.SuspendLayout();
             // 
             // phleft
             // 
             this.phleft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(228)))), ((int)(((byte)(242)))));
+            this.phleft.Controls.Add(this.bulogout);
             this.phleft.Controls.Add(this.lhname);
             this.phleft.Controls.Add(this.picbox_profile);
             this.phleft.Controls.Add(this.bnSettings);
             this.phleft.Controls.Add(this.bnReports);
             this.phleft.Controls.Add(this.bnTransport);
-            this.phleft.Controls.Add(this.bnCustomers);
+            this.phleft.Controls.Add(this.bnreviews);
             this.phleft.Controls.Add(this.bnbookticket);
             this.phleft.Controls.Add(this.bnhome);
             this.phleft.Dock = System.Windows.Forms.DockStyle.Left;
@@ -126,125 +128,6 @@
             this.lhname.Text = "Rasel Hossain";
             this.lhname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lhname.Click += new System.EventHandler(this.lhname_Click);
-            // 
-            // picbox_profile
-            // 
-            this.picbox_profile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picbox_profile.Image = global::TTT.Properties.Resources.Profile;
-            this.picbox_profile.Location = new System.Drawing.Point(63, 29);
-            this.picbox_profile.Name = "picbox_profile";
-            this.picbox_profile.Size = new System.Drawing.Size(124, 93);
-            this.picbox_profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picbox_profile.TabIndex = 3;
-            this.picbox_profile.TabStop = false;
-            // 
-            // bnSettings
-            // 
-            this.bnSettings.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bnSettings.FlatAppearance.BorderSize = 0;
-            this.bnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bnSettings.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnSettings.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.bnSettings.Image = global::TTT.Properties.Resources.Settings;
-            this.bnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bnSettings.Location = new System.Drawing.Point(0, 499);
-            this.bnSettings.Name = "bnSettings";
-            this.bnSettings.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.bnSettings.Size = new System.Drawing.Size(261, 54);
-            this.bnSettings.TabIndex = 8;
-            this.bnSettings.Text = "Settings";
-            this.bnSettings.UseVisualStyleBackColor = true;
-            this.bnSettings.Click += new System.EventHandler(this.bnSettings_Click);
-            // 
-            // bnReports
-            // 
-            this.bnReports.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bnReports.FlatAppearance.BorderSize = 0;
-            this.bnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bnReports.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnReports.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.bnReports.Image = global::TTT.Properties.Resources.Statistics_Report;
-            this.bnReports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bnReports.Location = new System.Drawing.Point(0, 446);
-            this.bnReports.Name = "bnReports";
-            this.bnReports.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.bnReports.Size = new System.Drawing.Size(261, 47);
-            this.bnReports.TabIndex = 7;
-            this.bnReports.Text = "Reports";
-            this.bnReports.UseVisualStyleBackColor = true;
-            this.bnReports.Click += new System.EventHandler(this.bnReports_Click);
-            // 
-            // bnTransport
-            // 
-            this.bnTransport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bnTransport.FlatAppearance.BorderSize = 0;
-            this.bnTransport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bnTransport.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnTransport.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.bnTransport.Image = global::TTT.Properties.Resources.Train;
-            this.bnTransport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bnTransport.Location = new System.Drawing.Point(0, 386);
-            this.bnTransport.Name = "bnTransport";
-            this.bnTransport.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.bnTransport.Size = new System.Drawing.Size(261, 54);
-            this.bnTransport.TabIndex = 6;
-            this.bnTransport.Text = "Transport";
-            this.bnTransport.UseVisualStyleBackColor = true;
-            this.bnTransport.Click += new System.EventHandler(this.bnTransport_Click);
-            // 
-            // bnCustomers
-            // 
-            this.bnCustomers.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bnCustomers.FlatAppearance.BorderSize = 0;
-            this.bnCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bnCustomers.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnCustomers.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.bnCustomers.Image = global::TTT.Properties.Resources.customers_black;
-            this.bnCustomers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bnCustomers.Location = new System.Drawing.Point(0, 331);
-            this.bnCustomers.Name = "bnCustomers";
-            this.bnCustomers.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.bnCustomers.Size = new System.Drawing.Size(261, 49);
-            this.bnCustomers.TabIndex = 5;
-            this.bnCustomers.Text = "Customers";
-            this.bnCustomers.UseVisualStyleBackColor = true;
-            this.bnCustomers.Click += new System.EventHandler(this.bnCustomers_Click);
-            // 
-            // bnbookticket
-            // 
-            this.bnbookticket.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bnbookticket.FlatAppearance.BorderSize = 0;
-            this.bnbookticket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bnbookticket.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnbookticket.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.bnbookticket.Image = global::TTT.Properties.Resources.Airplane_Take_Off_black;
-            this.bnbookticket.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bnbookticket.Location = new System.Drawing.Point(0, 274);
-            this.bnbookticket.Name = "bnbookticket";
-            this.bnbookticket.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.bnbookticket.Size = new System.Drawing.Size(261, 51);
-            this.bnbookticket.TabIndex = 4;
-            this.bnbookticket.Text = "Book Ticket";
-            this.bnbookticket.UseVisualStyleBackColor = true;
-            this.bnbookticket.Click += new System.EventHandler(this.bnbookticket_Click);
-            // 
-            // bnhome
-            // 
-            this.bnhome.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bnhome.FlatAppearance.BorderSize = 0;
-            this.bnhome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bnhome.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnhome.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.bnhome.Image = global::TTT.Properties.Resources.Home_black;
-            this.bnhome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bnhome.Location = new System.Drawing.Point(0, 216);
-            this.bnhome.Name = "bnhome";
-            this.bnhome.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.bnhome.Size = new System.Drawing.Size(261, 52);
-            this.bnhome.TabIndex = 3;
-            this.bnhome.Text = "Home";
-            this.bnhome.UseVisualStyleBackColor = true;
-            this.bnhome.Click += new System.EventHandler(this.bnhome_Click);
             // 
             // phtop
             // 
@@ -386,16 +269,6 @@
             this.button_search.Text = "Search";
             this.button_search.UseVisualStyleBackColor = false;
             // 
-            // pictureBox_to
-            // 
-            this.pictureBox_to.Image = global::TTT.Properties.Resources.To;
-            this.pictureBox_to.Location = new System.Drawing.Point(159, 90);
-            this.pictureBox_to.Name = "pictureBox_to";
-            this.pictureBox_to.Size = new System.Drawing.Size(25, 23);
-            this.pictureBox_to.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_to.TabIndex = 5;
-            this.pictureBox_to.TabStop = false;
-            // 
             // label_to
             // 
             this.label_to.AutoSize = true;
@@ -415,16 +288,6 @@
             this.textBox_to.Name = "textBox_to";
             this.textBox_to.Size = new System.Drawing.Size(296, 22);
             this.textBox_to.TabIndex = 3;
-            // 
-            // pictureBox_from
-            // 
-            this.pictureBox_from.Image = global::TTT.Properties.Resources.From_Search;
-            this.pictureBox_from.Location = new System.Drawing.Point(157, 23);
-            this.pictureBox_from.Name = "pictureBox_from";
-            this.pictureBox_from.Size = new System.Drawing.Size(25, 23);
-            this.pictureBox_from.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_from.TabIndex = 2;
-            this.pictureBox_from.TabStop = false;
             // 
             // label_from
             // 
@@ -480,16 +343,6 @@
             this.panel_T1.TabIndex = 3;
             this.panel_T1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_T1_Paint);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::TTT.Properties.Resources.plane2;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(189, 154);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 10;
-            this.pictureBox2.TabStop = false;
-            // 
             // label_databaseprice
             // 
             this.label_databaseprice.AutoSize = true;
@@ -523,26 +376,6 @@
             this.label_databasetime.TabIndex = 7;
             this.label_databasetime.Text = "Time";
             // 
-            // pictureBox_p_to
-            // 
-            this.pictureBox_p_to.Image = global::TTT.Properties.Resources.Place_Marker;
-            this.pictureBox_p_to.Location = new System.Drawing.Point(584, 28);
-            this.pictureBox_p_to.Name = "pictureBox_p_to";
-            this.pictureBox_p_to.Size = new System.Drawing.Size(30, 35);
-            this.pictureBox_p_to.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_p_to.TabIndex = 6;
-            this.pictureBox_p_to.TabStop = false;
-            // 
-            // pictureBoxPanel_from
-            // 
-            this.pictureBoxPanel_from.Image = global::TTT.Properties.Resources.From_pannel_use;
-            this.pictureBoxPanel_from.Location = new System.Drawing.Point(221, 28);
-            this.pictureBoxPanel_from.Name = "pictureBoxPanel_from";
-            this.pictureBoxPanel_from.Size = new System.Drawing.Size(30, 35);
-            this.pictureBoxPanel_from.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxPanel_from.TabIndex = 5;
-            this.pictureBoxPanel_from.TabStop = false;
-            // 
             // label_p_to
             // 
             this.label_p_to.AutoSize = true;
@@ -573,16 +406,6 @@
             this.label_databaseto.Size = new System.Drawing.Size(59, 16);
             this.label_databaseto.TabIndex = 2;
             this.label_databaseto.Text = "Gazipur";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::TTT.Properties.Resources.Journey_Black;
-            this.pictureBox1.Location = new System.Drawing.Point(417, 28);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(52, 40);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // label_databasefrom
             // 
@@ -654,6 +477,203 @@
             this.panel18.Size = new System.Drawing.Size(22, 38);
             this.panel18.TabIndex = 3;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::TTT.Properties.Resources.plane2;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(189, 154);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 10;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox_p_to
+            // 
+            this.pictureBox_p_to.Image = global::TTT.Properties.Resources.Place_Marker;
+            this.pictureBox_p_to.Location = new System.Drawing.Point(584, 28);
+            this.pictureBox_p_to.Name = "pictureBox_p_to";
+            this.pictureBox_p_to.Size = new System.Drawing.Size(30, 35);
+            this.pictureBox_p_to.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_p_to.TabIndex = 6;
+            this.pictureBox_p_to.TabStop = false;
+            // 
+            // pictureBoxPanel_from
+            // 
+            this.pictureBoxPanel_from.Image = global::TTT.Properties.Resources.From_pannel_use;
+            this.pictureBoxPanel_from.Location = new System.Drawing.Point(221, 28);
+            this.pictureBoxPanel_from.Name = "pictureBoxPanel_from";
+            this.pictureBoxPanel_from.Size = new System.Drawing.Size(30, 35);
+            this.pictureBoxPanel_from.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxPanel_from.TabIndex = 5;
+            this.pictureBoxPanel_from.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::TTT.Properties.Resources.Journey_Black;
+            this.pictureBox1.Location = new System.Drawing.Point(417, 28);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(52, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox_to
+            // 
+            this.pictureBox_to.Image = global::TTT.Properties.Resources.To;
+            this.pictureBox_to.Location = new System.Drawing.Point(159, 90);
+            this.pictureBox_to.Name = "pictureBox_to";
+            this.pictureBox_to.Size = new System.Drawing.Size(25, 23);
+            this.pictureBox_to.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_to.TabIndex = 5;
+            this.pictureBox_to.TabStop = false;
+            // 
+            // pictureBox_from
+            // 
+            this.pictureBox_from.Image = global::TTT.Properties.Resources.From_Search;
+            this.pictureBox_from.Location = new System.Drawing.Point(157, 23);
+            this.pictureBox_from.Name = "pictureBox_from";
+            this.pictureBox_from.Size = new System.Drawing.Size(25, 23);
+            this.pictureBox_from.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_from.TabIndex = 2;
+            this.pictureBox_from.TabStop = false;
+            // 
+            // bulogout
+            // 
+            this.bulogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bulogout.FlatAppearance.BorderSize = 0;
+            this.bulogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bulogout.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bulogout.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.bulogout.Image = global::TTT.Properties.Resources.log_out_;
+            this.bulogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bulogout.Location = new System.Drawing.Point(0, 559);
+            this.bulogout.Name = "bulogout";
+            this.bulogout.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.bulogout.Size = new System.Drawing.Size(261, 54);
+            this.bulogout.TabIndex = 9;
+            this.bulogout.Text = "Log out";
+            this.bulogout.UseVisualStyleBackColor = true;
+            this.bulogout.Click += new System.EventHandler(this.bulogout_Click);
+            // 
+            // picbox_profile
+            // 
+            this.picbox_profile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picbox_profile.Image = global::TTT.Properties.Resources.Profile;
+            this.picbox_profile.Location = new System.Drawing.Point(63, 29);
+            this.picbox_profile.Name = "picbox_profile";
+            this.picbox_profile.Size = new System.Drawing.Size(124, 93);
+            this.picbox_profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picbox_profile.TabIndex = 3;
+            this.picbox_profile.TabStop = false;
+            // 
+            // bnSettings
+            // 
+            this.bnSettings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bnSettings.FlatAppearance.BorderSize = 0;
+            this.bnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bnSettings.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bnSettings.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.bnSettings.Image = global::TTT.Properties.Resources.Settings;
+            this.bnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bnSettings.Location = new System.Drawing.Point(0, 499);
+            this.bnSettings.Name = "bnSettings";
+            this.bnSettings.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.bnSettings.Size = new System.Drawing.Size(261, 54);
+            this.bnSettings.TabIndex = 8;
+            this.bnSettings.Text = "Settings";
+            this.bnSettings.UseVisualStyleBackColor = true;
+            this.bnSettings.Click += new System.EventHandler(this.bnSettings_Click);
+            // 
+            // bnReports
+            // 
+            this.bnReports.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bnReports.FlatAppearance.BorderSize = 0;
+            this.bnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bnReports.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bnReports.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.bnReports.Image = global::TTT.Properties.Resources.Statistics_Report;
+            this.bnReports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bnReports.Location = new System.Drawing.Point(0, 446);
+            this.bnReports.Name = "bnReports";
+            this.bnReports.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.bnReports.Size = new System.Drawing.Size(261, 47);
+            this.bnReports.TabIndex = 7;
+            this.bnReports.Text = "Reports";
+            this.bnReports.UseVisualStyleBackColor = true;
+            this.bnReports.Click += new System.EventHandler(this.bnReports_Click);
+            // 
+            // bnTransport
+            // 
+            this.bnTransport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bnTransport.FlatAppearance.BorderSize = 0;
+            this.bnTransport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bnTransport.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bnTransport.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.bnTransport.Image = global::TTT.Properties.Resources.Train;
+            this.bnTransport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bnTransport.Location = new System.Drawing.Point(0, 386);
+            this.bnTransport.Name = "bnTransport";
+            this.bnTransport.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.bnTransport.Size = new System.Drawing.Size(261, 54);
+            this.bnTransport.TabIndex = 6;
+            this.bnTransport.Text = "Transport";
+            this.bnTransport.UseVisualStyleBackColor = true;
+            this.bnTransport.Click += new System.EventHandler(this.bnTransport_Click);
+            // 
+            // bnreviews
+            // 
+            this.bnreviews.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bnreviews.FlatAppearance.BorderSize = 0;
+            this.bnreviews.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bnreviews.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bnreviews.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.bnreviews.Image = global::TTT.Properties.Resources.customers_black;
+            this.bnreviews.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bnreviews.Location = new System.Drawing.Point(0, 331);
+            this.bnreviews.Name = "bnreviews";
+            this.bnreviews.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.bnreviews.Size = new System.Drawing.Size(261, 49);
+            this.bnreviews.TabIndex = 5;
+            this.bnreviews.Text = "Reviews";
+            this.bnreviews.UseVisualStyleBackColor = true;
+            this.bnreviews.Click += new System.EventHandler(this.bnCustomers_Click);
+            // 
+            // bnbookticket
+            // 
+            this.bnbookticket.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bnbookticket.FlatAppearance.BorderSize = 0;
+            this.bnbookticket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bnbookticket.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bnbookticket.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.bnbookticket.Image = global::TTT.Properties.Resources.Airplane_Take_Off_black;
+            this.bnbookticket.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bnbookticket.Location = new System.Drawing.Point(0, 274);
+            this.bnbookticket.Name = "bnbookticket";
+            this.bnbookticket.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.bnbookticket.Size = new System.Drawing.Size(261, 51);
+            this.bnbookticket.TabIndex = 4;
+            this.bnbookticket.Text = "Book Ticket";
+            this.bnbookticket.UseVisualStyleBackColor = true;
+            this.bnbookticket.Click += new System.EventHandler(this.bnbookticket_Click);
+            // 
+            // bnhome
+            // 
+            this.bnhome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bnhome.FlatAppearance.BorderSize = 0;
+            this.bnhome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bnhome.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bnhome.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.bnhome.Image = global::TTT.Properties.Resources.Home_black;
+            this.bnhome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bnhome.Location = new System.Drawing.Point(0, 216);
+            this.bnhome.Name = "bnhome";
+            this.bnhome.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.bnhome.Size = new System.Drawing.Size(261, 52);
+            this.bnhome.TabIndex = 3;
+            this.bnhome.Text = "Home";
+            this.bnhome.UseVisualStyleBackColor = true;
+            this.bnhome.Click += new System.EventHandler(this.bnhome_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -673,23 +693,23 @@
             this.Load += new System.EventHandler(this.Home_Load);
             this.phleft.ResumeLayout(false);
             this.phleft.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picbox_profile)).EndInit();
             this.phtop.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
             this.panel_Book_Ticket.ResumeLayout(false);
             this.panel_Book_Hote.ResumeLayout(false);
             this.panel_Book_Hote.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_to)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_from)).EndInit();
             this.panel_T1.ResumeLayout(false);
             this.panel_T1.PerformLayout();
+            this.panel_Book_Transport.ResumeLayout(false);
+            this.panel17.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_p_to)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPanel_from)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel_Book_Transport.ResumeLayout(false);
-            this.panel17.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_to)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_from)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbox_profile)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -704,7 +724,7 @@
         private System.Windows.Forms.Button bnbookticket;
         private System.Windows.Forms.Button bnReports;
         private System.Windows.Forms.Button bnTransport;
-        private System.Windows.Forms.Button bnCustomers;
+        private System.Windows.Forms.Button bnreviews;
         private System.Windows.Forms.Button bnSettings;
         private System.Windows.Forms.PictureBox picbox_profile;
         private System.Windows.Forms.Label lhname;
@@ -743,5 +763,6 @@
         private System.Windows.Forms.Label label_p_price;
         private System.Windows.Forms.Label label_databasetime;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button bulogout;
     }
 }

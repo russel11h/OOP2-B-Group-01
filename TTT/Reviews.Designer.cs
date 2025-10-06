@@ -1,6 +1,6 @@
 ﻿namespace TTT
 {
-    partial class Book_Ticket
+    partial class Reviews
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.bhx = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.labelbooked = new System.Windows.Forms.Label();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.panel16 = new System.Windows.Forms.Panel();
             this.bulogoutbooked = new System.Windows.Forms.Button();
+            this.labelbooked = new System.Windows.Forms.Label();
             this.pictureBoxbooked = new System.Windows.Forms.PictureBox();
             this.bsettingsbooked = new System.Windows.Forms.Button();
             this.breportsbooked = new System.Windows.Forms.Button();
@@ -42,24 +38,13 @@
             this.breviewsbooked = new System.Windows.Forms.Button();
             this.bbookticketbooked = new System.Windows.Forms.Button();
             this.bhomebooked = new System.Windows.Forms.Button();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.panel16 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.panel15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxbooked)).BeginInit();
+            this.panel15.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // bhx
-            // 
-            this.bhx.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bhx.FlatAppearance.BorderSize = 0;
-            this.bhx.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bhx.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bhx.Location = new System.Drawing.Point(1042, 12);
-            this.bhx.Name = "bhx";
-            this.bhx.Size = new System.Drawing.Size(37, 33);
-            this.bhx.TabIndex = 3;
-            this.bhx.Text = "X";
-            this.bhx.UseVisualStyleBackColor = true;
-            this.bhx.Click += new System.EventHandler(this.bhx_Click);
             // 
             // panel1
             // 
@@ -78,54 +63,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(261, 664);
-            this.panel1.TabIndex = 6;
-            // 
-            // labelbooked
-            // 
-            this.labelbooked.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelbooked.AutoSize = true;
-            this.labelbooked.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelbooked.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.labelbooked.Location = new System.Drawing.Point(47, 135);
-            this.labelbooked.Name = "labelbooked";
-            this.labelbooked.Size = new System.Drawing.Size(163, 27);
-            this.labelbooked.TabIndex = 3;
-            this.labelbooked.Text = "Rasel Hossain";
-            this.labelbooked.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel15
-            // 
-            this.panel15.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel15.Controls.Add(this.button2);
-            this.panel15.Controls.Add(this.panel16);
-            this.panel15.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel15.Location = new System.Drawing.Point(261, 0);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(848, 51);
-            this.panel15.TabIndex = 7;
-            // 
-            // button2
-            // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(799, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(37, 33);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "X";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // panel16
-            // 
-            this.panel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.panel16.Location = new System.Drawing.Point(111, 0);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(200, 51);
-            this.panel16.TabIndex = 2;
+            this.panel1.TabIndex = 7;
             // 
             // bulogoutbooked
             // 
@@ -143,7 +81,20 @@
             this.bulogoutbooked.TabIndex = 9;
             this.bulogoutbooked.Text = "Log out";
             this.bulogoutbooked.UseVisualStyleBackColor = true;
-            this.bulogoutbooked.Click += new System.EventHandler(this.bulogoutbooked_Click);
+            // 
+            // labelbooked
+            // 
+            this.labelbooked.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelbooked.AutoSize = true;
+            this.labelbooked.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelbooked.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.labelbooked.Location = new System.Drawing.Point(47, 135);
+            this.labelbooked.Name = "labelbooked";
+            this.labelbooked.Size = new System.Drawing.Size(163, 27);
+            this.labelbooked.TabIndex = 3;
+            this.labelbooked.Text = "Rasel Hossain";
+            this.labelbooked.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBoxbooked
             // 
@@ -172,7 +123,6 @@
             this.bsettingsbooked.TabIndex = 8;
             this.bsettingsbooked.Text = "Settings";
             this.bsettingsbooked.UseVisualStyleBackColor = true;
-            this.bsettingsbooked.Click += new System.EventHandler(this.bsettingsbooked_Click);
             // 
             // breportsbooked
             // 
@@ -190,7 +140,6 @@
             this.breportsbooked.TabIndex = 7;
             this.breportsbooked.Text = "Reports";
             this.breportsbooked.UseVisualStyleBackColor = true;
-            this.breportsbooked.Click += new System.EventHandler(this.breportsbooked_Click);
             // 
             // btransportsbooked
             // 
@@ -208,7 +157,6 @@
             this.btransportsbooked.TabIndex = 6;
             this.btransportsbooked.Text = "Transports";
             this.btransportsbooked.UseVisualStyleBackColor = true;
-            this.btransportsbooked.Click += new System.EventHandler(this.btransportsbooked_Click);
             // 
             // breviewsbooked
             // 
@@ -226,7 +174,6 @@
             this.breviewsbooked.TabIndex = 5;
             this.breviewsbooked.Text = "Reviews";
             this.breviewsbooked.UseVisualStyleBackColor = true;
-            this.breviewsbooked.Click += new System.EventHandler(this.breviewsbooked_Click);
             // 
             // bbookticketbooked
             // 
@@ -244,7 +191,6 @@
             this.bbookticketbooked.TabIndex = 4;
             this.bbookticketbooked.Text = "Book Ticket";
             this.bbookticketbooked.UseVisualStyleBackColor = true;
-            this.bbookticketbooked.Click += new System.EventHandler(this.bbookticketbooked_Click);
             // 
             // bhomebooked
             // 
@@ -262,9 +208,41 @@
             this.bhomebooked.TabIndex = 3;
             this.bhomebooked.Text = "Home";
             this.bhomebooked.UseVisualStyleBackColor = true;
-            this.bhomebooked.Click += new System.EventHandler(this.bhomebooked_Click);
             // 
-            // Book_Ticket
+            // panel15
+            // 
+            this.panel15.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel15.Controls.Add(this.button2);
+            this.panel15.Controls.Add(this.panel16);
+            this.panel15.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel15.Location = new System.Drawing.Point(261, 0);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(848, 51);
+            this.panel15.TabIndex = 8;
+            // 
+            // button2
+            // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(799, 12);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(37, 33);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "X";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // panel16
+            // 
+            this.panel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.panel16.Location = new System.Drawing.Point(111, 0);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(200, 51);
+            this.panel16.TabIndex = 2;
+            // 
+            // Reviews
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -272,22 +250,20 @@
             this.ClientSize = new System.Drawing.Size(1109, 664);
             this.Controls.Add(this.panel15);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.bhx);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Book_Ticket";
+            this.Name = "Reviews";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Book_Ticket";
+            this.Text = "Reviews";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel15.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxbooked)).EndInit();
+            this.panel15.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button bhx;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button bulogoutbooked;
         private System.Windows.Forms.Label labelbooked;

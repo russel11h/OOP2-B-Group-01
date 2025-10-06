@@ -57,7 +57,7 @@ namespace TTT
             Application.Exit();
         }
 
-        private void change_color_by_click(Button b1, Button b2, Button b3, Button b4, Button b5, Button b6)
+        private void change_color_by_click(Button b1, Button b2, Button b3, Button b4, Button b5, Button b6,Button b7)
         {
             b1.BackColor = Color.FromArgb(0, 122, 204);
             b2.BackColor = Color.FromArgb(215, 228, 242);
@@ -65,19 +65,19 @@ namespace TTT
             b4.BackColor = Color.FromArgb(215, 228, 242);
             b5.BackColor = Color.FromArgb(215, 228, 242);
             b6.BackColor = Color.FromArgb(215, 228, 242);
-
+            b7.BackColor = Color.FromArgb(215, 228, 242);
         }
 
         private void bnhome_Click(object sender, EventArgs e)
         {
-            change_color_by_click(bnhome, bnbookticket, bnCustomers, bnTransport, bnReports, bnSettings);
+            change_color_by_click(bnhome, bnbookticket, bnreviews, bnTransport, bnReports, bnSettings,bulogout);
 
         }
 
         private void bnbookticket_Click(object sender, EventArgs e)
         {
-            change_color_by_click(bnbookticket, bnhome, bnCustomers, bnTransport, bnReports, bnSettings);
-            Book_Ticket book_Ticket = new Book_Ticket();
+            change_color_by_click(bnbookticket, bnhome, bnreviews, bnTransport, bnReports, bnSettings, bulogout);
+            Book_Ticket book_Ticket = new Book_Ticket(loggedInUsername);
             book_Ticket.Show();
             this.Hide();
            
@@ -87,27 +87,27 @@ namespace TTT
 
         private void bnCustomers_Click(object sender, EventArgs e)
         {
-            change_color_by_click(bnCustomers, bnhome, bnbookticket, bnTransport, bnReports, bnSettings);
+            change_color_by_click(bnreviews, bnhome, bnbookticket, bnTransport, bnReports, bnSettings, bulogout);
         }
 
         private void bnTransport_Click(object sender, EventArgs e)
         {
-            change_color_by_click(bnTransport, bnhome, bnbookticket, bnCustomers, bnReports, bnSettings);
+            change_color_by_click(bnTransport, bnhome, bnbookticket, bnreviews, bnReports, bnSettings, bulogout);
         }
 
         private void bnReports_Click(object sender, EventArgs e)
         {
-            change_color_by_click(bnReports, bnhome, bnbookticket, bnCustomers, bnTransport, bnSettings);
+            change_color_by_click(bnReports, bnhome, bnbookticket, bnreviews, bnTransport, bnSettings, bulogout);
         }
 
         private void bnSettings_Click(object sender, EventArgs e)
         {
-            change_color_by_click(bnSettings, bnhome, bnbookticket, bnCustomers, bnTransport, bnReports);
+            change_color_by_click(bnSettings, bnhome, bnbookticket, bnreviews, bnTransport, bnReports, bulogout);
         }
 
         private void Home_Load(object sender, EventArgs e)
         {
-            change_color_by_click(bnhome, bnbookticket, bnCustomers, bnTransport, bnReports, bnSettings);
+            change_color_by_click(bnhome, bnbookticket, bnreviews, bnTransport, bnReports, bnSettings, bulogout);
             //lhname.Text = USERNAME.USERname;
         }
 
@@ -218,6 +218,11 @@ namespace TTT
         private void panel_T4_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void bulogout_Click(object sender, EventArgs e)
+        {
+            change_color_by_click(bulogout,bnreviews, bnhome, bnbookticket, bnTransport, bnReports, bnSettings);
         }
     }
 }

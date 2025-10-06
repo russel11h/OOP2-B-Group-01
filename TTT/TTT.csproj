@@ -90,6 +90,30 @@
     <Compile Include="registration.Designer.cs">
       <DependentUpon>registration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports.Designer.cs">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reviews.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reviews.Designer.cs">
+      <DependentUpon>Reviews.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transports.Designer.cs">
+      <DependentUpon>Transports.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Book_Ticket.resx">
       <DependentUpon>Book_Ticket.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,6 +144,18 @@
     </Compile>
     <EmbeddedResource Include="registration.resx">
       <DependentUpon>registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports.resx">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reviews.resx">
+      <DependentUpon>Reviews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transports.resx">
+      <DependentUpon>Transports.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -220,6 +256,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\plane2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\log out .png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

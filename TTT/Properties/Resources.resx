@@ -199,10 +199,13 @@
   <data name="log in page1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\log in page1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="plane2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plane2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="From pannel use" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\From pannel use.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="plane2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\plane2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="log out " type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\log out .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
