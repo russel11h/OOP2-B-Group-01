@@ -76,6 +76,7 @@ namespace TTT
         private void bbookticketbooked_Click(object sender, EventArgs e)
         {
             change_color_by_click(bbookticketbooked,bhomebooked, breviewsbooked, btransportsbooked, breportsbooked, bsettingsbooked, bulogoutbooked);
+
         }
 
         private void breviewsbooked_Click(object sender, EventArgs e)
@@ -119,6 +120,11 @@ namespace TTT
         private void button2_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Book_Ticket_Load(object sender, EventArgs e)
+        {
+            change_color_by_click(bbookticketbooked, bhomebooked, breviewsbooked, btransportsbooked, breportsbooked, bsettingsbooked, bulogoutbooked);
         }
     }
 }

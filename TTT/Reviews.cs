@@ -66,6 +66,7 @@ namespace TTT
 
         private void Reviews_Load(object sender, EventArgs e)
         {
+            change_color_by_click(breviewsbooked, bhomebooked, bbookticketbooked, btransportsbooked, breportsbooked, bsettingsbooked, bulogoutbooked);
 
         }
 

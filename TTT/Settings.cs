@@ -114,5 +114,11 @@ namespace TTT
             change_color_by_click(bulogoutbooked, bhomebooked, bbookticketbooked, breviewsbooked, btransportsbooked, breportsbooked, bsettingsbooked);
 
         }
+
+        private void Settings_Load(object sender, EventArgs e)
+        {
+            change_color_by_click(bsettingsbooked, bhomebooked, bbookticketbooked, breviewsbooked, btransportsbooked, breportsbooked, bulogoutbooked);
+
+        }
     }
 }

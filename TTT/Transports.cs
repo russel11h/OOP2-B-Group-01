@@ -89,6 +89,7 @@ namespace TTT
 
         private void btransportsbooked_Click(object sender, EventArgs e)
         {
+            change_color_by_click(btransportsbooked, bhomebooked, bbookticketbooked, breviewsbooked, breportsbooked, bsettingsbooked, bulogoutbooked);
 
         }
 
@@ -111,6 +112,12 @@ namespace TTT
         private void bulogoutbooked_Click(object sender, EventArgs e)
         {
             change_color_by_click(bulogoutbooked, bhomebooked, bbookticketbooked, breviewsbooked, btransportsbooked, breportsbooked, bsettingsbooked);
+
+        }
+
+        private void Transports_Load(object sender, EventArgs e)
+        {
+            change_color_by_click(btransportsbooked, bhomebooked, bbookticketbooked, breviewsbooked, breportsbooked, bsettingsbooked, bulogoutbooked);
 
         }
     }
