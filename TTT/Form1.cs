@@ -58,7 +58,7 @@ namespace TTT
 
                 if (ds.Tables[0].Rows.Count > 0)
                 {
-                    MessageBox.Show("Login Successfulllll");
+                    //MessageBox.Show("Login Successfulllll");
 
                     // Get the username from the textbox
                     string username = tbname.Text;

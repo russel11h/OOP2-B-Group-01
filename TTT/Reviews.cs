@@ -119,7 +119,18 @@ namespace TTT
         private void bulogoutbooked_Click(object sender, EventArgs e)
         {
             change_color_by_click(bulogoutbooked, bhomebooked, bbookticketbooked, breviewsbooked, btransportsbooked, breportsbooked, bsettingsbooked);
+            DialogResult result = MessageBox.Show("Log out?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
+            if (result == DialogResult.OK)
+            {
+                Form1 f = new Form1();
+                f.Show();
+                this.Hide();
+            }
+            else
+            {
+                // Do nothing; stay on the current form
+            }
         }
     }
 }
