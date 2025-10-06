@@ -88,21 +88,33 @@ namespace TTT
         private void bnCustomers_Click(object sender, EventArgs e)
         {
             change_color_by_click(bnreviews, bnhome, bnbookticket, bnTransport, bnReports, bnSettings, bulogout);
+            Reviews review = new Reviews(loggedInUsername);
+            review.Show();
+            this.Hide();
         }
 
         private void bnTransport_Click(object sender, EventArgs e)
         {
             change_color_by_click(bnTransport, bnhome, bnbookticket, bnreviews, bnReports, bnSettings, bulogout);
+            Transports transports = new Transports(loggedInUsername);
+            transports.Show();
+            this.Hide();
         }
 
         private void bnReports_Click(object sender, EventArgs e)
         {
             change_color_by_click(bnReports, bnhome, bnbookticket, bnreviews, bnTransport, bnSettings, bulogout);
+            Reports reports = new Reports(loggedInUsername);
+            reports.Show();
+            this.Hide();
         }
 
         private void bnSettings_Click(object sender, EventArgs e)
         {
             change_color_by_click(bnSettings, bnhome, bnbookticket, bnreviews, bnTransport, bnReports, bulogout);
+            Settings settings = new Settings(loggedInUsername);
+            settings.Show();
+            this.Hide();
         }
 
         private void Home_Load(object sender, EventArgs e)

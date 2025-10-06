@@ -62,7 +62,7 @@
             this.panel1.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(261, 617);
+            this.panel1.Size = new System.Drawing.Size(261, 664);
             this.panel1.TabIndex = 7;
             // 
             // bulogoutbooked
@@ -81,6 +81,7 @@
             this.bulogoutbooked.TabIndex = 9;
             this.bulogoutbooked.Text = "Log out";
             this.bulogoutbooked.UseVisualStyleBackColor = true;
+            this.bulogoutbooked.Click += new System.EventHandler(this.bulogoutbooked_Click);
             // 
             // labelbooked
             // 
@@ -123,6 +124,7 @@
             this.bsettingsbooked.TabIndex = 8;
             this.bsettingsbooked.Text = "Settings";
             this.bsettingsbooked.UseVisualStyleBackColor = true;
+            this.bsettingsbooked.Click += new System.EventHandler(this.bsettingsbooked_Click);
             // 
             // breportsbooked
             // 
@@ -140,6 +142,7 @@
             this.breportsbooked.TabIndex = 7;
             this.breportsbooked.Text = "Reports";
             this.breportsbooked.UseVisualStyleBackColor = true;
+            this.breportsbooked.Click += new System.EventHandler(this.breportsbooked_Click);
             // 
             // btransportsbooked
             // 
@@ -157,6 +160,7 @@
             this.btransportsbooked.TabIndex = 6;
             this.btransportsbooked.Text = "Transports";
             this.btransportsbooked.UseVisualStyleBackColor = true;
+            this.btransportsbooked.Click += new System.EventHandler(this.btransportsbooked_Click);
             // 
             // breviewsbooked
             // 
@@ -174,6 +178,7 @@
             this.breviewsbooked.TabIndex = 5;
             this.breviewsbooked.Text = "Reviews";
             this.breviewsbooked.UseVisualStyleBackColor = true;
+            this.breviewsbooked.Click += new System.EventHandler(this.breviewsbooked_Click);
             // 
             // bbookticketbooked
             // 
@@ -191,6 +196,7 @@
             this.bbookticketbooked.TabIndex = 4;
             this.bbookticketbooked.Text = "Book Ticket";
             this.bbookticketbooked.UseVisualStyleBackColor = true;
+            this.bbookticketbooked.Click += new System.EventHandler(this.bbookticketbooked_Click);
             // 
             // bhomebooked
             // 
@@ -208,6 +214,7 @@
             this.bhomebooked.TabIndex = 3;
             this.bhomebooked.Text = "Home";
             this.bhomebooked.UseVisualStyleBackColor = true;
+            this.bhomebooked.Click += new System.EventHandler(this.bhomebooked_Click);
             // 
             // panel15
             // 
@@ -217,7 +224,7 @@
             this.panel15.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel15.Location = new System.Drawing.Point(261, 0);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(830, 51);
+            this.panel15.Size = new System.Drawing.Size(848, 51);
             this.panel15.TabIndex = 8;
             // 
             // button2
@@ -247,7 +254,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1091, 617);
+            this.ClientSize = new System.Drawing.Size(1109, 664);
             this.Controls.Add(this.panel15);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
