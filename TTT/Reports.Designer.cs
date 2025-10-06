@@ -41,9 +41,14 @@
             this.panel15 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.panel16 = new System.Windows.Forms.Panel();
+            this.panel_reports1 = new System.Windows.Forms.Panel();
+            this.button_reportssubmit = new System.Windows.Forms.Button();
+            this.label_writereports = new System.Windows.Forms.Label();
+            this.textBox_reports = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxbooked)).BeginInit();
             this.panel15.SuspendLayout();
+            this.panel_reports1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -249,12 +254,73 @@
             this.panel16.Size = new System.Drawing.Size(200, 51);
             this.panel16.TabIndex = 2;
             // 
+            // panel_reports1
+            // 
+            this.panel_reports1.BackColor = System.Drawing.Color.Transparent;
+            this.panel_reports1.BackgroundImage = global::TTT.Properties.Resources.reports_blure;
+            this.panel_reports1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel_reports1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_reports1.Controls.Add(this.button_reportssubmit);
+            this.panel_reports1.Controls.Add(this.label_writereports);
+            this.panel_reports1.Controls.Add(this.textBox_reports);
+            this.panel_reports1.Location = new System.Drawing.Point(393, 183);
+            this.panel_reports1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel_reports1.Name = "panel_reports1";
+            this.panel_reports1.Size = new System.Drawing.Size(641, 339);
+            this.panel_reports1.TabIndex = 9;
+            // 
+            // button_reportssubmit
+            // 
+            this.button_reportssubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button_reportssubmit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_reportssubmit.FlatAppearance.BorderSize = 0;
+            this.button_reportssubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_reportssubmit.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_reportssubmit.Location = new System.Drawing.Point(171, 268);
+            this.button_reportssubmit.Name = "button_reportssubmit";
+            this.button_reportssubmit.Size = new System.Drawing.Size(328, 47);
+            this.button_reportssubmit.TabIndex = 2;
+            this.button_reportssubmit.Text = "Submit";
+            this.button_reportssubmit.UseVisualStyleBackColor = false;
+            this.button_reportssubmit.Click += new System.EventHandler(this.button_reportssubmit_Click);
+            // 
+            // label_writereports
+            // 
+            this.label_writereports.AutoSize = true;
+            this.label_writereports.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_writereports.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.label_writereports.Image = global::TTT.Properties.Resources.reports_red;
+            this.label_writereports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label_writereports.Location = new System.Drawing.Point(49, 28);
+            this.label_writereports.Name = "label_writereports";
+            this.label_writereports.Size = new System.Drawing.Size(271, 23);
+            this.label_writereports.TabIndex = 1;
+            this.label_writereports.Text = "      Write your reports here:";
+            this.label_writereports.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // textBox_reports
+            // 
+            this.textBox_reports.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.textBox_reports.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox_reports.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_reports.ForeColor = System.Drawing.Color.Black;
+            this.textBox_reports.Location = new System.Drawing.Point(54, 68);
+            this.textBox_reports.Multiline = true;
+            this.textBox_reports.Name = "textBox_reports";
+            this.textBox_reports.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.textBox_reports.Size = new System.Drawing.Size(542, 166);
+            this.textBox_reports.TabIndex = 0;
+            this.textBox_reports.TextChanged += new System.EventHandler(this.textBox_reports_TextChanged);
+            // 
             // Reports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::TTT.Properties.Resources.report_background;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1109, 664);
+            this.Controls.Add(this.panel_reports1);
             this.Controls.Add(this.panel15);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -266,6 +332,8 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxbooked)).EndInit();
             this.panel15.ResumeLayout(false);
+            this.panel_reports1.ResumeLayout(false);
+            this.panel_reports1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -285,5 +353,9 @@
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.Panel panel_reports1;
+        private System.Windows.Forms.TextBox textBox_reports;
+        private System.Windows.Forms.Label label_writereports;
+        private System.Windows.Forms.Button button_reportssubmit;
     }
 }

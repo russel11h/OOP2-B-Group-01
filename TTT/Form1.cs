@@ -146,6 +146,10 @@ namespace TTT
             Application.Exit();
         }
 
+        private void tbname_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
    
 }

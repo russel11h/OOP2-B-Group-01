@@ -132,5 +132,39 @@ namespace TTT
             change_color_by_click(breportsbooked, bhomebooked, bbookticketbooked, breviewsbooked, btransportsbooked, bsettingsbooked, bulogoutbooked);
 
         }
+
+        private void textBox_reports_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_reportssubmit_Click(object sender, EventArgs e)
+        {
+            string connectionString = @"Data Source=RASEL\SQLEXPRESS;Initial Catalog=TMS;Integrated Security=True;";
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+
+            string reportText = textBox_reports.Text.Trim();
+
+            string checkColumnQuery = $@"
+        IF COL_LENGTH('Reports', '{loggedInUsername}') IS NULL
+        ALTER TABLE [Reports] ADD [{loggedInUsername}] NVARCHAR(MAX);";
+
+            SqlCommand checkCmd = new SqlCommand(checkColumnQuery, conn);
+            checkCmd.ExecuteNonQuery();
+
+            string insertQuery = $"INSERT INTO [Reports] ([{loggedInUsername}]) VALUES (@reportText)";
+            SqlCommand insertCmd = new SqlCommand(insertQuery, conn);
+            insertCmd.Parameters.AddWithValue("@reportText", reportText);
+            insertCmd.ExecuteNonQuery();
+
+            MessageBox.Show("Report saved successfully!");
+            textBox_reports.Clear();
+
+            conn.Close();
+        }
+
+
+
     }
 }

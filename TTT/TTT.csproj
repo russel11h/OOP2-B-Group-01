@@ -260,5 +260,20 @@
   <ItemGroup>
     <None Include="Resources\log out .png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reports.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report 25 px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reports blure.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reports red.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
