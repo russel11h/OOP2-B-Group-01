@@ -73,6 +73,7 @@
             this.tdata_username.Name = "tdata_username";
             this.tdata_username.Size = new System.Drawing.Size(222, 22);
             this.tdata_username.TabIndex = 2;
+            this.tdata_username.TextChanged += new System.EventHandler(this.tdata_username_TextChanged);
             // 
             // bdata_edit
             // 

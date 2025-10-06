@@ -126,6 +126,11 @@ namespace TTT
         {
 
         }
+
+        private void tdata_username_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 
