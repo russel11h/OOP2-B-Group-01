@@ -13,40 +13,205 @@ namespace TTT
 {
     public partial class Reviews : Form
     {
-        private string loggedInUsername; // Field to store the username
+        private string loggedInUsername;
+        private TextBox[] reviewDisplayBoxes;
+
         public Reviews(string username)
         {
             InitializeComponent();
-            this.loggedInUsername = username; // Store the username
-            LoadUserData();
-        }
-        private void LoadUserData()
-        {
-            string connectionString = @"Data Source=RASEL\SQLEXPRESS;Initial Catalog=TMS;Integrated Security=True;";
-            SqlConnection conn = new SqlConnection(connectionString);
-            conn.Open();
+            this.loggedInUsername = username;
 
-            // Construct the query to select the givenname and surname
-            string query = "SELECT givenname, surname FROM regst WHERE user_name = @username";
-            SqlCommand cmd = new SqlCommand(query, conn);
-            cmd.Parameters.AddWithValue("@username", loggedInUsername);
-
-            SqlDataAdapter adp = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            adp.Fill(ds);
-
-            if (ds.Tables[0].Rows.Count > 0)
+            reviewDisplayBoxes = new TextBox[]
             {
-                // Get the givenname and surname from the first row of the DataTable
-                string givenName = ds.Tables[0].Rows[0]["givenname"].ToString();
-                string surName = ds.Tables[0].Rows[0]["surname"].ToString();
+                textBoxreview1,
+                textBoxreview2,
+                textBoxreview3,
+                textBoxreview4
+            };
 
-                // Concatenate and display the full name in the label
-                labelbooked.Text = givenName + " " + surName;
+            foreach (var tb in reviewDisplayBoxes)
+            {
+                if (tb != null) tb.ReadOnly = true;
             }
 
-            conn.Close();
+            LoadUserData();
+            LoadReviews();
         }
+
+        private SqlConnection GetConnection()
+        {
+            string connectionString = @"Data Source=RASEL\SQLEXPRESS;Initial Catalog=TMS;Integrated Security=True;";
+            return new SqlConnection(connectionString);
+        }
+
+        private void LoadUserData()
+        {
+            using (SqlConnection conn = GetConnection())
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT givenname, surname FROM regst WHERE user_name = @username";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@username", loggedInUsername);
+
+                        using (SqlDataAdapter adp = new SqlDataAdapter(cmd))
+                        {
+                            DataSet ds = new DataSet();
+                            adp.Fill(ds);
+
+                            if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+                            {
+                                string givenName = ds.Tables[0].Rows[0]["givenname"].ToString();
+                                string surName = ds.Tables[0].Rows[0]["surname"].ToString();
+                                labelbooked.Text = givenName + " " + surName;
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading user data: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private string FormatReviewText(string givenName, string surName, string comment)
+        {
+            string formattedText =
+                $"👤  {givenName} {surName}" + Environment.NewLine +
+                $"✍️ {comment}";
+
+            return formattedText;
+        }
+
+        private void LoadReviews()
+        {
+            using (SqlConnection conn = GetConnection())
+            {
+                try
+                {
+                    conn.Open();
+
+                    // ✅ UPDATED: Order by star DESC (used as time indicator)
+                    string query = "SELECT TOP 4 givenname, surname, comment, star FROM Reviews ORDER BY star DESC";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            int i = 0;
+                            foreach (var tb in reviewDisplayBoxes)
+                            {
+                                if (tb != null) tb.Text = string.Empty;
+                            }
+
+                            while (reader.Read() && i < reviewDisplayBoxes.Length)
+                            {
+                                string givenName = reader["givenname"].ToString();
+                                string surName = reader["surname"].ToString();
+                                string comment = reader["comment"].ToString();
+
+                                reviewDisplayBoxes[i].Text = FormatReviewText(givenName, surName, comment);
+                                i++;
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading reviews: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        // ✅ FIXED: Update old comment if user already has one
+        private void button_submit_Click_1(object sender, EventArgs e)
+        {
+            string newComment = textBoxyour_review.Text.Trim();
+
+            if (string.IsNullOrEmpty(newComment))
+            {
+                MessageBox.Show("Please enter a comment before submitting.", "Missing Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string givenName = string.Empty;
+            string surName = string.Empty;
+            string[] parts = labelbooked.Text.Split(new char[] { ' ' }, 2);
+            givenName = parts.Length > 0 ? parts[0] : "";
+            surName = parts.Length > 1 ? parts[1] : "";
+
+            if (string.IsNullOrEmpty(givenName))
+            {
+                MessageBox.Show("User name could not be retrieved. Please try logging in again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            using (SqlConnection conn = GetConnection())
+            {
+                try
+                {
+                    conn.Open();
+
+                    // ✅ UPDATED: Check if user already commented
+                    string checkQuery = "SELECT COUNT(*) FROM Reviews WHERE username = @username";
+                    using (SqlCommand checkCmd = new SqlCommand(checkQuery, conn))
+                    {
+                        checkCmd.Parameters.AddWithValue("@username", loggedInUsername);
+                        int count = (int)checkCmd.ExecuteScalar();
+
+                        // ✅ Use star column to store the latest timestamp (as integer)
+                        int currentTimeValue = (int)DateTimeOffset.UtcNow.ToUnixTimeSeconds() % 1000000;
+
+                        if (count > 0)
+                        {
+                            // ✅ Update existing comment
+                            string updateQuery = @"UPDATE Reviews 
+                                                   SET comment = @comment, star = @star 
+                                                   WHERE username = @username";
+                            using (SqlCommand updateCmd = new SqlCommand(updateQuery, conn))
+                            {
+                                updateCmd.Parameters.AddWithValue("@username", loggedInUsername);
+                                updateCmd.Parameters.AddWithValue("@comment", newComment);
+                                updateCmd.Parameters.AddWithValue("@star", currentTimeValue);
+                                updateCmd.ExecuteNonQuery();
+
+                                MessageBox.Show("Your previous comment has been updated!", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                        }
+                        else
+                        {
+                            // ✅ Insert new comment
+                            string insertQuery = @"INSERT INTO Reviews (username, givenname, surname, comment, star)
+                                                   VALUES (@username, @givenname, @surname, @comment, @star)";
+                            using (SqlCommand insertCmd = new SqlCommand(insertQuery, conn))
+                            {
+                                insertCmd.Parameters.AddWithValue("@username", loggedInUsername);
+                                insertCmd.Parameters.AddWithValue("@givenname", givenName);
+                                insertCmd.Parameters.AddWithValue("@surname", surName);
+                                insertCmd.Parameters.AddWithValue("@comment", newComment);
+                                insertCmd.Parameters.AddWithValue("@star", currentTimeValue);
+                                insertCmd.ExecuteNonQuery();
+
+                                MessageBox.Show("Your review has been submitted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                        }
+                    }
+
+                    textBoxyour_review.Clear();
+                    LoadReviews();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error submitting review: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        // --- Keep All Original Code Below ---
+
         private void change_color_by_click(Button b1, Button b2, Button b3, Button b4, Button b5, Button b6, Button b7)
         {
             b1.BackColor = Color.FromArgb(0, 122, 204);
@@ -58,16 +223,19 @@ namespace TTT
             b7.BackColor = Color.FromArgb(215, 228, 242);
         }
 
+        private void breviewsbooked_Click(object sender, EventArgs e)
+        {
+            change_color_by_click(breviewsbooked, bhomebooked, bbookticketbooked, btransportsbooked, breportsbooked, bsettingsbooked, bulogoutbooked);
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-
         private void Reviews_Load(object sender, EventArgs e)
         {
             change_color_by_click(breviewsbooked, bhomebooked, bbookticketbooked, btransportsbooked, breportsbooked, bsettingsbooked, bulogoutbooked);
-
         }
 
         private void bhomebooked_Click(object sender, EventArgs e)
@@ -84,12 +252,6 @@ namespace TTT
             Book_Ticket book_Ticket = new Book_Ticket(loggedInUsername);
             book_Ticket.Show();
             this.Hide();
-        }
-
-        private void breviewsbooked_Click(object sender, EventArgs e)
-        {
-            change_color_by_click(breviewsbooked, bhomebooked, bbookticketbooked, btransportsbooked, breportsbooked, bsettingsbooked, bulogoutbooked);
-
         }
 
         private void btransportsbooked_Click(object sender, EventArgs e)
@@ -127,10 +289,19 @@ namespace TTT
                 f.Show();
                 this.Hide();
             }
-            else
-            {
-                // Do nothing; stay on the current form
-            }
+        }
+
+        private void textBoxreview1_TextChanged(object sender, EventArgs e) { }
+        private void textBoxreview2_TextChanged(object sender, EventArgs e) { }
+        private void textBoxreview3_TextChanged(object sender, EventArgs e) { }
+        private void textBoxreview4_TextChanged(object sender, EventArgs e) { }
+        private void textBoxyour_review_TextChanged(object sender, EventArgs e) { }
+        private void pictureBoxbooked_Click(object sender, EventArgs e) { }
+        private void textBoxyour_review_TextChanged_1(object sender, EventArgs e) { }
+
+        private void label_customer_review_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

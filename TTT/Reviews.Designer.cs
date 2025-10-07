@@ -41,9 +41,19 @@
             this.panel15 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.panel16 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button_submit = new System.Windows.Forms.Button();
+            this.textBoxyour_review = new System.Windows.Forms.TextBox();
+            this.textBoxreview4 = new System.Windows.Forms.TextBox();
+            this.textBoxreview3 = new System.Windows.Forms.TextBox();
+            this.textBoxreview2 = new System.Windows.Forms.TextBox();
+            this.textBoxreview1 = new System.Windows.Forms.TextBox();
+            this.label_customer_review = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxbooked)).BeginInit();
             this.panel15.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -63,7 +73,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(261, 664);
-            this.panel1.TabIndex = 7;
+            this.panel1.TabIndex = 8;
             // 
             // bulogoutbooked
             // 
@@ -225,7 +235,7 @@
             this.panel15.Location = new System.Drawing.Point(261, 0);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(848, 51);
-            this.panel15.TabIndex = 8;
+            this.panel15.TabIndex = 9;
             // 
             // button2
             // 
@@ -249,12 +259,115 @@
             this.panel16.Size = new System.Drawing.Size(200, 51);
             this.panel16.TabIndex = 2;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.label_customer_review);
+            this.panel2.Controls.Add(this.button_submit);
+            this.panel2.Controls.Add(this.textBoxyour_review);
+            this.panel2.Controls.Add(this.textBoxreview4);
+            this.panel2.Controls.Add(this.textBoxreview3);
+            this.panel2.Controls.Add(this.textBoxreview2);
+            this.panel2.Controls.Add(this.textBoxreview1);
+            this.panel2.Location = new System.Drawing.Point(261, 51);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(802, 613);
+            this.panel2.TabIndex = 10;
+            // 
+            // button_submit
+            // 
+            this.button_submit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.button_submit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_submit.FlatAppearance.BorderSize = 0;
+            this.button_submit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_submit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_submit.Location = new System.Drawing.Point(649, 479);
+            this.button_submit.Name = "button_submit";
+            this.button_submit.Size = new System.Drawing.Size(135, 53);
+            this.button_submit.TabIndex = 5;
+            this.button_submit.Text = "Submit";
+            this.button_submit.UseVisualStyleBackColor = false;
+            this.button_submit.Click += new System.EventHandler(this.button_submit_Click_1);
+            // 
+            // textBoxyour_review
+            // 
+            this.textBoxyour_review.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBoxyour_review.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
+            this.textBoxyour_review.Location = new System.Drawing.Point(165, 431);
+            this.textBoxyour_review.Multiline = true;
+            this.textBoxyour_review.Name = "textBoxyour_review";
+            this.textBoxyour_review.Size = new System.Drawing.Size(465, 151);
+            this.textBoxyour_review.TabIndex = 4;
+            this.textBoxyour_review.TextChanged += new System.EventHandler(this.textBoxyour_review_TextChanged_1);
+            // 
+            // textBoxreview4
+            // 
+            this.textBoxreview4.BackColor = System.Drawing.Color.White;
+            this.textBoxreview4.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
+            this.textBoxreview4.Location = new System.Drawing.Point(28, 326);
+            this.textBoxreview4.Multiline = true;
+            this.textBoxreview4.Name = "textBoxreview4";
+            this.textBoxreview4.Size = new System.Drawing.Size(771, 89);
+            this.textBoxreview4.TabIndex = 3;
+            // 
+            // textBoxreview3
+            // 
+            this.textBoxreview3.BackColor = System.Drawing.Color.White;
+            this.textBoxreview3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
+            this.textBoxreview3.Location = new System.Drawing.Point(28, 241);
+            this.textBoxreview3.Multiline = true;
+            this.textBoxreview3.Name = "textBoxreview3";
+            this.textBoxreview3.Size = new System.Drawing.Size(771, 89);
+            this.textBoxreview3.TabIndex = 2;
+            // 
+            // textBoxreview2
+            // 
+            this.textBoxreview2.BackColor = System.Drawing.Color.White;
+            this.textBoxreview2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
+            this.textBoxreview2.Location = new System.Drawing.Point(28, 154);
+            this.textBoxreview2.Multiline = true;
+            this.textBoxreview2.Name = "textBoxreview2";
+            this.textBoxreview2.Size = new System.Drawing.Size(771, 89);
+            this.textBoxreview2.TabIndex = 1;
+            // 
+            // textBoxreview1
+            // 
+            this.textBoxreview1.BackColor = System.Drawing.Color.White;
+            this.textBoxreview1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxreview1.Location = new System.Drawing.Point(28, 69);
+            this.textBoxreview1.Multiline = true;
+            this.textBoxreview1.Name = "textBoxreview1";
+            this.textBoxreview1.Size = new System.Drawing.Size(771, 89);
+            this.textBoxreview1.TabIndex = 0;
+            // 
+            // label_customer_review
+            // 
+            this.label_customer_review.AutoSize = true;
+            this.label_customer_review.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_customer_review.Location = new System.Drawing.Point(215, 3);
+            this.label_customer_review.Name = "label_customer_review";
+            this.label_customer_review.Size = new System.Drawing.Size(392, 52);
+            this.label_customer_review.TabIndex = 6;
+            this.label_customer_review.Text = "Customer Reviews";
+            this.label_customer_review.Click += new System.EventHandler(this.label_customer_review_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 464);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(157, 44);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "   Write your \r\ncomments here :";
+            // 
             // Reviews
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1109, 664);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel15);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -266,6 +379,8 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxbooked)).EndInit();
             this.panel15.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -285,5 +400,14 @@
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button_submit;
+        private System.Windows.Forms.TextBox textBoxyour_review;
+        private System.Windows.Forms.TextBox textBoxreview4;
+        private System.Windows.Forms.TextBox textBoxreview3;
+        private System.Windows.Forms.TextBox textBoxreview2;
+        private System.Windows.Forms.TextBox textBoxreview1;
+        private System.Windows.Forms.Label label_customer_review;
+        private System.Windows.Forms.Label label1;
     }
 }
