@@ -23,6 +23,14 @@ namespace TTT
             this.loggedInUsername = username;
             this.selectedTransportNo = transportNo;
 
+            // --- START NEW/MODIFIED CODE ---
+            // 1. Set the Transport No. in the new textbox on load
+            // Assuming your new textbox is named 'textBox_plane'
+            // We set it here as it's passed in the constructor
+            textBox_plane.Text = this.selectedTransportNo;
+            textBox_plane.ReadOnly = true; // It should be read-only
+            // --- END NEW/MODIFIED CODE ---
+
             // Wire up checkbox handlers (safety check)
             checkBox_eco.CheckedChanged += CheckBox_eco_CheckedChanged;
             checkBox_busin.CheckedChanged += CheckBox_busin_CheckedChanged;
@@ -62,6 +70,7 @@ namespace TTT
             textBox_adate.ReadOnly = isReadOnly;
             textBox_atime.ReadOnly = isReadOnly;
             textBox_price.ReadOnly = true; // Price is ALWAYS read-only
+            // textBox_plane is set to ReadOnly = true in the constructor
         }
 
         // Load user personal data from regst
@@ -235,6 +244,8 @@ namespace TTT
             try
             {
                 // Upsert ensures the latest user details are saved for this booking
+                // Since this uses the separate UpsertUserBookingRecord(), the button name needs to be fixed. 
+                // Assuming your button is named 'button_Save' in the designer, but the handler is 'button_save_Click_1'
                 UpsertUserBookingRecord();
 
                 // Reset fields to read-only
@@ -251,8 +262,7 @@ namespace TTT
                 MessageBox.Show("Save failed: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-       
-       
+
 
         // Confirm: insert/update the per-user table and decrement seat count atomically
         private void button_confirm_Click(object sender, EventArgs e)
@@ -352,8 +362,6 @@ namespace TTT
         private void UpsertUserBookingRecord(SqlConnection conn, SqlTransaction tx)
         {
             // 1) Ensure table exists with required columns
-            // **FIXED:** Using brackets [] around column names to prevent issues with spaces/keywords, 
-            // and confirming the column name matches exactly what is used later.
             string createTableSql = $@"
 IF NOT EXISTS (SELECT * FROM sysobjects WHERE name = @tbl AND xtype='U')
 BEGIN
@@ -364,7 +372,7 @@ BEGIN
         [passport] NVARCHAR(50),
         [phone] NVARCHAR(50),
         [address] NVARCHAR(500),
-        [Transport_No] NVARCHAR(50) PRIMARY KEY, -- Use correct case and ensure it's the primary key
+        [Transport_No] NVARCHAR(50) PRIMARY KEY,
         [Price_eco] DECIMAL(18,2),
         [Price_busine] DECIMAL(18,2),
         [From_City] NVARCHAR(200),
@@ -373,7 +381,7 @@ BEGIN
         [Departure_Only_Time] NVARCHAR(50),
         [Arrival_Date] NVARCHAR(50),
         [Arrival_Only_Time] NVARCHAR(50),
-        [Payment_Status] NVARCHAR(50) -- Adding Payment Status for 'pay later' logic
+        [Payment_Status] NVARCHAR(50)
     )
 END";
             using (SqlCommand cmdCreate = new SqlCommand(createTableSql, conn, tx))
@@ -391,7 +399,7 @@ END";
 
                 if (count > 0)
                 {
-                    // Update existing row
+                    // Update existing row (Note: Transport_No is Primary Key, so it's not updated)
                     string updateSql = $@"
 UPDATE [{loggedInUsername}]
 SET
@@ -414,7 +422,7 @@ WHERE [Transport_No] = @tno";
                     using (SqlCommand cmdUpd = new SqlCommand(updateSql, conn, tx))
                     {
                         AddCommonParametersToCommand(cmdUpd);
-                        cmdUpd.Parameters.AddWithValue("@tno", selectedTransportNo);
+                        // @tno parameter is added in AddCommonParametersToCommand now
                         cmdUpd.ExecuteNonQuery();
                     }
                 }
@@ -431,7 +439,7 @@ INSERT INTO [{loggedInUsername}] (
                     using (SqlCommand cmdIns = new SqlCommand(insertSql, conn, tx))
                     {
                         AddCommonParametersToCommand(cmdIns);
-                        cmdIns.Parameters.AddWithValue("@tno", selectedTransportNo);
+                        // @tno parameter is added in AddCommonParametersToCommand now
                         cmdIns.ExecuteNonQuery();
                     }
                 }
@@ -447,6 +455,11 @@ INSERT INTO [{loggedInUsername}] (
             cmd.Parameters.AddWithValue("@passport", tbpassport.Text);
             cmd.Parameters.AddWithValue("@phone", tbphone.Text);
             cmd.Parameters.AddWithValue("@address", tbaddress.Text);
+
+            // --- START NEW/MODIFIED CODE ---
+            // 2. Include the Transport_No value in the SQL command parameters
+            cmd.Parameters.AddWithValue("@tno", textBox_plane.Text);
+            // --- END NEW/MODIFIED CODE ---
 
             // Determine prices to save (using the ones loaded from plane_details)
             cmd.Parameters.AddWithValue("@priceeco", ecoPrice);
@@ -486,6 +499,6 @@ INSERT INTO [{loggedInUsername}] (
 
         private void button2_Click(object sender, EventArgs e) => Application.Exit();
 
-        
+
     }
 }

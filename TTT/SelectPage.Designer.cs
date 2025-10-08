@@ -76,11 +76,10 @@
             this.checkBox_busin = new System.Windows.Forms.CheckBox();
             this.button_edit = new System.Windows.Forms.Button();
             this.button_confirm = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.checkBox_paylater = new System.Windows.Forms.CheckBox();
-            this.textBox_transferid = new System.Windows.Forms.TextBox();
-            this.label_transferid = new System.Windows.Forms.Label();
+            this.textBox_plane = new System.Windows.Forms.TextBox();
+            this.label_plane = new System.Windows.Forms.Label();
             this.button_save = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxbooked)).BeginInit();
@@ -418,9 +417,9 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel2.Controls.Add(this.textBox_transferid);
-            this.panel2.Controls.Add(this.label_transferid);
-            this.panel2.Controls.Add(this.checkBox1);
+            this.panel2.Controls.Add(this.button_save);
+            this.panel2.Controls.Add(this.textBox_plane);
+            this.panel2.Controls.Add(this.label_plane);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.checkBox_paylater);
             this.panel2.Controls.Add(this.button_confirm);
@@ -589,9 +588,9 @@
             this.textBox_price.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_price.ForeColor = System.Drawing.Color.Red;
-            this.textBox_price.Location = new System.Drawing.Point(87, 477);
+            this.textBox_price.Location = new System.Drawing.Point(281, 419);
             this.textBox_price.Name = "textBox_price";
-            this.textBox_price.Size = new System.Drawing.Size(111, 27);
+            this.textBox_price.Size = new System.Drawing.Size(121, 27);
             this.textBox_price.TabIndex = 75;
             // 
             // label_p_price
@@ -599,7 +598,7 @@
             this.label_p_price.AutoSize = true;
             this.label_p_price.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_p_price.ForeColor = System.Drawing.Color.Black;
-            this.label_p_price.Location = new System.Drawing.Point(33, 479);
+            this.label_p_price.Location = new System.Drawing.Point(237, 421);
             this.label_p_price.Name = "label_p_price";
             this.label_p_price.Size = new System.Drawing.Size(39, 16);
             this.label_p_price.TabIndex = 74;
@@ -618,7 +617,7 @@
             this.checkBox_eco.AutoSize = true;
             this.checkBox_eco.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBox_eco.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox_eco.Location = new System.Drawing.Point(93, 419);
+            this.checkBox_eco.Location = new System.Drawing.Point(93, 445);
             this.checkBox_eco.Name = "checkBox_eco";
             this.checkBox_eco.Size = new System.Drawing.Size(92, 20);
             this.checkBox_eco.TabIndex = 77;
@@ -630,7 +629,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(31, 419);
+            this.label5.Location = new System.Drawing.Point(31, 445);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 16);
             this.label5.TabIndex = 78;
@@ -641,7 +640,7 @@
             this.checkBox_busin.AutoSize = true;
             this.checkBox_busin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBox_busin.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox_busin.Location = new System.Drawing.Point(93, 451);
+            this.checkBox_busin.Location = new System.Drawing.Point(93, 477);
             this.checkBox_busin.Name = "checkBox_busin";
             this.checkBox_busin.Size = new System.Drawing.Size(83, 20);
             this.checkBox_busin.TabIndex = 79;
@@ -676,24 +675,12 @@
             this.button_confirm.UseVisualStyleBackColor = false;
             this.button_confirm.Click += new System.EventHandler(this.button_confirm_Click);
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkBox1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(310, 442);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(53, 20);
-            this.checkBox1.TabIndex = 84;
-            this.checkBox1.Text = "Pay";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(237, 419);
+            this.label6.Location = new System.Drawing.Point(237, 460);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(63, 16);
             this.label6.TabIndex = 83;
@@ -704,31 +691,31 @@
             this.checkBox_paylater.AutoSize = true;
             this.checkBox_paylater.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBox_paylater.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox_paylater.Location = new System.Drawing.Point(310, 415);
+            this.checkBox_paylater.Location = new System.Drawing.Point(310, 456);
             this.checkBox_paylater.Name = "checkBox_paylater";
             this.checkBox_paylater.Size = new System.Drawing.Size(88, 20);
             this.checkBox_paylater.TabIndex = 82;
             this.checkBox_paylater.Text = "Pay-later";
             this.checkBox_paylater.UseVisualStyleBackColor = true;
             // 
-            // textBox_transferid
+            // textBox_plane
             // 
-            this.textBox_transferid.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox_transferid.Location = new System.Drawing.Point(310, 465);
-            this.textBox_transferid.Name = "textBox_transferid";
-            this.textBox_transferid.Size = new System.Drawing.Size(92, 22);
-            this.textBox_transferid.TabIndex = 86;
+            this.textBox_plane.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.textBox_plane.Location = new System.Drawing.Point(93, 405);
+            this.textBox_plane.Name = "textBox_plane";
+            this.textBox_plane.Size = new System.Drawing.Size(105, 22);
+            this.textBox_plane.TabIndex = 86;
             // 
-            // label_transferid
+            // label_plane
             // 
-            this.label_transferid.AutoSize = true;
-            this.label_transferid.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_transferid.ForeColor = System.Drawing.Color.Black;
-            this.label_transferid.Location = new System.Drawing.Point(233, 468);
-            this.label_transferid.Name = "label_transferid";
-            this.label_transferid.Size = new System.Drawing.Size(75, 16);
-            this.label_transferid.TabIndex = 85;
-            this.label_transferid.Text = "Transfer ID";
+            this.label_plane.AutoSize = true;
+            this.label_plane.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_plane.ForeColor = System.Drawing.Color.Black;
+            this.label_plane.Location = new System.Drawing.Point(31, 408);
+            this.label_plane.Name = "label_plane";
+            this.label_plane.Size = new System.Drawing.Size(43, 16);
+            this.label_plane.TabIndex = 85;
+            this.label_plane.Text = "Plane";
             // 
             // button_save
             // 
@@ -736,7 +723,7 @@
             this.button_save.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_save.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_save.Location = new System.Drawing.Point(838, 600);
+            this.button_save.Location = new System.Drawing.Point(70, 542);
             this.button_save.Name = "button_save";
             this.button_save.Size = new System.Drawing.Size(133, 30);
             this.button_save.TabIndex = 87;
@@ -750,7 +737,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1109, 664);
-            this.Controls.Add(this.button_save);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel15);
             this.Controls.Add(this.panel1);
@@ -818,9 +804,8 @@
         private System.Windows.Forms.CheckBox checkBox_eco;
         private System.Windows.Forms.Button button_edit;
         private System.Windows.Forms.Button button_confirm;
-        private System.Windows.Forms.TextBox textBox_transferid;
-        private System.Windows.Forms.Label label_transferid;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox textBox_plane;
+        private System.Windows.Forms.Label label_plane;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.CheckBox checkBox_paylater;
         private System.Windows.Forms.Button button_save;
