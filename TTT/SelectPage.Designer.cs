@@ -55,32 +55,32 @@
             this.tbname = new System.Windows.Forms.TextBox();
             this.tbemail = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxd_dtime = new System.Windows.Forms.TextBox();
-            this.textBox_ddate = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxfrom = new System.Windows.Forms.TextBox();
-            this.label_databasetime = new System.Windows.Forms.Label();
-            this.label_p_from = new System.Windows.Forms.Label();
+            this.button_save = new System.Windows.Forms.Button();
+            this.textBox_plane = new System.Windows.Forms.TextBox();
+            this.label_plane = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.checkBox_paylater = new System.Windows.Forms.CheckBox();
+            this.button_confirm = new System.Windows.Forms.Button();
+            this.button_edit = new System.Windows.Forms.Button();
+            this.checkBox_busin = new System.Windows.Forms.CheckBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.checkBox_eco = new System.Windows.Forms.CheckBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.textBox_price = new System.Windows.Forms.TextBox();
+            this.label_p_price = new System.Windows.Forms.Label();
             this.textBox_adate = new System.Windows.Forms.TextBox();
             this.textBox_atime = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxto = new System.Windows.Forms.TextBox();
             this.label_p_to = new System.Windows.Forms.Label();
-            this.textBox_price = new System.Windows.Forms.TextBox();
-            this.label_p_price = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.checkBox_eco = new System.Windows.Forms.CheckBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.checkBox_busin = new System.Windows.Forms.CheckBox();
-            this.button_edit = new System.Windows.Forms.Button();
-            this.button_confirm = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.checkBox_paylater = new System.Windows.Forms.CheckBox();
-            this.textBox_plane = new System.Windows.Forms.TextBox();
-            this.label_plane = new System.Windows.Forms.Label();
-            this.button_save = new System.Windows.Forms.Button();
+            this.textBoxd_dtime = new System.Windows.Forms.TextBox();
+            this.textBox_ddate = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxfrom = new System.Windows.Forms.TextBox();
+            this.label_databasetime = new System.Windows.Forms.Label();
+            this.label_p_from = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxbooked)).BeginInit();
             this.panel15.SuspendLayout();
@@ -235,7 +235,7 @@
             this.bbookticketbooked.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.bbookticketbooked.Size = new System.Drawing.Size(261, 51);
             this.bbookticketbooked.TabIndex = 4;
-            this.bbookticketbooked.Text = "Book Ticket";
+            this.bbookticketbooked.Text = "Booked Ticket";
             this.bbookticketbooked.UseVisualStyleBackColor = true;
             this.bbookticketbooked.Click += new System.EventHandler(this.bbookticketbooked_Click);
             // 
@@ -461,71 +461,153 @@
             this.panel2.Size = new System.Drawing.Size(427, 595);
             this.panel2.TabIndex = 61;
             // 
-            // label1
+            // button_save
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(115, 275);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(184, 23);
-            this.label1.TabIndex = 61;
-            this.label1.Text = "Ticket Information";
+            this.button_save.BackColor = System.Drawing.SystemColors.Control;
+            this.button_save.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_save.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_save.Location = new System.Drawing.Point(70, 542);
+            this.button_save.Name = "button_save";
+            this.button_save.Size = new System.Drawing.Size(133, 30);
+            this.button_save.TabIndex = 87;
+            this.button_save.Text = "save";
+            this.button_save.UseVisualStyleBackColor = false;
+            this.button_save.Click += new System.EventHandler(this.button_save_Click_1);
             // 
-            // textBoxd_dtime
+            // textBox_plane
             // 
-            this.textBoxd_dtime.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBoxd_dtime.Location = new System.Drawing.Point(93, 372);
-            this.textBoxd_dtime.Name = "textBoxd_dtime";
-            this.textBoxd_dtime.Size = new System.Drawing.Size(105, 22);
-            this.textBoxd_dtime.TabIndex = 67;
+            this.textBox_plane.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.textBox_plane.Location = new System.Drawing.Point(93, 405);
+            this.textBox_plane.Name = "textBox_plane";
+            this.textBox_plane.Size = new System.Drawing.Size(105, 22);
+            this.textBox_plane.TabIndex = 86;
             // 
-            // textBox_ddate
+            // label_plane
             // 
-            this.textBox_ddate.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox_ddate.Location = new System.Drawing.Point(93, 343);
-            this.textBox_ddate.Name = "textBox_ddate";
-            this.textBox_ddate.Size = new System.Drawing.Size(105, 22);
-            this.textBox_ddate.TabIndex = 66;
+            this.label_plane.AutoSize = true;
+            this.label_plane.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_plane.ForeColor = System.Drawing.Color.Black;
+            this.label_plane.Location = new System.Drawing.Point(31, 408);
+            this.label_plane.Name = "label_plane";
+            this.label_plane.Size = new System.Drawing.Size(43, 16);
+            this.label_plane.TabIndex = 85;
+            this.label_plane.Text = "Plane";
             // 
-            // label2
+            // label6
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(31, 349);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 16);
-            this.label2.TabIndex = 65;
-            this.label2.Text = "Date";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(237, 460);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(63, 16);
+            this.label6.TabIndex = 83;
+            this.label6.Text = "Payment";
             // 
-            // textBoxfrom
+            // checkBox_paylater
             // 
-            this.textBoxfrom.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBoxfrom.Location = new System.Drawing.Point(93, 316);
-            this.textBoxfrom.Name = "textBoxfrom";
-            this.textBoxfrom.Size = new System.Drawing.Size(105, 22);
-            this.textBoxfrom.TabIndex = 64;
+            this.checkBox_paylater.AutoSize = true;
+            this.checkBox_paylater.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBox_paylater.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox_paylater.Location = new System.Drawing.Point(310, 456);
+            this.checkBox_paylater.Name = "checkBox_paylater";
+            this.checkBox_paylater.Size = new System.Drawing.Size(88, 20);
+            this.checkBox_paylater.TabIndex = 82;
+            this.checkBox_paylater.Text = "Pay-later";
+            this.checkBox_paylater.UseVisualStyleBackColor = true;
             // 
-            // label_databasetime
+            // button_confirm
             // 
-            this.label_databasetime.AutoSize = true;
-            this.label_databasetime.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_databasetime.ForeColor = System.Drawing.Color.Black;
-            this.label_databasetime.Location = new System.Drawing.Point(31, 375);
-            this.label_databasetime.Name = "label_databasetime";
-            this.label_databasetime.Size = new System.Drawing.Size(37, 16);
-            this.label_databasetime.TabIndex = 63;
-            this.label_databasetime.Text = "Time";
+            this.button_confirm.BackColor = System.Drawing.SystemColors.Control;
+            this.button_confirm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_confirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_confirm.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_confirm.Location = new System.Drawing.Point(240, 533);
+            this.button_confirm.Name = "button_confirm";
+            this.button_confirm.Size = new System.Drawing.Size(133, 30);
+            this.button_confirm.TabIndex = 81;
+            this.button_confirm.Text = "Confirm";
+            this.button_confirm.UseVisualStyleBackColor = false;
+            this.button_confirm.Click += new System.EventHandler(this.button_confirm_Click);
             // 
-            // label_p_from
+            // button_edit
             // 
-            this.label_p_from.AutoSize = true;
-            this.label_p_from.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_p_from.Location = new System.Drawing.Point(31, 319);
-            this.label_p_from.Name = "label_p_from";
-            this.label_p_from.Size = new System.Drawing.Size(38, 16);
-            this.label_p_from.TabIndex = 62;
-            this.label_p_from.Text = "From";
+            this.button_edit.BackColor = System.Drawing.SystemColors.Control;
+            this.button_edit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_edit.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_edit.Location = new System.Drawing.Point(70, 533);
+            this.button_edit.Name = "button_edit";
+            this.button_edit.Size = new System.Drawing.Size(133, 30);
+            this.button_edit.TabIndex = 80;
+            this.button_edit.Text = "Edit";
+            this.button_edit.UseVisualStyleBackColor = false;
+            this.button_edit.Click += new System.EventHandler(this.button_edit_Click);
+            // 
+            // checkBox_busin
+            // 
+            this.checkBox_busin.AutoSize = true;
+            this.checkBox_busin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBox_busin.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox_busin.Location = new System.Drawing.Point(93, 477);
+            this.checkBox_busin.Name = "checkBox_busin";
+            this.checkBox_busin.Size = new System.Drawing.Size(83, 20);
+            this.checkBox_busin.TabIndex = 79;
+            this.checkBox_busin.Text = "Business";
+            this.checkBox_busin.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(31, 445);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(57, 16);
+            this.label5.TabIndex = 78;
+            this.label5.Text = "Sit Type";
+            // 
+            // checkBox_eco
+            // 
+            this.checkBox_eco.AutoSize = true;
+            this.checkBox_eco.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBox_eco.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox_eco.Location = new System.Drawing.Point(93, 445);
+            this.checkBox_eco.Name = "checkBox_eco";
+            this.checkBox_eco.Size = new System.Drawing.Size(92, 20);
+            this.checkBox_eco.TabIndex = 77;
+            this.checkBox_eco.Text = "Economic";
+            this.checkBox_eco.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Black;
+            this.panel3.Location = new System.Drawing.Point(212, 319);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(14, 78);
+            this.panel3.TabIndex = 76;
+            // 
+            // textBox_price
+            // 
+            this.textBox_price.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.textBox_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_price.ForeColor = System.Drawing.Color.Red;
+            this.textBox_price.Location = new System.Drawing.Point(281, 419);
+            this.textBox_price.Name = "textBox_price";
+            this.textBox_price.Size = new System.Drawing.Size(121, 27);
+            this.textBox_price.TabIndex = 75;
+            // 
+            // label_p_price
+            // 
+            this.label_p_price.AutoSize = true;
+            this.label_p_price.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_p_price.ForeColor = System.Drawing.Color.Black;
+            this.label_p_price.Location = new System.Drawing.Point(237, 421);
+            this.label_p_price.Name = "label_p_price";
+            this.label_p_price.Size = new System.Drawing.Size(39, 16);
+            this.label_p_price.TabIndex = 74;
+            this.label_p_price.Text = "Price";
             // 
             // textBox_adate
             // 
@@ -583,153 +665,71 @@
             this.label_p_to.TabIndex = 68;
             this.label_p_to.Text = "To";
             // 
-            // textBox_price
+            // textBoxd_dtime
             // 
-            this.textBox_price.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_price.ForeColor = System.Drawing.Color.Red;
-            this.textBox_price.Location = new System.Drawing.Point(281, 419);
-            this.textBox_price.Name = "textBox_price";
-            this.textBox_price.Size = new System.Drawing.Size(121, 27);
-            this.textBox_price.TabIndex = 75;
+            this.textBoxd_dtime.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.textBoxd_dtime.Location = new System.Drawing.Point(93, 372);
+            this.textBoxd_dtime.Name = "textBoxd_dtime";
+            this.textBoxd_dtime.Size = new System.Drawing.Size(105, 22);
+            this.textBoxd_dtime.TabIndex = 67;
             // 
-            // label_p_price
+            // textBox_ddate
             // 
-            this.label_p_price.AutoSize = true;
-            this.label_p_price.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_p_price.ForeColor = System.Drawing.Color.Black;
-            this.label_p_price.Location = new System.Drawing.Point(237, 421);
-            this.label_p_price.Name = "label_p_price";
-            this.label_p_price.Size = new System.Drawing.Size(39, 16);
-            this.label_p_price.TabIndex = 74;
-            this.label_p_price.Text = "Price";
+            this.textBox_ddate.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.textBox_ddate.Location = new System.Drawing.Point(93, 343);
+            this.textBox_ddate.Name = "textBox_ddate";
+            this.textBox_ddate.Size = new System.Drawing.Size(105, 22);
+            this.textBox_ddate.TabIndex = 66;
             // 
-            // panel3
+            // label2
             // 
-            this.panel3.BackColor = System.Drawing.Color.Black;
-            this.panel3.Location = new System.Drawing.Point(212, 319);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(14, 78);
-            this.panel3.TabIndex = 76;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(31, 349);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 16);
+            this.label2.TabIndex = 65;
+            this.label2.Text = "Date";
             // 
-            // checkBox_eco
+            // textBoxfrom
             // 
-            this.checkBox_eco.AutoSize = true;
-            this.checkBox_eco.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkBox_eco.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox_eco.Location = new System.Drawing.Point(93, 445);
-            this.checkBox_eco.Name = "checkBox_eco";
-            this.checkBox_eco.Size = new System.Drawing.Size(92, 20);
-            this.checkBox_eco.TabIndex = 77;
-            this.checkBox_eco.Text = "Economic";
-            this.checkBox_eco.UseVisualStyleBackColor = true;
+            this.textBoxfrom.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.textBoxfrom.Location = new System.Drawing.Point(93, 316);
+            this.textBoxfrom.Name = "textBoxfrom";
+            this.textBoxfrom.Size = new System.Drawing.Size(105, 22);
+            this.textBoxfrom.TabIndex = 64;
             // 
-            // label5
+            // label_databasetime
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(31, 445);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 16);
-            this.label5.TabIndex = 78;
-            this.label5.Text = "Sit Type";
+            this.label_databasetime.AutoSize = true;
+            this.label_databasetime.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_databasetime.ForeColor = System.Drawing.Color.Black;
+            this.label_databasetime.Location = new System.Drawing.Point(31, 375);
+            this.label_databasetime.Name = "label_databasetime";
+            this.label_databasetime.Size = new System.Drawing.Size(37, 16);
+            this.label_databasetime.TabIndex = 63;
+            this.label_databasetime.Text = "Time";
             // 
-            // checkBox_busin
+            // label_p_from
             // 
-            this.checkBox_busin.AutoSize = true;
-            this.checkBox_busin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkBox_busin.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox_busin.Location = new System.Drawing.Point(93, 477);
-            this.checkBox_busin.Name = "checkBox_busin";
-            this.checkBox_busin.Size = new System.Drawing.Size(83, 20);
-            this.checkBox_busin.TabIndex = 79;
-            this.checkBox_busin.Text = "Business";
-            this.checkBox_busin.UseVisualStyleBackColor = true;
+            this.label_p_from.AutoSize = true;
+            this.label_p_from.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_p_from.Location = new System.Drawing.Point(31, 319);
+            this.label_p_from.Name = "label_p_from";
+            this.label_p_from.Size = new System.Drawing.Size(38, 16);
+            this.label_p_from.TabIndex = 62;
+            this.label_p_from.Text = "From";
             // 
-            // button_edit
+            // label1
             // 
-            this.button_edit.BackColor = System.Drawing.SystemColors.Control;
-            this.button_edit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_edit.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_edit.Location = new System.Drawing.Point(70, 533);
-            this.button_edit.Name = "button_edit";
-            this.button_edit.Size = new System.Drawing.Size(133, 30);
-            this.button_edit.TabIndex = 80;
-            this.button_edit.Text = "Edit";
-            this.button_edit.UseVisualStyleBackColor = false;
-            this.button_edit.Click += new System.EventHandler(this.button_edit_Click);
-            // 
-            // button_confirm
-            // 
-            this.button_confirm.BackColor = System.Drawing.SystemColors.Control;
-            this.button_confirm.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_confirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_confirm.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_confirm.Location = new System.Drawing.Point(240, 533);
-            this.button_confirm.Name = "button_confirm";
-            this.button_confirm.Size = new System.Drawing.Size(133, 30);
-            this.button_confirm.TabIndex = 81;
-            this.button_confirm.Text = "Confirm";
-            this.button_confirm.UseVisualStyleBackColor = false;
-            this.button_confirm.Click += new System.EventHandler(this.button_confirm_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(237, 460);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 16);
-            this.label6.TabIndex = 83;
-            this.label6.Text = "Payment";
-            // 
-            // checkBox_paylater
-            // 
-            this.checkBox_paylater.AutoSize = true;
-            this.checkBox_paylater.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkBox_paylater.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox_paylater.Location = new System.Drawing.Point(310, 456);
-            this.checkBox_paylater.Name = "checkBox_paylater";
-            this.checkBox_paylater.Size = new System.Drawing.Size(88, 20);
-            this.checkBox_paylater.TabIndex = 82;
-            this.checkBox_paylater.Text = "Pay-later";
-            this.checkBox_paylater.UseVisualStyleBackColor = true;
-            // 
-            // textBox_plane
-            // 
-            this.textBox_plane.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox_plane.Location = new System.Drawing.Point(93, 405);
-            this.textBox_plane.Name = "textBox_plane";
-            this.textBox_plane.Size = new System.Drawing.Size(105, 22);
-            this.textBox_plane.TabIndex = 86;
-            // 
-            // label_plane
-            // 
-            this.label_plane.AutoSize = true;
-            this.label_plane.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_plane.ForeColor = System.Drawing.Color.Black;
-            this.label_plane.Location = new System.Drawing.Point(31, 408);
-            this.label_plane.Name = "label_plane";
-            this.label_plane.Size = new System.Drawing.Size(43, 16);
-            this.label_plane.TabIndex = 85;
-            this.label_plane.Text = "Plane";
-            // 
-            // button_save
-            // 
-            this.button_save.BackColor = System.Drawing.SystemColors.Control;
-            this.button_save.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_save.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_save.Location = new System.Drawing.Point(70, 542);
-            this.button_save.Name = "button_save";
-            this.button_save.Size = new System.Drawing.Size(133, 30);
-            this.button_save.TabIndex = 87;
-            this.button_save.Text = "save";
-            this.button_save.UseVisualStyleBackColor = false;
-            this.button_save.Click += new System.EventHandler(this.button_save_Click_1);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(115, 275);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(184, 23);
+            this.label1.TabIndex = 61;
+            this.label1.Text = "Ticket Information";
             // 
             // SelectPage
             // 

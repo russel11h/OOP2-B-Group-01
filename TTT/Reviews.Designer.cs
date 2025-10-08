@@ -42,14 +42,14 @@
             this.button2 = new System.Windows.Forms.Button();
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label_customer_review = new System.Windows.Forms.Label();
             this.button_submit = new System.Windows.Forms.Button();
             this.textBoxyour_review = new System.Windows.Forms.TextBox();
             this.textBoxreview4 = new System.Windows.Forms.TextBox();
             this.textBoxreview3 = new System.Windows.Forms.TextBox();
             this.textBoxreview2 = new System.Windows.Forms.TextBox();
             this.textBoxreview1 = new System.Windows.Forms.TextBox();
-            this.label_customer_review = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxbooked)).BeginInit();
             this.panel15.SuspendLayout();
@@ -204,7 +204,7 @@
             this.bbookticketbooked.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.bbookticketbooked.Size = new System.Drawing.Size(261, 51);
             this.bbookticketbooked.TabIndex = 4;
-            this.bbookticketbooked.Text = "Book Ticket";
+            this.bbookticketbooked.Text = "Booked Ticket";
             this.bbookticketbooked.UseVisualStyleBackColor = true;
             this.bbookticketbooked.Click += new System.EventHandler(this.bbookticketbooked_Click);
             // 
@@ -274,6 +274,27 @@
             this.panel2.Size = new System.Drawing.Size(802, 613);
             this.panel2.TabIndex = 10;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 464);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(157, 44);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "   Write your \r\ncomments here :";
+            // 
+            // label_customer_review
+            // 
+            this.label_customer_review.AutoSize = true;
+            this.label_customer_review.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_customer_review.Location = new System.Drawing.Point(215, 3);
+            this.label_customer_review.Name = "label_customer_review";
+            this.label_customer_review.Size = new System.Drawing.Size(392, 52);
+            this.label_customer_review.TabIndex = 6;
+            this.label_customer_review.Text = "Customer Reviews";
+            this.label_customer_review.Click += new System.EventHandler(this.label_customer_review_Click);
+            // 
             // button_submit
             // 
             this.button_submit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
@@ -339,27 +360,6 @@
             this.textBoxreview1.Name = "textBoxreview1";
             this.textBoxreview1.Size = new System.Drawing.Size(771, 89);
             this.textBoxreview1.TabIndex = 0;
-            // 
-            // label_customer_review
-            // 
-            this.label_customer_review.AutoSize = true;
-            this.label_customer_review.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_customer_review.Location = new System.Drawing.Point(215, 3);
-            this.label_customer_review.Name = "label_customer_review";
-            this.label_customer_review.Size = new System.Drawing.Size(392, 52);
-            this.label_customer_review.TabIndex = 6;
-            this.label_customer_review.Text = "Customer Reviews";
-            this.label_customer_review.Click += new System.EventHandler(this.label_customer_review_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 464);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 44);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "   Write your \r\ncomments here :";
             // 
             // Reviews
             // 

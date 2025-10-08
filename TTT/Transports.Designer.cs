@@ -194,7 +194,7 @@
             this.bbookticketbooked.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.bbookticketbooked.Size = new System.Drawing.Size(261, 51);
             this.bbookticketbooked.TabIndex = 4;
-            this.bbookticketbooked.Text = "Book Ticket";
+            this.bbookticketbooked.Text = "Booked Ticket";
             this.bbookticketbooked.UseVisualStyleBackColor = true;
             this.bbookticketbooked.Click += new System.EventHandler(this.bbookticketbooked_Click);
             // 

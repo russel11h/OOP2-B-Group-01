@@ -39,6 +39,7 @@
             this.tdata_search = new System.Windows.Forms.TextBox();
             this.bdata_search = new System.Windows.Forms.Button();
             this.bdata_refresh = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -211,5 +212,6 @@
         private System.Windows.Forms.TextBox tdata_number;
         private System.Windows.Forms.Button bdata_search;
         private System.Windows.Forms.TextBox tdata_search;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

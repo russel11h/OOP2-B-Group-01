@@ -42,9 +42,13 @@
             this.panel15 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.panel16 = new System.Windows.Forms.Panel();
+            this.dataGridViewhistory = new System.Windows.Forms.DataGridView();
+            this.textBoxhistory = new System.Windows.Forms.TextBox();
+            this.buttonserachhistory = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxbooked)).BeginInit();
             this.panel15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewhistory)).BeginInit();
             this.SuspendLayout();
             // 
             // bhx
@@ -209,7 +213,7 @@
             this.bbookticketbooked.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.bbookticketbooked.Size = new System.Drawing.Size(261, 51);
             this.bbookticketbooked.TabIndex = 4;
-            this.bbookticketbooked.Text = "Book Ticket";
+            this.bbookticketbooked.Text = "Booked Ticket";
             this.bbookticketbooked.UseVisualStyleBackColor = true;
             this.bbookticketbooked.Click += new System.EventHandler(this.bbookticketbooked_Click);
             // 
@@ -264,12 +268,46 @@
             this.panel16.Size = new System.Drawing.Size(200, 51);
             this.panel16.TabIndex = 2;
             // 
+            // dataGridViewhistory
+            // 
+            this.dataGridViewhistory.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridViewhistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewhistory.GridColor = System.Drawing.SystemColors.Control;
+            this.dataGridViewhistory.Location = new System.Drawing.Point(267, 216);
+            this.dataGridViewhistory.Name = "dataGridViewhistory";
+            this.dataGridViewhistory.RowHeadersWidth = 51;
+            this.dataGridViewhistory.RowTemplate.Height = 24;
+            this.dataGridViewhistory.Size = new System.Drawing.Size(812, 397);
+            this.dataGridViewhistory.TabIndex = 8;
+            this.dataGridViewhistory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewhistory_CellContentClick);
+            // 
+            // textBoxhistory
+            // 
+            this.textBoxhistory.Location = new System.Drawing.Point(432, 109);
+            this.textBoxhistory.Multiline = true;
+            this.textBoxhistory.Name = "textBoxhistory";
+            this.textBoxhistory.Size = new System.Drawing.Size(241, 44);
+            this.textBoxhistory.TabIndex = 9;
+            // 
+            // buttonserachhistory
+            // 
+            this.buttonserachhistory.Location = new System.Drawing.Point(679, 109);
+            this.buttonserachhistory.Name = "buttonserachhistory";
+            this.buttonserachhistory.Size = new System.Drawing.Size(163, 43);
+            this.buttonserachhistory.TabIndex = 10;
+            this.buttonserachhistory.Text = "search";
+            this.buttonserachhistory.UseVisualStyleBackColor = true;
+            this.buttonserachhistory.Click += new System.EventHandler(this.buttonserachhistory_Click_1);
+            // 
             // Book_Ticket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1109, 664);
+            this.Controls.Add(this.buttonserachhistory);
+            this.Controls.Add(this.textBoxhistory);
+            this.Controls.Add(this.dataGridViewhistory);
             this.Controls.Add(this.panel15);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.bhx);
@@ -282,7 +320,9 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxbooked)).EndInit();
             this.panel15.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewhistory)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -302,5 +342,8 @@
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.DataGridView dataGridViewhistory;
+        private System.Windows.Forms.TextBox textBoxhistory;
+        private System.Windows.Forms.Button buttonserachhistory;
     }
 }

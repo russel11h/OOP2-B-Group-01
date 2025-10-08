@@ -42,6 +42,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel_registration = new System.Windows.Forms.Panel();
+            this.label_title = new System.Windows.Forms.Label();
             this.button_editsurname = new System.Windows.Forms.Button();
             this.button_editpassword = new System.Windows.Forms.Button();
             this.button_editaddress = new System.Windows.Forms.Button();
@@ -67,7 +68,6 @@
             this.tbsurname = new System.Windows.Forms.TextBox();
             this.tbemail = new System.Windows.Forms.TextBox();
             this.tbgivenname = new System.Windows.Forms.TextBox();
-            this.label_title = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxbooked)).BeginInit();
             this.panel15.SuspendLayout();
@@ -222,7 +222,7 @@
             this.bbookticketbooked.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.bbookticketbooked.Size = new System.Drawing.Size(261, 51);
             this.bbookticketbooked.TabIndex = 4;
-            this.bbookticketbooked.Text = "Book Ticket";
+            this.bbookticketbooked.Text = "Booked Ticket";
             this.bbookticketbooked.UseVisualStyleBackColor = true;
             this.bbookticketbooked.Click += new System.EventHandler(this.bbookticketbooked_Click);
             // 
@@ -312,6 +312,16 @@
             this.panel_registration.Size = new System.Drawing.Size(848, 617);
             this.panel_registration.TabIndex = 27;
             this.panel_registration.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_registration_Paint);
+            // 
+            // label_title
+            // 
+            this.label_title.AutoSize = true;
+            this.label_title.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_title.Location = new System.Drawing.Point(231, 20);
+            this.label_title.Name = "label_title";
+            this.label_title.Size = new System.Drawing.Size(384, 44);
+            this.label_title.TabIndex = 35;
+            this.label_title.Text = "Personal Information";
             // 
             // button_editsurname
             // 
@@ -627,16 +637,6 @@
             this.tbgivenname.Size = new System.Drawing.Size(296, 15);
             this.tbgivenname.TabIndex = 12;
             this.tbgivenname.TextChanged += new System.EventHandler(this.tbgivenname_TextChanged);
-            // 
-            // label_title
-            // 
-            this.label_title.AutoSize = true;
-            this.label_title.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_title.Location = new System.Drawing.Point(231, 20);
-            this.label_title.Name = "label_title";
-            this.label_title.Size = new System.Drawing.Size(384, 44);
-            this.label_title.TabIndex = 35;
-            this.label_title.Text = "Personal Information";
             // 
             // Settings
             // 
