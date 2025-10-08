@@ -14,23 +14,23 @@ namespace TTT
 {
     public partial class Home : Form
     {
-        
+        private string loggedInUsername;
+        private int currentOffset = 0; // ✅ Used for pagination (next 4 records per refresh)
+        private const int PageSize = 4;
 
-        private string loggedInUsername; // Field to store the username
-
-        public Home(string username) // Updated constructor to accept a username
+        public Home(string username)
         {
             InitializeComponent();
-            this.loggedInUsername = username; // Store the username
+            this.loggedInUsername = username;
             LoadUserData();
         }
+
         private void LoadUserData()
         {
             string connectionString = @"Data Source=RASEL\SQLEXPRESS;Initial Catalog=TMS;Integrated Security=True;";
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
 
-            // Construct the query to select the givenname and surname
             string query = "SELECT givenname, surname FROM regst WHERE user_name = @username";
             SqlCommand cmd = new SqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@username", loggedInUsername);
@@ -41,15 +41,68 @@ namespace TTT
 
             if (ds.Tables[0].Rows.Count > 0)
             {
-                // Get the givenname and surname from the first row of the DataTable
                 string givenName = ds.Tables[0].Rows[0]["givenname"].ToString();
                 string surName = ds.Tables[0].Rows[0]["surname"].ToString();
-
-                // Concatenate and display the full name in the label
                 lhname.Text = givenName + " " + surName;
             }
 
             conn.Close();
+        }
+
+        // ✅ Loads 4 flight details starting from currentOffset
+        private void LoadPlaneDetails()
+        {
+            string connectionString = @"Data Source=RASEL\SQLEXPRESS;Initial Catalog=TMS;Integrated Security=True;";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string query = $@"
+                    SELECT Transport_No, From_City, To_City, Departure_Date, Departure_Only_Time, 
+                           Arrival_Date, Arrival_Only_Time, Price_eco
+                    FROM plane_details
+                    ORDER BY Transport_No
+                    OFFSET {currentOffset} ROWS FETCH NEXT {PageSize} ROWS ONLY;";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    int panelIndex = 1;
+
+                    while (reader.Read() && panelIndex <= 4)
+                    {
+                        string suffix = panelIndex == 1 ? "" : "_T" + panelIndex;
+
+                        // Find TextBoxes dynamically
+                        TextBox tbPlane = this.Controls.Find("textBoxplane_name" + suffix, true).FirstOrDefault() as TextBox;
+                        TextBox tbFrom = this.Controls.Find("textBoxfrom" + suffix, true).FirstOrDefault() as TextBox;
+                        TextBox tbDeparture = this.Controls.Find("textBoxdeparture" + suffix, true).FirstOrDefault() as TextBox;
+                        TextBox tbDepTime = this.Controls.Find("textBoxdeparturetime" + suffix, true).FirstOrDefault() as TextBox;
+                        TextBox tbTo = this.Controls.Find("textBoxto" + suffix, true).FirstOrDefault() as TextBox;
+                        TextBox tbArrival = this.Controls.Find("textBoxarrival" + suffix, true).FirstOrDefault() as TextBox;
+                        TextBox tbArrTime = this.Controls.Find("textBoxarrival_time" + suffix, true).FirstOrDefault() as TextBox;
+                        TextBox tbPrice = this.Controls.Find("textBoxeco_price" + suffix, true).FirstOrDefault() as TextBox;
+
+                        // Set values safely
+                        if (tbPlane != null) tbPlane.Text = reader["Transport_No"].ToString();
+                        if (tbFrom != null) tbFrom.Text = reader["From_City"].ToString();
+                        if (tbTo != null) tbTo.Text = reader["To_City"].ToString();
+                        if (tbDeparture != null) tbDeparture.Text = Convert.ToDateTime(reader["Departure_Date"]).ToString("dd/MM/yyyy");
+                        if (tbArrival != null) tbArrival.Text = Convert.ToDateTime(reader["Arrival_Date"]).ToString("dd/MM/yyyy");
+
+                        // ✅ Handle TimeSpan correctly
+                        if (tbDepTime != null && reader["Departure_Only_Time"] is TimeSpan depTime)
+                            tbDepTime.Text = (DateTime.Today + depTime).ToString("hh:mm tt");
+                        if (tbArrTime != null && reader["Arrival_Only_Time"] is TimeSpan arrTime)
+                            tbArrTime.Text = (DateTime.Today + arrTime).ToString("hh:mm tt");
+
+                        if (tbPrice != null) tbPrice.Text = reader["Price_eco"].ToString();
+
+                        panelIndex++;
+                    }
+                }
+            }
         }
 
         private void bhx_Click(object sender, EventArgs e)
@@ -57,7 +110,7 @@ namespace TTT
             Application.Exit();
         }
 
-        private void change_color_by_click(Button b1, Button b2, Button b3, Button b4, Button b5, Button b6,Button b7)
+        private void change_color_by_click(Button b1, Button b2, Button b3, Button b4, Button b5, Button b6, Button b7)
         {
             b1.BackColor = Color.FromArgb(0, 122, 204);
             b2.BackColor = Color.FromArgb(215, 228, 242);
@@ -70,8 +123,7 @@ namespace TTT
 
         private void bnhome_Click(object sender, EventArgs e)
         {
-            change_color_by_click(bnhome, bnbookticket, bnreviews, bnTransport, bnReports, bnSettings,bulogout);
-
+            change_color_by_click(bnhome, bnbookticket, bnreviews, bnTransport, bnReports, bnSettings, bulogout);
         }
 
         private void bnbookticket_Click(object sender, EventArgs e)
@@ -80,10 +132,7 @@ namespace TTT
             Book_Ticket book_Ticket = new Book_Ticket(loggedInUsername);
             book_Ticket.Show();
             this.Hide();
-           
         }
-        
-
 
         private void bnCustomers_Click(object sender, EventArgs e)
         {
@@ -120,73 +169,20 @@ namespace TTT
         private void Home_Load(object sender, EventArgs e)
         {
             change_color_by_click(bnhome, bnbookticket, bnreviews, bnTransport, bnReports, bnSettings, bulogout);
-            //lhname.Text = USERNAME.USERname;
+            LoadPlaneDetails();
         }
 
-        private void lhname_Click(object sender, EventArgs e)
-        {
-
-        }
+        private void lhname_Click(object sender, EventArgs e) { }
 
         private void panel_Book_Hote_Paint(object sender, PaintEventArgs e)
         {
-            Panel p = sender as Panel;
-            int radius = 30;
-
-            GraphicsPath path = new GraphicsPath();
-            path.StartFigure();
-            path.AddArc(new Rectangle(0, 0, radius, radius), 180, 90);
-            path.AddLine(radius, 0, p.Width - radius, 0);
-            path.AddArc(new Rectangle(p.Width - radius, 0, radius, radius), 270, 90);
-            path.AddLine(p.Width, radius, p.Width, p.Height - radius);
-            path.AddArc(new Rectangle(p.Width - radius, p.Height - radius, radius, radius), 0, 90);
-            path.AddLine(p.Width - radius, p.Height, radius, p.Height);
-            path.AddArc(new Rectangle(0, p.Height - radius, radius, radius), 90, 90);
-            path.CloseFigure();
-
-            p.Region = new Region(path);
-        }
-
-        private void label_databasefrom_Click(object sender, EventArgs e)
-        {
-
+           
         }
 
         private void panel_Book_Transport_Paint(object sender, PaintEventArgs e)
         {
-            string connectionString = @"Data Source=RASEL\SQLEXPRESS;Initial Catalog=TMS;Integrated Security=True;";
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                conn.Open();
-
-                string query = @"SELECT TOP 1 From_City, To_City, Departure_Date, Departure_Only_Time, Arrival_Date, Arrival_Only_Time, Price_eco 
-                         FROM plane_details 
-                         ORDER BY Transport_No";
-                using (SqlCommand cmd = new SqlCommand(query, conn))
-                using (SqlDataReader reader = cmd.ExecuteReader())
-                {
-                    if (reader.Read())
-                    {
-                        label_databasefrom.Text = reader["From_City"].ToString();
-                        label_databaseto.Text = reader["To_City"].ToString();
-
-                        // Parse departure and arrival dates and times
-                        DateTime depDate = DateTime.Parse(reader["Departure_Date"].ToString());
-                        DateTime depTime = DateTime.Parse(reader["Departure_Only_Time"].ToString());
-                        DateTime arrDate = DateTime.Parse(reader["Arrival_Date"].ToString());
-                        DateTime arrTime = DateTime.Parse(reader["Arrival_Only_Time"].ToString());
-
-                        // Format and set the text with red color
-                        label_databasetime.ForeColor = Color.Red;
-                        label_databasetime.Text = $"Departure: {depDate:dd/MM/yyyy} Time: {depTime:hh:mm tt} → Arrival: {arrDate:dd/MM/yyyy} Time: {arrTime:hh:mm tt}";
-
-                        label_databaseprice.Text = reader["Price_eco"].ToString();
-                    }
-                }
-            }
+            //
         }
-
-
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -195,46 +191,17 @@ namespace TTT
 
         private void panel_Book_Ticket_Paint(object sender, PaintEventArgs e)
         {
-            Panel p = sender as Panel;
-            int radius = 30;
-
-            GraphicsPath path = new GraphicsPath();
-            path.StartFigure();
-            path.AddArc(new Rectangle(0, 0, radius, radius), 180, 90);
-            path.AddLine(radius, 0, p.Width - radius, 0);
-            path.AddArc(new Rectangle(p.Width - radius, 0, radius, radius), 270, 90);
-            path.AddLine(p.Width, radius, p.Width, p.Height - radius);
-            path.AddArc(new Rectangle(p.Width - radius, p.Height - radius, radius, radius), 0, 90);
-            path.AddLine(p.Width - radius, p.Height, radius, p.Height);
-            path.AddArc(new Rectangle(0, p.Height - radius, radius, radius), 90, 90);
-            path.CloseFigure();
-
-            p.Region = new Region(path);
+           
         }
 
-        private void panel_T1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel_T2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel_T3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel_T4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        private void panel_T1_Paint(object sender, PaintEventArgs e) { }
+        private void panel_T2_Paint(object sender, PaintEventArgs e) { }
+        private void panel_T3_Paint(object sender, PaintEventArgs e) { }
+        private void panel_T4_Paint(object sender, PaintEventArgs e) { }
 
         private void bulogout_Click(object sender, EventArgs e)
         {
-            change_color_by_click(bulogout,bnreviews, bnhome, bnbookticket, bnTransport, bnReports, bnSettings);
+            change_color_by_click(bulogout, bnreviews, bnhome, bnbookticket, bnTransport, bnReports, bnSettings);
 
             DialogResult result = MessageBox.Show("Log out?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
@@ -244,11 +211,17 @@ namespace TTT
                 f.Show();
                 this.Hide();
             }
-            else
-            {
-                // Do nothing; stay on the current form
-            }
+        }
 
+        // ✅ Refresh button: show next 4 flights
+        private void button_refresh_Click(object sender, EventArgs e)
+        {
+            currentOffset += PageSize;
+            LoadPlaneDetails();
+        }
+
+        private void button_search_Click(object sender, EventArgs e)
+        {
 
         }
     }

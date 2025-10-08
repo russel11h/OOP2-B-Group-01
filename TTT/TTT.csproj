@@ -102,6 +102,12 @@
     <Compile Include="Reviews.Designer.cs">
       <DependentUpon>Reviews.cs</DependentUpon>
     </Compile>
+    <Compile Include="SelectPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectPage.Designer.cs">
+      <DependentUpon>SelectPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Settings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reviews.resx">
       <DependentUpon>Reviews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectPage.resx">
+      <DependentUpon>SelectPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
