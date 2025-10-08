@@ -9,16 +9,17 @@ namespace TTT
     public partial class SelectPage : Form
     {
         private string loggedInUsername;
-        private string selectedTransportNo;
+        private string selectedTransportNo; // New field to hold the flight ID
 
+        // MODIFIED Constructor to accept the selected flight's Transport_No
         public SelectPage(string username, string transportNo)
         {
             InitializeComponent();
             this.loggedInUsername = username;
-            this.selectedTransportNo = transportNo;
-
+            this.selectedTransportNo = transportNo; // Store the Transport_No
             LoadUserData();
-            LoadFlightDetails(selectedTransportNo); // Load flight immediately
+            // You can now use selectedTransportNo to load the specific flight's details
+            // Example: LoadFlightDetails(selectedTransportNo);
         }
 
         private void LoadUserData()
@@ -46,27 +47,7 @@ namespace TTT
             }
         }
 
-        private void LoadFlightDetails(string transportNo)
-        {
-            string connectionString = @"Data Source=RASEL\SQLEXPRESS;Initial Catalog=TMS;Integrated Security=True;";
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                conn.Open();
-                string query = "SELECT * FROM plane_details WHERE Transport_No = @transportNo";
-                using (SqlCommand cmd = new SqlCommand(query, conn))
-                {
-                    cmd.Parameters.AddWithValue("@transportNo", transportNo);
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            // Populate flight details textboxes or labels
-                           
-                        }
-                    }
-                }
-            }
-        }
+        
 
         // Navigation buttons
         private void bhomebooked_Click(object sender, EventArgs e)
