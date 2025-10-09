@@ -41,9 +41,25 @@
             this.panel15 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.panel16 = new System.Windows.Forms.Panel();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button_more = new System.Windows.Forms.Button();
+            this.panel_Book_Hote = new System.Windows.Forms.Panel();
+            this.button_search = new System.Windows.Forms.Button();
+            this.pictureBox_to = new System.Windows.Forms.PictureBox();
+            this.label_to = new System.Windows.Forms.Label();
+            this.textBox_searchto = new System.Windows.Forms.TextBox();
+            this.pictureBox_from = new System.Windows.Forms.PictureBox();
+            this.label_from = new System.Windows.Forms.Label();
+            this.textBox_searchfrom = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxbooked)).BeginInit();
             this.panel15.SuspendLayout();
+            this.panel_Book_Hote.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_to)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_from)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -249,12 +265,164 @@
             this.panel16.Size = new System.Drawing.Size(200, 51);
             this.panel16.TabIndex = 2;
             // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.Color.White;
+            this.textBox4.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
+            this.textBox4.Location = new System.Drawing.Point(320, 471);
+            this.textBox4.Multiline = true;
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(771, 89);
+            this.textBox4.TabIndex = 12;
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.White;
+            this.textBox3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
+            this.textBox3.Location = new System.Drawing.Point(320, 386);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(771, 89);
+            this.textBox3.TabIndex = 11;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.White;
+            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
+            this.textBox2.Location = new System.Drawing.Point(320, 299);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(771, 89);
+            this.textBox2.TabIndex = 10;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.White;
+            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(320, 214);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(771, 89);
+            this.textBox1.TabIndex = 9;
+            // 
+            // button_more
+            // 
+            this.button_more.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.button_more.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_more.FlatAppearance.BorderSize = 0;
+            this.button_more.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_more.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_more.Location = new System.Drawing.Point(581, 582);
+            this.button_more.Name = "button_more";
+            this.button_more.Size = new System.Drawing.Size(135, 53);
+            this.button_more.TabIndex = 15;
+            this.button_more.Text = "More";
+            this.button_more.UseVisualStyleBackColor = false;
+            this.button_more.Click += new System.EventHandler(this.button_more_Click);
+            // 
+            // panel_Book_Hote
+            // 
+            this.panel_Book_Hote.BackColor = System.Drawing.Color.White;
+            this.panel_Book_Hote.Controls.Add(this.button_search);
+            this.panel_Book_Hote.Controls.Add(this.pictureBox_to);
+            this.panel_Book_Hote.Controls.Add(this.label_to);
+            this.panel_Book_Hote.Controls.Add(this.textBox_searchto);
+            this.panel_Book_Hote.Controls.Add(this.pictureBox_from);
+            this.panel_Book_Hote.Controls.Add(this.label_from);
+            this.panel_Book_Hote.Controls.Add(this.textBox_searchfrom);
+            this.panel_Book_Hote.Location = new System.Drawing.Point(308, 79);
+            this.panel_Book_Hote.Name = "panel_Book_Hote";
+            this.panel_Book_Hote.Size = new System.Drawing.Size(801, 102);
+            this.panel_Book_Hote.TabIndex = 16;
+            // 
+            // button_search
+            // 
+            this.button_search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button_search.FlatAppearance.BorderSize = 0;
+            this.button_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_search.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_search.ForeColor = System.Drawing.Color.White;
+            this.button_search.Location = new System.Drawing.Point(655, 13);
+            this.button_search.Name = "button_search";
+            this.button_search.Size = new System.Drawing.Size(121, 49);
+            this.button_search.TabIndex = 6;
+            this.button_search.Text = "Search";
+            this.button_search.UseVisualStyleBackColor = false;
+            this.button_search.Click += new System.EventHandler(this.button_search_Click);
+            // 
+            // pictureBox_to
+            // 
+            this.pictureBox_to.Image = global::TTT.Properties.Resources.To;
+            this.pictureBox_to.Location = new System.Drawing.Point(338, 11);
+            this.pictureBox_to.Name = "pictureBox_to";
+            this.pictureBox_to.Size = new System.Drawing.Size(25, 23);
+            this.pictureBox_to.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_to.TabIndex = 5;
+            this.pictureBox_to.TabStop = false;
+            // 
+            // label_to
+            // 
+            this.label_to.AutoSize = true;
+            this.label_to.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_to.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label_to.Location = new System.Drawing.Point(361, 13);
+            this.label_to.Name = "label_to";
+            this.label_to.Size = new System.Drawing.Size(31, 23);
+            this.label_to.TabIndex = 4;
+            this.label_to.Text = "To";
+            this.label_to.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox_searchto
+            // 
+            this.textBox_searchto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox_searchto.Location = new System.Drawing.Point(338, 40);
+            this.textBox_searchto.Name = "textBox_searchto";
+            this.textBox_searchto.Size = new System.Drawing.Size(296, 22);
+            this.textBox_searchto.TabIndex = 3;
+            // 
+            // pictureBox_from
+            // 
+            this.pictureBox_from.Image = global::TTT.Properties.Resources.From_Search;
+            this.pictureBox_from.Location = new System.Drawing.Point(13, 11);
+            this.pictureBox_from.Name = "pictureBox_from";
+            this.pictureBox_from.Size = new System.Drawing.Size(25, 23);
+            this.pictureBox_from.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_from.TabIndex = 2;
+            this.pictureBox_from.TabStop = false;
+            // 
+            // label_from
+            // 
+            this.label_from.AutoSize = true;
+            this.label_from.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_from.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label_from.Location = new System.Drawing.Point(36, 13);
+            this.label_from.Name = "label_from";
+            this.label_from.Size = new System.Drawing.Size(58, 23);
+            this.label_from.TabIndex = 1;
+            this.label_from.Text = "From";
+            this.label_from.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox_searchfrom
+            // 
+            this.textBox_searchfrom.BackColor = System.Drawing.Color.White;
+            this.textBox_searchfrom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox_searchfrom.Location = new System.Drawing.Point(13, 40);
+            this.textBox_searchfrom.Name = "textBox_searchfrom";
+            this.textBox_searchfrom.Size = new System.Drawing.Size(296, 22);
+            this.textBox_searchfrom.TabIndex = 0;
+            // 
             // Transports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1109, 664);
+            this.Controls.Add(this.panel_Book_Hote);
+            this.Controls.Add(this.button_more);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.panel15);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -266,7 +434,12 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxbooked)).EndInit();
             this.panel15.ResumeLayout(false);
+            this.panel_Book_Hote.ResumeLayout(false);
+            this.panel_Book_Hote.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_to)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_from)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -285,5 +458,18 @@
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button_more;
+        private System.Windows.Forms.Panel panel_Book_Hote;
+        private System.Windows.Forms.Button button_search;
+        private System.Windows.Forms.PictureBox pictureBox_to;
+        private System.Windows.Forms.Label label_to;
+        private System.Windows.Forms.TextBox textBox_searchto;
+        private System.Windows.Forms.PictureBox pictureBox_from;
+        private System.Windows.Forms.Label label_from;
+        private System.Windows.Forms.TextBox textBox_searchfrom;
     }
 }

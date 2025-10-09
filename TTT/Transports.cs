@@ -13,20 +13,23 @@ namespace TTT
 {
     public partial class Transports : Form
     {
-        private string loggedInUsername; // Field to store the username
+        private string loggedInUsername;
+        private DataTable transportData;
+        private int currentIndex = 0; // Track which set of 4 rows are showing
+
         public Transports(string username)
         {
             InitializeComponent();
-            this.loggedInUsername = username; // Store the username
+            this.loggedInUsername = username;
             LoadUserData();
         }
+
         private void LoadUserData()
         {
             string connectionString = @"Data Source=RASEL\SQLEXPRESS;Initial Catalog=TMS;Integrated Security=True;";
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
 
-            // Construct the query to select the givenname and surname
             string query = "SELECT givenname, surname FROM regst WHERE user_name = @username";
             SqlCommand cmd = new SqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@username", loggedInUsername);
@@ -37,16 +40,14 @@ namespace TTT
 
             if (ds.Tables[0].Rows.Count > 0)
             {
-                // Get the givenname and surname from the first row of the DataTable
                 string givenName = ds.Tables[0].Rows[0]["givenname"].ToString();
                 string surName = ds.Tables[0].Rows[0]["surname"].ToString();
-
-                // Concatenate and display the full name in the label
                 labelbooked.Text = givenName + " " + surName;
             }
 
             conn.Close();
         }
+
         private void change_color_by_click(Button b1, Button b2, Button b3, Button b4, Button b5, Button b6, Button b7)
         {
             b1.BackColor = Color.FromArgb(0, 122, 204);
@@ -90,7 +91,6 @@ namespace TTT
         private void btransportsbooked_Click(object sender, EventArgs e)
         {
             change_color_by_click(btransportsbooked, bhomebooked, bbookticketbooked, breviewsbooked, breportsbooked, bsettingsbooked, bulogoutbooked);
-
         }
 
         private void breportsbooked_Click(object sender, EventArgs e)
@@ -120,16 +120,121 @@ namespace TTT
                 f.Show();
                 this.Hide();
             }
-            else
-            {
-                // Do nothing; stay on the current form
-            }
         }
 
         private void Transports_Load(object sender, EventArgs e)
         {
             change_color_by_click(btransportsbooked, bhomebooked, bbookticketbooked, breviewsbooked, breportsbooked, bsettingsbooked, bulogoutbooked);
+            LoadTransportData();
+        }
 
+        private void LoadTransportData()
+        {
+            string connectionString = @"Data Source=RASEL\SQLEXPRESS;Initial Catalog=TMS;Integrated Security=True;";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "SELECT place1, place2, price FROM Transports";
+                SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                transportData = new DataTable();
+                adapter.Fill(transportData);
+            }
+
+            if (transportData.Rows.Count > 0)
+            {
+                currentIndex = 0;
+                ShowNextFour();
+            }
+        }
+
+        private void ShowNextFour()
+        {
+            if (transportData == null || transportData.Rows.Count == 0) return;
+
+            // Clear all first
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
+
+            // Fill each textbox with one record
+            for (int i = 0; i < 4; i++)
+            {
+                int index = (currentIndex + i) % transportData.Rows.Count;
+                DataRow row = transportData.Rows[index];
+                string text = $"From {row["place1"]} To {row["place2"]} Price {row["price"]} BDT";
+
+                switch (i)
+                {
+                    case 0: textBox1.Text = text; break;
+                    case 1: textBox2.Text = text; break;
+                    case 2: textBox3.Text = text; break;
+                    case 3: textBox4.Text = text; break;
+                }
+
+                // Stop early if no more rows
+                if (index == transportData.Rows.Count - 1 && i < 3)
+                    break;
+            }
+
+            // Move to next 4 rows for next click
+            currentIndex = (currentIndex + 4) % transportData.Rows.Count;
+        }
+
+        private void button_more_Click(object sender, EventArgs e)
+        {
+            ShowNextFour();
+        }
+
+        private void button_search_Click(object sender, EventArgs e)
+        {
+            string from = textBox_searchfrom.Text.Trim();
+            string to = textBox_searchto.Text.Trim();
+
+            if (from == "" || to == "")
+            {
+                MessageBox.Show("Please enter both From and To places.");
+                return;
+            }
+
+            string connectionString = @"Data Source=RASEL\SQLEXPRESS;Initial Catalog=TMS;Integrated Security=True;";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "SELECT place1, place2, price FROM Transports WHERE place1 LIKE @from AND place2 LIKE @to";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@from", "%" + from + "%");
+                cmd.Parameters.AddWithValue("@to", "%" + to + "%");
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+
+                // Clear all boxes first
+                textBox1.Clear();
+                textBox2.Clear();
+                textBox3.Clear();
+                textBox4.Clear();
+
+                if (dt.Rows.Count > 0)
+                {
+                    for (int i = 0; i < dt.Rows.Count && i < 4; i++)
+                    {
+                        DataRow row = dt.Rows[i];
+                        string text = $"From {row["place1"]} To {row["place2"]} Price {row["price"]} BDT";
+
+                        switch (i)
+                        {
+                            case 0: textBox1.Text = text; break;
+                            case 1: textBox2.Text = text; break;
+                            case 2: textBox3.Text = text; break;
+                            case 3: textBox4.Text = text; break;
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No matching routes found.");
+                }
+            }
         }
     }
 }
