@@ -6,7 +6,6 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -58,26 +57,30 @@ namespace TTT
 
                 if (ds.Tables[0].Rows.Count > 0)
                 {
-                    //MessageBox.Show("Login Successfulllll");
-
-                    // Get the username from the textbox
                     string username = tbname.Text;
 
-
-                    Home home = new Home(username);
-                    home.Show();
-                    this.Hide();
+                    // ✅ Check if username starts with "admin"
+                    if (username.StartsWith("admin", StringComparison.OrdinalIgnoreCase))
+                    {
+                        Admin adminPage = new Admin(username);
+                        adminPage.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        Home home = new Home(username);
+                        home.Show();
+                        this.Hide();
+                    }
                 }
                 else
                 {
                     MessageBox.Show("Invalid Username or Password");
                 }
 
-
                 conn.Close();
             }
         }
-
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -130,10 +133,6 @@ namespace TTT
         {
             //Home home = new Home();
             //home.Show();
-
-           
-
-            
         }
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
@@ -151,5 +150,4 @@ namespace TTT
 
         }
     }
-   
 }
