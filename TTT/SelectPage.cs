@@ -23,6 +23,22 @@ namespace TTT
             this.loggedInUsername = username;
             this.selectedTransportNo = transportNo;
 
+            // --- START MODIFICATIONS FOR AGENT LOGIC ---
+            // Check if the username starts with "agent" (case-insensitive check is crucial)
+            bool isAgent = this.loggedInUsername.StartsWith("agent", StringComparison.OrdinalIgnoreCase);
+
+            // Set visibility based on user role
+            label_selectticketnumbers.Visible = isAgent;
+            comboBox_ticketnumber.Visible = isAgent;
+
+            // If it's an agent, populate the ticket number selection control
+            if (isAgent)
+            {
+                // Call the updated method to load 01 through 10
+                LoadAvailableTickets();
+            }
+            // --- END MODIFICATIONS FOR AGENT LOGIC ---
+
             // --- START NEW/MODIFIED CODE ---
             // 1. Set the Transport No. in the new textbox on load
             // Assuming your new textbox is named 'textBox_plane'
@@ -108,8 +124,8 @@ namespace TTT
                 @"SELECT From_City, To_City, Departure_Date, Departure_Only_Time,
                          Arrival_Date, Arrival_Only_Time, Econo_Available_Seats, Busine_Available_Seats,
                          Price_eco, Price_busine
-                  FROM plane_details
-                  WHERE Transport_No = @tno", conn))
+                     FROM plane_details
+                     WHERE Transport_No = @tno", conn))
             {
                 cmd.Parameters.AddWithValue("@tno", selectedTransportNo);
                 conn.Open();
@@ -244,7 +260,6 @@ namespace TTT
             try
             {
                 // Upsert ensures the latest user details are saved for this booking
-                // Since this uses the separate UpsertUserBookingRecord(), the button name needs to be fixed. 
                 // Assuming your button is named 'button_Save' in the designer, but the handler is 'button_save_Click_1'
                 UpsertUserBookingRecord();
 
@@ -318,7 +333,7 @@ namespace TTT
                         UpsertUserBookingRecord(conn, tx);
 
                         tx.Commit();
-                        MessageBox.Show($"Booking confirmed for Flight {selectedTransportNo} ({selectedClass} Class)!");
+                        MessageBox.Show($"Booking confirmed for Flight {selectedTransportNo} ({selectedClass} Class)! The ticket number is: {comboBox_ticketnumber.Text}");
                     }
                     catch (Exception ex)
                     {
@@ -381,7 +396,8 @@ BEGIN
         [Departure_Only_Time] NVARCHAR(50),
         [Arrival_Date] NVARCHAR(50),
         [Arrival_Only_Time] NVARCHAR(50),
-        [Payment_Status] NVARCHAR(50)
+        [Payment_Status] NVARCHAR(50),
+        [ticketnumber] NVARCHAR(50) -- <<< ADDED NEW COLUMN
     )
 END";
             using (SqlCommand cmdCreate = new SqlCommand(createTableSql, conn, tx))
@@ -417,7 +433,8 @@ SET
     [Departure_Only_Time] = @dtime,
     [Arrival_Date] = @adate,
     [Arrival_Only_Time] = @atime,
-    [Payment_Status] = @paymentstatus
+    [Payment_Status] = @paymentstatus,
+    [ticketnumber] = @ticketnumber -- <<< ADDED TO UPDATE
 WHERE [Transport_No] = @tno";
                     using (SqlCommand cmdUpd = new SqlCommand(updateSql, conn, tx))
                     {
@@ -433,9 +450,9 @@ WHERE [Transport_No] = @tno";
 INSERT INTO [{loggedInUsername}] (
     [name],[email],[gender],[passport],[phone],[address],
     [Transport_No],[Price_eco],[Price_busine],[From_City],[To_City],
-    [Departure_Date],[Departure_Only_Time],[Arrival_Date],[Arrival_Only_Time], [Payment_Status]
+    [Departure_Date],[Departure_Only_Time],[Arrival_Date],[Arrival_Only_Time], [Payment_Status], [ticketnumber] -- <<< ADDED TO INSERT
 ) VALUES (@name,@email,@gender,@passport,@phone,@address,
-          @tno,@priceeco,@pricebus,@fromcity,@tocity,@ddate,@dtime,@adate,@atime, @paymentstatus)";
+          @tno,@priceeco,@pricebus,@fromcity,@tocity,@ddate,@dtime,@adate,@atime, @paymentstatus, @ticketnumber)"; // <<< ADDED VALUE
                     using (SqlCommand cmdIns = new SqlCommand(insertSql, conn, tx))
                     {
                         AddCommonParametersToCommand(cmdIns);
@@ -475,7 +492,40 @@ INSERT INTO [{loggedInUsername}] (
             // Payment Status (Unpaid if pay later is checked, or other value if not)
             string paymentStatus = checkBox_paylater.Checked ? "Unpaid" : "Paid";
             cmd.Parameters.AddWithValue("@paymentstatus", paymentStatus);
+
+            // --- START NEW/MODIFIED CODE FOR TICKET NUMBER ---
+            string ticketNumberValue = string.Empty;
+            if (comboBox_ticketnumber.Visible && comboBox_ticketnumber.SelectedItem != null)
+            {
+                ticketNumberValue = comboBox_ticketnumber.SelectedItem.ToString();
+            }
+            // Store the ticket number (will be empty string if user is not an agent)
+            cmd.Parameters.AddWithValue("@ticketnumber", ticketNumberValue);
+            // --- END NEW/MODIFIED CODE FOR TICKET NUMBER ---
         }
+
+        // --- NEW METHOD FOR AGENT LOGIC (UPDATED) ---
+        // Populates the combobox with ticket numbers 01 through 10
+        private void LoadAvailableTickets()
+        {
+            comboBox_ticketnumber.Items.Clear();
+
+            // Populate the combobox with ticket numbers 01 through 10
+            for (int i = 1; i <= 10; i++)
+            {
+                // Use ToString("D2") for two-digit formatting (01, 02, ..., 10)
+                string ticketNumber = i.ToString("D2");
+                comboBox_ticketnumber.Items.Add(ticketNumber);
+            }
+
+            // Select the first item ("01") by default
+            if (comboBox_ticketnumber.Items.Count > 0)
+            {
+                comboBox_ticketnumber.SelectedIndex = 0;
+            }
+        }
+        // --- END NEW METHOD ---
+
 
         // Navigation buttons (unchanged)
         private void bhomebooked_Click(object sender, EventArgs e) { new Home(loggedInUsername).Show(); this.Hide(); }

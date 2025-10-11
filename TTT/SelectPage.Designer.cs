@@ -81,6 +81,8 @@
             this.label_databasetime = new System.Windows.Forms.Label();
             this.label_p_from = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label_selectticketnumbers = new System.Windows.Forms.Label();
+            this.comboBox_ticketnumber = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxbooked)).BeginInit();
             this.panel15.SuspendLayout();
@@ -417,6 +419,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel2.Controls.Add(this.comboBox_ticketnumber);
+            this.panel2.Controls.Add(this.label_selectticketnumbers);
             this.panel2.Controls.Add(this.button_save);
             this.panel2.Controls.Add(this.textBox_plane);
             this.panel2.Controls.Add(this.label_plane);
@@ -731,6 +735,36 @@
             this.label1.TabIndex = 61;
             this.label1.Text = "Ticket Information";
             // 
+            // label_selectticketnumbers
+            // 
+            this.label_selectticketnumbers.AutoSize = true;
+            this.label_selectticketnumbers.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_selectticketnumbers.ForeColor = System.Drawing.Color.Black;
+            this.label_selectticketnumbers.Location = new System.Drawing.Point(188, 481);
+            this.label_selectticketnumbers.Name = "label_selectticketnumbers";
+            this.label_selectticketnumbers.Size = new System.Drawing.Size(111, 16);
+            this.label_selectticketnumbers.TabIndex = 88;
+            this.label_selectticketnumbers.Text = "Tickets numbers";
+            // 
+            // comboBox_ticketnumber
+            // 
+            this.comboBox_ticketnumber.FormattingEnabled = true;
+            this.comboBox_ticketnumber.Items.AddRange(new object[] {
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10"});
+            this.comboBox_ticketnumber.Location = new System.Drawing.Point(310, 483);
+            this.comboBox_ticketnumber.Name = "comboBox_ticketnumber";
+            this.comboBox_ticketnumber.Size = new System.Drawing.Size(63, 24);
+            this.comboBox_ticketnumber.TabIndex = 89;
+            // 
             // SelectPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -809,5 +843,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.CheckBox checkBox_paylater;
         private System.Windows.Forms.Button button_save;
+        private System.Windows.Forms.Label label_selectticketnumbers;
+        private System.Windows.Forms.ComboBox comboBox_ticketnumber;
     }
 }

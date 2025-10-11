@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TTT
@@ -15,42 +10,66 @@ namespace TTT
     {
         private string loggedInUsername;
 
-        // Class-level fields to manage the data source for editing/saving
+        // Class-level fields
         private SqlDataAdapter adapter;
         private DataTable currentDataTable;
         private string currentQuery;
-        private string currentTableName; // Stores the name of the currently displayed table (e.g., "plane_details")
+        private string currentTableName;
 
-        // Assuming you have a TextBox named 'textBox_search'
-        // If not, replace 'textBox_search' with the actual name of your search TextBox control.
+        // Class-level SqlConnection to keep it open during editing
+        private SqlConnection sqlConnection;
+
+        // Connection String defined once
+        private readonly string connectionString = @"Data Source=RASEL\SQLEXPRESS;Initial Catalog=TMS;Integrated Security=True;";
 
         public Admin(string username)
         {
             InitializeComponent();
             this.loggedInUsername = username;
+
+            // Initialize the class-level connection object
+            sqlConnection = new SqlConnection(connectionString);
+
             LoadUserData();
-            // Optional: Hide the save button and make DataGridView read-only on startup
-            // if (button_save != null) button_save.Visible = false; 
             dataGridView_admin.ReadOnly = true;
+            dataGridView_admin.AllowUserToAddRows = false;
+
+            // Ensure the connection is closed when the form closes
+            this.FormClosed += (s, e) => { if (sqlConnection != null && sqlConnection.State == ConnectionState.Open) sqlConnection.Close(); };
+        }
+
+        // Helper method to ensure connection is open
+        private bool InitializeConnection()
+        {
+            try
+            {
+                if (sqlConnection.State != ConnectionState.Open)
+                {
+                    sqlConnection.Open();
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to open database connection: " + ex.Message, "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
         }
 
         private void LoadUserData()
         {
-            string connectionString = @"Data Source=RASEL\SQLEXPRESS;Initial Catalog=TMS;Integrated Security=True;";
+            // Use a local connection scope for simple read operations
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-
                 string query = "SELECT givenname, surname FROM regst WHERE user_name = @username";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@username", loggedInUsername);
-
                     using (SqlDataAdapter adp = new SqlDataAdapter(cmd))
                     {
                         DataSet ds = new DataSet();
                         adp.Fill(ds);
-
                         if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
                         {
                             string givenName = ds.Tables[0].Rows[0]["givenname"].ToString();
@@ -78,20 +97,20 @@ namespace TTT
             Application.Exit();
         }
 
-        // UPDATED: Helper method to load data into DataGridView and initialize DataAdapter/DataTable
+        // LoadData uses a local connection scope for simple read operations
         private void LoadData(string query, string tableName)
         {
             currentQuery = query;
             currentTableName = tableName;
-            string connectionString = @"Data Source=RASEL\SQLEXPRESS;Initial Catalog=TMS;Integrated Security=True;";
 
-            // Dispose of previous objects
+            // Dispose previous adapter and table
             if (adapter != null) adapter.Dispose();
             if (currentDataTable != null) currentDataTable.Dispose();
 
             currentDataTable = new DataTable();
             try
             {
+                // Use a local connection for safe, read-only display
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
@@ -99,11 +118,10 @@ namespace TTT
                     adapter.Fill(currentDataTable);
                     dataGridView_admin.DataSource = currentDataTable;
 
-                    // Set DataGridView to read-only until 'Edit' is clicked
+                    // Reset to read-only state after loading
                     dataGridView_admin.ReadOnly = true;
+                    dataGridView_admin.AllowUserToAddRows = false;
                 }
-                // Optional: Hide save button whenever new data is loaded
-                // if (button_save != null) button_save.Visible = false; 
             }
             catch (Exception ex)
             {
@@ -112,81 +130,53 @@ namespace TTT
             }
         }
 
+        // --- BUTTON HANDLERS ---
+
         private void bhomebooked_Click(object sender, EventArgs e)
         {
             change_color_by_click(bhomebooked, bbookticketbooked, breviewsbooked, btransportsbooked, breportsbooked, bsettingsbooked, bulogoutbooked);
-
-            // ✅ Show plane_details table
-            string query = @"SELECT [Transport_No],
-                                     [Price_eco],
-                                     [Price_busine],
-                                     [From_City],
-                                     [To_City],
-                                     [Departure_Date],
-                                     [Departure_Only_Time],
-                                     [Arrival_Date],
-                                     [Arrival_Only_Time],
-                                     [Econo_Available_Seats],
-                                     [Busine_Available_Seats]
-                              FROM [TMS].[dbo].[plane_details]";
+            string query = @"SELECT [Transport_No], [Price_eco], [Price_busine], [From_City], [To_City],
+                                     [Departure_Date], [Departure_Only_Time], [Arrival_Date], [Arrival_Only_Time],
+                                     [Econo_Available_Seats], [Busine_Available_Seats]
+                                 FROM [TMS].[dbo].[plane_details]";
             LoadData(query, "plane_details");
         }
 
         private void bbookticketbooked_Click(object sender, EventArgs e)
         {
             change_color_by_click(bbookticketbooked, bhomebooked, breviewsbooked, btransportsbooked, breportsbooked, bsettingsbooked, bulogoutbooked);
-
-            // ✅ Clear DataGridView
             dataGridView_admin.DataSource = null;
             if (currentDataTable != null) currentDataTable.Clear();
             currentTableName = null;
+
+            MessageBox.Show("Enter a keyword in the search box and click Search to find table data. Search results are read-only.",
+                "Search Mode", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void breviewsbooked_Click(object sender, EventArgs e)
         {
             change_color_by_click(breviewsbooked, bhomebooked, bbookticketbooked, btransportsbooked, breportsbooked, bsettingsbooked, bulogoutbooked);
-
-            // ✅ Show Reviews table
-            string query = @"SELECT [username],
-                                     [givenname],
-                                     [surname],
-                                     [comment],
-                                     [star]
-                              FROM [TMS].[dbo].[Reviews]";
+            string query = @"SELECT [username], [givenname], [surname], [comment], [star] FROM [TMS].[dbo].[Reviews]";
             LoadData(query, "Reviews");
         }
 
         private void btransportsbooked_Click(object sender, EventArgs e)
         {
             change_color_by_click(btransportsbooked, bhomebooked, bbookticketbooked, breviewsbooked, breportsbooked, bsettingsbooked, bulogoutbooked);
-
-            // ✅ Show Transports table
-            string query = @"SELECT [place1],
-                                     [place2],
-                                     [price]
-                              FROM [TMS].[dbo].[Transports]";
+            string query = @"SELECT [place1], [place2], [price] FROM [TMS].[dbo].[Transports]";
             LoadData(query, "Transports");
         }
 
         private void breportsbooked_Click(object sender, EventArgs e)
         {
             change_color_by_click(breportsbooked, bhomebooked, bbookticketbooked, breviewsbooked, btransportsbooked, bsettingsbooked, bulogoutbooked);
-
-            // ✅ Show Reports table
-            string query = @"SELECT [Id],
-                                     [rasel],
-                                     [jitu]
-                              FROM [TMS].[dbo].[Reports]";
+            string query = @"SELECT [Id], [rasel], [jitu] FROM [TMS].[dbo].[Reports]";
             LoadData(query, "Reports");
         }
 
         private void bsettingsbooked_Click(object sender, EventArgs e)
         {
             change_color_by_click(bsettingsbooked, bhomebooked, bbookticketbooked, breviewsbooked, btransportsbooked, breportsbooked, bulogoutbooked);
-            // Assuming Settings form exists
-            // Settings s = new Settings(loggedInUsername);
-            // s.Show();
-            // this.Hide();
             MessageBox.Show("Settings form is pending.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -194,158 +184,207 @@ namespace TTT
         {
             change_color_by_click(bulogoutbooked, bhomebooked, bbookticketbooked, breviewsbooked, btransportsbooked, breportsbooked, bsettingsbooked);
             DialogResult result = MessageBox.Show("Log out?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-
             if (result == DialogResult.OK)
             {
-                // Assuming Form1 is the login form
-                // Form1 f = new Form1();
-                // f.Show();
-                // this.Hide();
-                MessageBox.Show("Logging out and showing Form1 is pending.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Close the active connection before switching forms
+                if (sqlConnection.State == ConnectionState.Open) sqlConnection.Close();
+
+                // Assuming Form1 is your login/initial form
+                Form1 f = new Form1();
+                f.Show();
+                this.Hide();
             }
         }
 
         private void Admin_Load(object sender, EventArgs e)
         {
-            // Initial load of the Home (plane_details) data
+            // Initial load of the default view (plane_details)
             bhomebooked_Click(sender, e);
         }
 
-        // ---------------------------------------------
-        //             CORE FUNCTIONALITY
-        // ---------------------------------------------
-
-        /// <summary>
-        /// Searches and filters the data currently in the DataGridView based on the search TextBox.
-        /// </summary>
+        // 🔍 SMART SEARCH FUNCTION - REVISED
         private void button_search_Click(object sender, EventArgs e)
         {
-            if (currentDataTable == null || currentDataTable.Rows.Count == 0)
-            {
-                MessageBox.Show("No data loaded to search.", "Search Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            // Assuming you have a TextBox named 'textBox_search'
             string searchValue = textBox_searchfrom.Text.Trim();
 
             if (string.IsNullOrEmpty(searchValue))
             {
-                // If search box is empty, remove the filter to show all rows
-                currentDataTable.DefaultView.RowFilter = string.Empty;
+                MessageBox.Show("Please enter something to search.", "Search Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Client-side filtering (on the loaded DataTable)
-            try
-            {
-                StringBuilder filter = new StringBuilder();
+            string[] possibleTables = { "plane_details", "Transports", "Reviews", "Reports", "regst" };
 
-                // Build a filter expression that searches all string-convertible columns
-                foreach (DataColumn column in currentDataTable.Columns)
+            bool tableFound = false;
+
+            // *** FIX: Clear the state regardless of what button was previously clicked ***
+            dataGridView_admin.DataSource = null;
+            if (adapter != null) adapter.Dispose();
+            if (currentDataTable != null) currentDataTable.Dispose();
+            currentTableName = null;
+            currentQuery = null;
+            // *************************************************************************
+
+            currentDataTable = new DataTable();
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                foreach (string table in possibleTables)
                 {
-                    if (filter.Length > 0)
+                    try
                     {
-                        filter.Append(" OR ");
+                        // Dynamic SQL search query
+                        string searchQuery = $@"
+                            DECLARE @sql NVARCHAR(MAX) = N'';
+                            SELECT @sql = STRING_AGG(
+                                'SELECT * FROM [{table}] WHERE ' + 
+                                STRING_AGG('CONVERT([' + COLUMN_NAME + '], NVARCHAR(100)) LIKE ''%{searchValue.Replace("'", "''")}%''', ' OR ')
+                            , '')
+                            FROM INFORMATION_SCHEMA.COLUMNS
+                            WHERE TABLE_NAME = '{table}';
+                            EXEC sp_executesql @sql;";
+
+                        SqlDataAdapter da = new SqlDataAdapter(searchQuery, conn);
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+
+                        if (dt.Rows.Count > 0)
+                        {
+                            currentTableName = table;
+                            currentDataTable = dt;
+                            currentQuery = $"SELECT * FROM [{table}]";
+
+                            dataGridView_admin.DataSource = dt;
+                            dataGridView_admin.ReadOnly = true;
+                            dataGridView_admin.AllowUserToAddRows = false;
+
+                            MessageBox.Show($"✅ Data found in table '{table}'. Search results are read-only. Click 'Edit Data' to enable editing on this table.",
+                                "Search Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            tableFound = true;
+                            break;
+                        }
                     }
-                    // Filter uses LIKE for partial, case-insensitive matches on the string conversion of the column
-                    filter.AppendFormat("CONVERT([{0}], 'System.String') LIKE '%{1}%'", column.ColumnName, searchValue.Replace("'", "''"));
+                    catch
+                    {
+                        // Ignore tables that fail the dynamic search query
+                        continue;
+                    }
                 }
 
-                currentDataTable.DefaultView.RowFilter = filter.ToString();
+                if (!tableFound)
+                {
+                    MessageBox.Show("❌ No table found containing your searched value.", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dataGridView_admin.DataSource = null;
+                }
+            }
+        }
+
+        // ✏️ EDIT DATA - Unchanged logic (relies on InitializeConnection())
+        private void bdata_edit_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(currentTableName))
+            {
+                MessageBox.Show("Please load data (e.g., click 'Home') or perform a search first.", "Edit Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Only allow editing/saving for configured tables
+            if (currentTableName != "plane_details" && currentTableName != "Reviews" && currentTableName != "Transports" && currentTableName != "Reports" && currentTableName != "regst")
+            {
+                MessageBox.Show($"Editing is not allowed for the current view ('{currentTableName}').", "Edit Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // Ensure the connection is open
+            if (!InitializeConnection()) return;
+
+            // Reload the data using the base SELECT query to ensure a clean adapter setup 
+            string baseQuery = $"SELECT * FROM [{currentTableName}]";
+            try
+            {
+                // Dispose previous adapter and table
+                if (adapter != null) adapter.Dispose();
+                if (currentDataTable != null) currentDataTable.Dispose();
+                currentDataTable = new DataTable();
+
+                // Create the adapter using the OPEN class-level connection
+                adapter = new SqlDataAdapter(baseQuery, sqlConnection);
+                adapter.Fill(currentDataTable);
+                dataGridView_admin.DataSource = currentDataTable;
+
+                // Enable editing
+                dataGridView_admin.ReadOnly = false;
+                dataGridView_admin.AllowUserToAddRows = true;
+
+                MessageBox.Show($"Data Grid View for table '{currentTableName}' is now editable. Click 'Save' to commit changes.",
+                    "Editing Enabled", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error filtering data: " + ex.Message, "Filter Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                currentDataTable.DefaultView.RowFilter = string.Empty; // Clear filter on error
+                MessageBox.Show("Error preparing data for editing. Ensure the table exists: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dataGridView_admin.ReadOnly = true;
+                dataGridView_admin.AllowUserToAddRows = false;
             }
         }
 
-        /// <summary>
-        /// Makes the DataGridView editable and shows the Save button.
-        /// </summary>
-        private void bdata_edit_Click(object sender, EventArgs e)
-        {
-            if (dataGridView_admin.DataSource == null)
-            {
-                MessageBox.Show("No data loaded to edit.", "Edit Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            // Check if the current table is one we allow editing for (e.g., must have a Primary Key)
-            if (string.IsNullOrEmpty(currentTableName))
-            {
-                MessageBox.Show("The current view cannot be edited. Load data (e.g., Home) first.", "Edit Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            dataGridView_admin.ReadOnly = false;
-            dataGridView_admin.AllowUserToAddRows = true;
-            // if (button_save != null) button_save.Visible = true; // Show save button
-
-            MessageBox.Show("Data Grid View is now editable. Click 'Save' to commit changes.", "Editing Enabled", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        /// <summary>
-        /// Saves changes (edits, new rows) from the DataGridView back to the database.
-        /// </summary>
+        // 💾 SAVE DATA - Unchanged logic (relies on InitializeConnection())
         private void button_save_Click(object sender, EventArgs e)
         {
-            if (currentDataTable == null || adapter == null || string.IsNullOrEmpty(currentTableName))
+            if (currentDataTable == null || adapter == null || string.IsNullOrEmpty(currentTableName) || dataGridView_admin.ReadOnly == true)
             {
-                MessageBox.Show("No data or adapter available to save.", "Save Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No active editable data loaded. Click 'Edit Data' first.", "Save Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Optional: Limit saving to certain tables if command generation is complex for others
-            if (currentTableName != "plane_details" && currentTableName != "Reviews" && currentTableName != "Transports" && currentTableName != "Reports")
+            if (currentTableName != "plane_details" && currentTableName != "Reviews" && currentTableName != "Transports" && currentTableName != "Reports" && currentTableName != "regst")
             {
                 MessageBox.Show($"Saving is not configured for the current view ('{currentTableName}').", "Save Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
+            // Ensure connection is open just before update
+            if (!InitializeConnection()) return;
+
             try
             {
-                // Crucial step: Generate SQL commands (Update, Insert, Delete). 
-                // REQUIRES a Primary Key on the table!
+                // 1. Generate commands (these commands will be automatically assigned the class-level connection)
                 SqlCommandBuilder commandBuilder = new SqlCommandBuilder(adapter);
 
-                // Commit changes: Sends SQL commands to the database
+                // 2. Execute the update using the open connection
                 int rowsAffected = adapter.Update(currentDataTable);
 
-                // Finalize changes in the DataTable after successful commit
+                // 3. Commit changes to the DataTable itself
                 currentDataTable.AcceptChanges();
 
-                // Revert to ReadOnly
+                // 4. Disable editing after successful save
                 dataGridView_admin.ReadOnly = true;
-                // if (button_save != null) button_save.Visible = false;
+                dataGridView_admin.AllowUserToAddRows = false;
 
-                MessageBox.Show($"{rowsAffected} row(s) updated and saved successfully.", "Save Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"{rowsAffected} row(s) updated/inserted/deleted and saved successfully.", "Save Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                // IMPORTANT: Show the detailed error, often reveals missing Primary Key issue.
-                MessageBox.Show("Error saving data. Ensure the table has a Primary Key: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                // Keep it editable so the user can fix the data
+                MessageBox.Show("Error saving data. Ensure the table has a Primary Key and all data types are valid: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Keep editing enabled so the user can fix the error
                 dataGridView_admin.ReadOnly = false;
+                dataGridView_admin.AllowUserToAddRows = true;
             }
         }
 
-        /// <summary>
-        /// Deletes the selected row(s) from the DataGridView and immediately commits the change to the database.
-        /// </summary>
+        // ❌ DELETE DATA - Unchanged logic (relies on InitializeConnection())
         private void bdata_delete_Click(object sender, EventArgs e)
         {
-            if (dataGridView_admin.SelectedRows.Count == 0 || currentDataTable == null)
+            if (dataGridView_admin.SelectedRows.Count == 0 || currentDataTable == null || dataGridView_admin.ReadOnly == true)
             {
-                MessageBox.Show("Please select one or more rows to delete.", "Delete Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please click 'Edit Data' and select one or more rows to delete.", "Delete Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Check if the current table is one we allow editing for
-            if (string.IsNullOrEmpty(currentTableName))
+            if (currentTableName != "plane_details" && currentTableName != "Reviews" && currentTableName != "Transports" && currentTableName != "Reports" && currentTableName != "regst")
             {
-                MessageBox.Show("The current view cannot have rows deleted.", "Delete Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Deletion is not configured for the current view.", "Delete Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -353,32 +392,38 @@ namespace TTT
 
             if (dialogResult == DialogResult.Yes)
             {
+                // Ensure connection is open just before update
+                if (!InitializeConnection()) return;
+
                 try
                 {
-                    // 1. Mark rows for deletion in the DataTable
-                    // Loop backwards to avoid issues with index changes after deletion
+                    // Mark rows for deletion in the DataTable
+                    int deletedCount = 0;
                     for (int i = dataGridView_admin.SelectedRows.Count - 1; i >= 0; i--)
                     {
-                        DataGridViewRow row = dataGridView_admin.SelectedRows[i];
-                        DataRowView drv = row.DataBoundItem as DataRowView;
+                        DataRowView drv = dataGridView_admin.SelectedRows[i].DataBoundItem as DataRowView;
                         if (drv != null)
                         {
-                            drv.Row.Delete(); // Marks the row as Deleted
+                            drv.Row.Delete();
+                            deletedCount++;
                         }
                     }
 
-                    // 2. Generate the DELETE command and execute it
+                    // 1. Generate the DELETE command (relies on Primary Key and open connection)
                     SqlCommandBuilder commandBuilder = new SqlCommandBuilder(adapter);
-                    int rowsAffected = adapter.Update(currentDataTable); // Sends the DELETE to the database
 
-                    // 3. Finalize the change in the DataTable
+                    // 2. Update the database with the deletions
+                    int rowsAffected = adapter.Update(currentDataTable);
                     currentDataTable.AcceptChanges();
+
+                    // 3. Revert to read-only state
+                    dataGridView_admin.ReadOnly = true;
+                    dataGridView_admin.AllowUserToAddRows = false;
 
                     MessageBox.Show($"{rowsAffected} row(s) deleted successfully and saved to database.", "Delete Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
-                    // IMPORTANT: Show the detailed error
                     MessageBox.Show("Error deleting data. Ensure the table has a Primary Key: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
