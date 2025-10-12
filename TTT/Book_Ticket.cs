@@ -45,7 +45,7 @@ namespace TTT
             }
         }
 
-        // Load data into DataGridView with optional search filter
+        
         private void LoadDataGrid(string searchFilter)
         {
             string tableName = loggedInUsername;
@@ -100,7 +100,7 @@ namespace TTT
             }
         }
 
-        // 🔍 Highlight matches in DataGridView
+       
         private void HighlightMatches(string searchText)
         {
             if (string.IsNullOrWhiteSpace(searchText))
@@ -117,8 +117,8 @@ namespace TTT
 
                         if (matchIndex >= 0)
                         {
-                            cell.Style.BackColor = Color.Yellow;  // Highlight background
-                            cell.Style.ForeColor = Color.Black;   // Keep text readable
+                            cell.Style.BackColor = Color.Yellow;  
+                            cell.Style.ForeColor = Color.Black;  
                         }
                         else
                         {
@@ -131,22 +131,21 @@ namespace TTT
             }
         }
 
-        // Search button click event
+        
         private void buttonserachhistory_Click_1(object sender, EventArgs e)
         {
             string searchTerm = textBoxhistory.Text.Trim();
-            LoadDataGrid(null);           // Load all data (so all rows visible)
-            HighlightMatches(searchTerm); // Highlight only matches
+            LoadDataGrid(null);           
+            HighlightMatches(searchTerm);
         }
 
-        // Optional unused event
+        
         private void buttonserachhistory_Click(object sender, EventArgs e)
         {
             // Not used, keep empty
         }
 
-        // ---------------------- Navigation + Design ----------------------
-
+       
         private void change_color_by_click(Button b1, Button b2, Button b3, Button b4, Button b5, Button b6, Button b7)
         {
             b1.BackColor = Color.FromArgb(0, 122, 204);

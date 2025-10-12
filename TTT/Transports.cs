@@ -15,7 +15,7 @@ namespace TTT
     {
         private string loggedInUsername;
         private DataTable transportData;
-        private int currentIndex = 0; // Track which set of 4 rows are showing
+        private int currentIndex = 0; 
 
         public Transports(string username)
         {
@@ -150,13 +150,13 @@ namespace TTT
         {
             if (transportData == null || transportData.Rows.Count == 0) return;
 
-            // Clear all first
+            
             textBox1.Clear();
             textBox2.Clear();
             textBox3.Clear();
             textBox4.Clear();
 
-            // Fill each textbox with one record
+            
             for (int i = 0; i < 4; i++)
             {
                 int index = (currentIndex + i) % transportData.Rows.Count;
@@ -171,12 +171,12 @@ namespace TTT
                     case 3: textBox4.Text = text; break;
                 }
 
-                // Stop early if no more rows
+                
                 if (index == transportData.Rows.Count - 1 && i < 3)
                     break;
             }
 
-            // Move to next 4 rows for next click
+           
             currentIndex = (currentIndex + 4) % transportData.Rows.Count;
         }
 
@@ -208,7 +208,7 @@ namespace TTT
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
 
-                // Clear all boxes first
+               
                 textBox1.Clear();
                 textBox2.Clear();
                 textBox3.Clear();

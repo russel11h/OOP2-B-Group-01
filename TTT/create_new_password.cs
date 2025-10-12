@@ -14,11 +14,11 @@ namespace TTT
 {
     public partial class create_new_password : Form
     {
-        private string userIdentifier; // will hold username or email
-        public create_new_password(string userIdentifier)// catching forget_pass constractor
+        private string userIdentifier;
+        public create_new_password(string userIdentifier)
         {
             InitializeComponent();
-            this.userIdentifier = userIdentifier; // save the value
+            this.userIdentifier = userIdentifier; 
         }
 
         private void lblregistration_Click(object sender, EventArgs e)

@@ -15,10 +15,10 @@ namespace TTT
     public partial class Home : Form
     {
         private string loggedInUsername;
-        private int currentOffset = 0; // Used for pagination (next 4 records per refresh)
+        private int currentOffset = 0; 
         private const int PageSize = 4;
 
-        // Structure to map panels to their Transport_No display TextBoxes for dynamic access
+       
         private readonly (Panel panel, string transportTextBoxName)[] flightPanelsInfo;
 
         public Home(string username)
@@ -27,8 +27,7 @@ namespace TTT
             this.loggedInUsername = username;
             LoadUserData();
 
-            // Initialize the array of flight panels/textboxes
-            // NOTE: Assuming panel names are panel_T1, panel_T2, etc.
+            
             flightPanelsInfo = new (Panel, string)[]
             {
                 (this.Controls.Find("panel_T1", true).FirstOrDefault() as Panel, "textBoxplane_name"),
@@ -37,13 +36,13 @@ namespace TTT
                 (this.Controls.Find("panel_T4", true).FirstOrDefault() as Panel, "textBoxplane_name_T4")
             };
 
-            // Attach a click event handler to the panels and their controls for navigation
+            
             foreach (var item in flightPanelsInfo)
             {
                 if (item.panel != null)
                 {
                     item.panel.Click += FlightPanel_Click;
-                    // Attach the handler to all controls within the panel to ensure clicks work
+                    
                     foreach (Control control in item.panel.Controls)
                     {
                         control.Click += FlightPanel_Click;
@@ -76,14 +75,14 @@ namespace TTT
             conn.Close();
         }
 
-        // Helper method to clear all textboxes and hide panels
+       
         private void ClearPlaneDetailsUI()
         {
             for (int i = 1; i <= PageSize; i++)
             {
                 string suffix = i == 1 ? "" : "_T" + i;
 
-                // Clear all associated textboxes (Transport_No, From, To, etc.)
+                
                 string[] textBoxNames = {
                     "textBoxplane_name", "textBoxfrom", "textBoxto",
                     "textBoxdeparture", "textBoxdeparturetime",
@@ -96,16 +95,16 @@ namespace TTT
                     if (tb != null) tb.Text = string.Empty;
                 }
 
-                // Hide the panel
+                
                 Panel p = this.Controls.Find("panel_T" + i, true).FirstOrDefault() as Panel;
                 if (p != null) p.Visible = false;
             }
         }
 
-        // MODIFIED: Loads flight details with optional search criteria
+        
         private void LoadPlaneDetails(string fromCity = null, string toCity = null)
         {
-            ClearPlaneDetailsUI(); // Clear the UI before loading new data
+            ClearPlaneDetailsUI(); 
 
             string connectionString = @"Data Source=RASEL\SQLEXPRESS;Initial Catalog=TMS;Integrated Security=True;";
 
@@ -113,13 +112,13 @@ namespace TTT
             {
                 conn.Open();
 
-                // Base query
+               
                 string baseQuery = @"
                     SELECT Transport_No, From_City, To_City, Departure_Date, Departure_Only_Time,
                            Arrival_Date, Arrival_Only_Time, Price_eco
                     FROM plane_details";
 
-                // Add WHERE clause if searching
+                
                 string whereClause = "";
                 bool isSearching = !string.IsNullOrWhiteSpace(fromCity) || !string.IsNullOrWhiteSpace(toCity);
 
@@ -128,7 +127,7 @@ namespace TTT
                     whereClause = " WHERE 1=1 ";
                     if (!string.IsNullOrWhiteSpace(fromCity))
                     {
-                        // Using LIKE for flexible searching (case-insensitive)
+                        
                         whereClause += " AND From_City LIKE @fromCity ";
                     }
                     if (!string.IsNullOrWhiteSpace(toCity))
@@ -137,7 +136,7 @@ namespace TTT
                     }
                 }
 
-                // Determine offset: use 0 for search, use currentOffset for refresh
+               
                 int offset = isSearching ? 0 : currentOffset;
                 string paginationClause = $@"
                     ORDER BY Transport_No
@@ -147,10 +146,10 @@ namespace TTT
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    // Add parameters if searching
+                   
                     if (!string.IsNullOrWhiteSpace(fromCity))
                     {
-                        // Wrap in % for partial matching
+                       
                         cmd.Parameters.AddWithValue("@fromCity", "%" + fromCity + "%");
                     }
                     if (!string.IsNullOrWhiteSpace(toCity))
@@ -167,7 +166,7 @@ namespace TTT
                             string suffix = panelIndex == 1 ? "" : "_T" + panelIndex;
                             Panel panel = this.Controls.Find("panel_T" + panelIndex, true).FirstOrDefault() as Panel;
 
-                            // Find TextBoxes dynamically
+                            
                             TextBox tbPlane = this.Controls.Find("textBoxplane_name" + suffix, true).FirstOrDefault() as TextBox;
                             TextBox tbFrom = this.Controls.Find("textBoxfrom" + suffix, true).FirstOrDefault() as TextBox;
                             TextBox tbDeparture = this.Controls.Find("textBoxdeparture" + suffix, true).FirstOrDefault() as TextBox;
@@ -177,16 +176,16 @@ namespace TTT
                             TextBox tbArrTime = this.Controls.Find("textBoxarrival_time" + suffix, true).FirstOrDefault() as TextBox;
                             TextBox tbPrice = this.Controls.Find("textBoxeco_price" + suffix, true).FirstOrDefault() as TextBox;
 
-                            // Set values safely
+                          
                             if (tbPlane != null) tbPlane.Text = reader["Transport_No"].ToString();
                             if (tbFrom != null) tbFrom.Text = reader["From_City"].ToString();
                             if (tbTo != null) tbTo.Text = reader["To_City"].ToString();
 
-                            // Date formatting
+                            
                             if (tbDeparture != null) tbDeparture.Text = Convert.ToDateTime(reader["Departure_Date"]).ToString("dd/MM/yyyy");
                             if (tbArrival != null) tbArrival.Text = Convert.ToDateTime(reader["Arrival_Date"]).ToString("dd/MM/yyyy");
 
-                            // Handle TimeSpan (time-only field) and format as 'hh:mm tt'
+                           
                             if (tbDepTime != null && reader["Departure_Only_Time"] is TimeSpan depTime)
                                 tbDepTime.Text = (DateTime.Today + depTime).ToString("hh:mm tt");
                             if (tbArrTime != null && reader["Arrival_Only_Time"] is TimeSpan arrTime)
@@ -194,7 +193,7 @@ namespace TTT
 
                             if (tbPrice != null) tbPrice.Text = reader["Price_eco"].ToString();
 
-                            // Make the panel visible
+                            
                             if (panel != null) panel.Visible = true;
 
                             panelIndex++;
@@ -204,12 +203,12 @@ namespace TTT
             }
         }
 
-        // NEW: Event handler for clicking any flight panel
+       
         private void FlightPanel_Click(object sender, EventArgs e)
         {
             Control clickedControl = sender as Control;
 
-            // Find the parent panel that was clicked
+           
             Panel clickedPanel = clickedControl as Panel ?? clickedControl.Parent as Panel;
 
             if (clickedPanel != null && clickedPanel.Visible)
@@ -218,17 +217,17 @@ namespace TTT
 
                 if (panelInfo.panel != null)
                 {
-                    // Find the Transport_No TextBox inside the panel using the stored name
+                    
                     TextBox tbTransportNo = clickedPanel.Controls.Find(panelInfo.transportTextBoxName, true).FirstOrDefault() as TextBox;
 
                     if (tbTransportNo != null && !string.IsNullOrWhiteSpace(tbTransportNo.Text))
                     {
                         string transportNo = tbTransportNo.Text;
 
-                        // Navigate to SelectPage, passing the username and Transport_No
+                        
                         try
                         {
-                            // This requires SelectPage to have a constructor: SelectPage(string username, string transportNo)
+                           
                             Form selectPage = (Form)Activator.CreateInstance(typeof(SelectPage), loggedInUsername, transportNo);
                             selectPage.Show();
                             this.Hide();
@@ -307,14 +306,14 @@ namespace TTT
         private void Home_Load(object sender, EventArgs e)
         {
             change_color_by_click(bnhome, bnbookticket, bnreviews, bnTransport, bnReports, bnSettings, bulogout);
-            // Initial load of the first 4 flights
+           
             currentOffset = 0;
             LoadPlaneDetails();
         }
 
         private void lhname_Click(object sender, EventArgs e) { }
 
-        // KEEPING ORIGINAL METHOD NAME TO PREVENT DESIGNER ISSUES
+        
         private void panel_Book_Hote_Paint(object sender, PaintEventArgs e)
         {
             Panel p = sender as Panel;
@@ -375,10 +374,10 @@ namespace TTT
             }
         }
 
-        // UPDATED: Refresh button: show next 4 flights
+        
         private void button_refresh_Click(object sender, EventArgs e)
         {
-            // Clear search fields when refreshing pagination
+           
             TextBox tbSearchFrom = this.Controls.Find("textBox_searchfrom", true).FirstOrDefault() as TextBox;
             TextBox tbSearchTo = this.Controls.Find("textBox_searchto", true).FirstOrDefault() as TextBox;
             if (tbSearchFrom != null) tbSearchFrom.Text = string.Empty;
@@ -388,7 +387,7 @@ namespace TTT
             LoadPlaneDetails();
         }
 
-        // IMPLEMENTED: Search button logic
+       
         private void button_search_Click(object sender, EventArgs e)
         {
             TextBox tbSearchFrom = this.Controls.Find("textBox_searchfrom", true).FirstOrDefault() as TextBox;
@@ -397,7 +396,7 @@ namespace TTT
             string fromCity = tbSearchFrom?.Text.Trim();
             string toCity = tbSearchTo?.Text.Trim();
 
-            // Reset offset to 0 to view the first page of search results
+            
             currentOffset = 0;
 
             LoadPlaneDetails(fromCity, toCity);

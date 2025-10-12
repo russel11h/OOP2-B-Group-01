@@ -13,11 +13,11 @@ namespace TTT
 {
     public partial class Reports : Form
     {
-        private string loggedInUsername; // Field to store the username
+        private string loggedInUsername;
         public Reports(string username)
         {
             InitializeComponent();
-            this.loggedInUsername = username; // Store the username
+            this.loggedInUsername = username; 
             LoadUserData();
         }
         private void LoadUserData()
@@ -26,7 +26,7 @@ namespace TTT
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
 
-            // Construct the query to select the givenname and surname
+           
             string query = "SELECT givenname, surname FROM regst WHERE user_name = @username";
             SqlCommand cmd = new SqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@username", loggedInUsername);
@@ -37,11 +37,11 @@ namespace TTT
 
             if (ds.Tables[0].Rows.Count > 0)
             {
-                // Get the givenname and surname from the first row of the DataTable
+               
                 string givenName = ds.Tables[0].Rows[0]["givenname"].ToString();
                 string surName = ds.Tables[0].Rows[0]["surname"].ToString();
 
-                // Concatenate and display the full name in the label
+                
                 labelbooked.Text = givenName + " " + surName;
             }
 

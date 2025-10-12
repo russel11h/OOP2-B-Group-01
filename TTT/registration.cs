@@ -10,20 +10,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using TTT.TTT;
-using System.Text.RegularExpressions; // Required for Regex validation
+using System.Text.RegularExpressions; 
 
 namespace TTT
 {
-    // The following classes (UserData and registration) are assumed to be in TTT namespace
-    // as per your provided code structure, even though UserData is defined outside of it
-    // in the original snippet. I'll keep the structure from your original code.
+  
 
     public partial class registration : Form
     {
         public void connect()
         {
-            // WARNING: The following SQL query is vulnerable to SQL Injection.
-            // In a real application, you should use parameterized queries.
+            
             string Connectionstring = @"Data Source=RASEL\SQLEXPRESS;Initial Catalog=TMS;Integrated Security=True;";
             SqlConnection conn = new SqlConnection(Connectionstring);
             conn.Open();
@@ -47,7 +44,7 @@ namespace TTT
 
         private void bsubmit_Click(object sender, EventArgs e)
         {
-            // 1. Clear previous errors
+           
             lblerrorusername.Text = "";
             lblerrorpass.Text = "";
             lblerrorsurname.Text = "";
@@ -56,9 +53,9 @@ namespace TTT
             lblerrorpassport.Text = "";
             lblerrornumber.Text = "";
 
-            bool isValid = true; // Flag to track overall validation state
+            bool isValid = true; 
 
-            // 2. Perform field validation
+          
             if (tbusername.Text == "")
             {
                 lblerrorusername.Text = "Please enter username";
@@ -90,33 +87,28 @@ namespace TTT
                 isValid = false;
             }
 
-            // Phone Number Validation
+           
             if (tbphonenumber.Text == "")
             {
                 lblerrornumber.Text = "Please enter Phone Number";
                 isValid = false;
             }
-            // Check if it contains ONLY digits (and maybe optional "+" at the start, if required)
-            // The regex @"^\d+$" checks for one or more digits from start to end of the string.
+          
             else if (!Regex.IsMatch(tbphonenumber.Text, @"^\d+$"))
             {
                 lblerrornumber.Text = "Phone number must contain only digits.";
                 isValid = false;
             }
 
-            // Check if address is selected (assuming comboboxaddress is not null)
+           
             if (comboboxaddress.Text == "")
             {
-                // Assuming you have an error label for address, if not, you should add one.
-                // For now, I'll update the isValid flag if this is a mandatory field.
-                // This logic block isn't in your original code, but it's logically required 
-                // for the successful block below to work correctly.
+               
                 isValid = false;
             }
 
 
-            // 3. Process if all fields are valid
-            // The original logic checked for every field being non-empty. Now we use the isValid flag.
+           
             if (isValid)
             {
                 string gender = "Not Selected ";
@@ -151,13 +143,13 @@ namespace TTT
 
             }
 
-            // 4. Update static UserData
+           
             UserData.USERNAME = tbusername.Text;
             UserData.PASSWORD = tbpassword.Text;
             UserData.EMAIL = tbemail.Text;
         }
 
-        // --- Rest of your original methods ---
+       
 
         private void breg_to_login_Click(object sender, EventArgs e)
         {
@@ -210,19 +202,17 @@ namespace TTT
 
         private void lblerrorpassport_Click(object sender, EventArgs e)
         {
-            // Note: This looks like a click handler for the label itself, which usually clears the error.
-            // If the text box changes, the change handler should clear the error.
+           
             lblerrorpassport.Text = "";
         }
 
         private void lblerrornumber_Click(object sender, EventArgs e)
         {
-            // Note: This looks like a click handler for the label itself, which usually clears the error.
-            // If the text box changes, the change handler should clear the error.
+            
             lblerrornumber.Text = "";
         }
 
-        // Add a TextChanged event handler for tbphonenumber to clear the error immediately
+        
         private void tbphonenumber_TextChanged(object sender, EventArgs e)
         {
             lblerrornumber.Text = "";
@@ -244,7 +234,7 @@ namespace TTT
         }
     }
 
-    // --- Namespace and UserData Class ---
+    
     namespace TTT
     {
         public static class UserData

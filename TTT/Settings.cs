@@ -13,18 +13,16 @@ namespace TTT
 {
     public partial class Settings : Form
     {
-        private string loggedInUsername; // Field to store the username
+        private string loggedInUsername; 
         public Settings(string username)
         {
             InitializeComponent();
-            this.loggedInUsername = username; // Store the username
+            this.loggedInUsername = username; 
             LoadUserData();
         }
         private void LoadUserData()
         {
-            // Make sure to match the control names to your actual form controls.
-            // The control for 'gender' is assumed to be 'textBox2' and 'address' is 'textBox_address'.
-            // It's recommended to rename controls to be more descriptive (e.g., 'tbGender', 'tbAddress').
+           
 
             string connectionString = @"Data Source=RASEL\SQLEXPRESS;Initial Catalog=TMS;Integrated Security=True;";
             using (SqlConnection conn = new SqlConnection(connectionString)) // Use 'using' for proper resource disposal
@@ -33,7 +31,7 @@ namespace TTT
                 {
                     conn.Open();
 
-                    // Select all required columns based on the user_name
+                   
                     string query = "SELECT givenname, surname, email, gender, passport, phone,password, [address] FROM regst WHERE user_name = @username";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@username", loggedInUsername);
@@ -42,7 +40,7 @@ namespace TTT
 
                     if (reader.Read())
                     {
-                        // Get the data
+                       
                         string givenName = reader["givenname"].ToString();
                         string surName = reader["surname"].ToString();
                         string email = reader["email"].ToString();
@@ -52,10 +50,10 @@ namespace TTT
                         string address = reader["address"].ToString();
                         string password = reader["password"].ToString();
 
-                        // Populate the label for full name
+                       
                         labelbooked.Text = givenName + " " + surName;
 
-                        // Populate the TextBoxes
+                        
                         tbgivenname.Text = givenName;
                         tbsurname.Text = surName;
                         tbemail.Text = email;
@@ -65,7 +63,7 @@ namespace TTT
                         textBox_address.Text = address;
                         tbpassword.Text = password;
 
-                        // Disable the TextBoxes by default
+                       
                         SetTextBoxReadOnly(true);
                     }
                     reader.Close();
@@ -74,10 +72,10 @@ namespace TTT
                 {
                     MessageBox.Show("Error loading user data: " + ex.Message);
                 }
-            } // conn.Close() is called automatically by the 'using' block
+            } 
         }
 
-        // Helper method to set all edit-enabled textboxes ReadOnly state
+       
         private void SetTextBoxReadOnly(bool isReadOnly)
         {
             tbgivenname.ReadOnly = isReadOnly;
@@ -89,7 +87,7 @@ namespace TTT
             textBox_address.ReadOnly = isReadOnly;
             tbpassword.ReadOnly = isReadOnly;
 
-            // Optionally hide/show the Save button based on the state
+            
             button_save.Visible = !isReadOnly;
         }
         private void change_color_by_click(Button b1, Button b2, Button b3, Button b4, Button b5, Button b6, Button b7)
@@ -304,7 +302,7 @@ namespace TTT
                 try
                 {
                     conn.Open();
-                    // Use an UPDATE statement to change the user's details
+                    
                     string updateQuery = @"
                 UPDATE regst SET 
                     surname = @surname, 
@@ -319,7 +317,7 @@ namespace TTT
 
                     SqlCommand cmd = new SqlCommand(updateQuery, conn);
 
-                    // Add parameters with values from the TextBoxes
+                    
                     cmd.Parameters.AddWithValue("@surname", tbsurname.Text);
                     cmd.Parameters.AddWithValue("@givenname", tbgivenname.Text);
                     cmd.Parameters.AddWithValue("@email", tbemail.Text);
@@ -335,9 +333,9 @@ namespace TTT
                     if (rowsAffected > 0)
                     {
                         MessageBox.Show("Your details have been successfully updated! 👍", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        // Re-load data to ensure consistency and update the label
+                        
                         LoadUserData();
-                        // Set textboxes back to read-only after saving
+                        
                         SetTextBoxReadOnly(true);
                     }
                     else

@@ -23,7 +23,7 @@ namespace TTT
 
         private void btnlogin_Click(object sender, EventArgs e)
         {
-            // Clear previous error messages first
+            
             lblnameerror.Text = "";
             lblpasserror.Text = "";
 
@@ -59,7 +59,7 @@ namespace TTT
                 {
                     string username = tbname.Text;
 
-                    // ✅ Check if username starts with "admin"
+                    
                     if (username.StartsWith("admin", StringComparison.OrdinalIgnoreCase))
                     {
                         Admin adminPage = new Admin(username);

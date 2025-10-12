@@ -94,7 +94,7 @@ namespace TTT
                 {
                     conn.Open();
 
-                    // ✅ UPDATED: Order by star DESC (used as time indicator)
+                    
                     string query = "SELECT TOP 4 givenname, surname, comment, star FROM Reviews ORDER BY star DESC";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -126,7 +126,7 @@ namespace TTT
             }
         }
 
-        // ✅ FIXED: Update old comment if user already has one
+       
         private void button_submit_Click_1(object sender, EventArgs e)
         {
             string newComment = textBoxyour_review.Text.Trim();
@@ -155,19 +155,19 @@ namespace TTT
                 {
                     conn.Open();
 
-                    // ✅ UPDATED: Check if user already commented
+                    
                     string checkQuery = "SELECT COUNT(*) FROM Reviews WHERE username = @username";
                     using (SqlCommand checkCmd = new SqlCommand(checkQuery, conn))
                     {
                         checkCmd.Parameters.AddWithValue("@username", loggedInUsername);
                         int count = (int)checkCmd.ExecuteScalar();
 
-                        // ✅ Use star column to store the latest timestamp (as integer)
+                        
                         int currentTimeValue = (int)DateTimeOffset.UtcNow.ToUnixTimeSeconds() % 1000000;
 
                         if (count > 0)
                         {
-                            // ✅ Update existing comment
+                           
                             string updateQuery = @"UPDATE Reviews 
                                                    SET comment = @comment, star = @star 
                                                    WHERE username = @username";
@@ -183,7 +183,7 @@ namespace TTT
                         }
                         else
                         {
-                            // ✅ Insert new comment
+                            
                             string insertQuery = @"INSERT INTO Reviews (username, givenname, surname, comment, star)
                                                    VALUES (@username, @givenname, @surname, @comment, @star)";
                             using (SqlCommand insertCmd = new SqlCommand(insertQuery, conn))
@@ -210,7 +210,7 @@ namespace TTT
             }
         }
 
-        // --- Keep All Original Code Below ---
+        
 
         private void change_color_by_click(Button b1, Button b2, Button b3, Button b4, Button b5, Button b6, Button b7)
         {

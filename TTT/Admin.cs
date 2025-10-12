@@ -10,16 +10,16 @@ namespace TTT
     {
         private string loggedInUsername;
 
-        // Class-level fields
+        
         private SqlDataAdapter adapter;
         private DataTable currentDataTable;
         private string currentQuery;
         private string currentTableName;
 
-        // Class-level SqlConnection to keep it open during editing
+        
         private SqlConnection sqlConnection;
 
-        // Connection String defined once
+        
         private readonly string connectionString = @"Data Source=RASEL\SQLEXPRESS;Initial Catalog=TMS;Integrated Security=True;";
 
         public Admin(string username)
@@ -27,18 +27,18 @@ namespace TTT
             InitializeComponent();
             this.loggedInUsername = username;
 
-            // Initialize the class-level connection object
+           
             sqlConnection = new SqlConnection(connectionString);
 
             LoadUserData();
             dataGridView_admin.ReadOnly = true;
             dataGridView_admin.AllowUserToAddRows = false;
 
-            // Ensure the connection is closed when the form closes
+            
             this.FormClosed += (s, e) => { if (sqlConnection != null && sqlConnection.State == ConnectionState.Open) sqlConnection.Close(); };
         }
 
-        // Helper method to ensure connection is open
+       
         private bool InitializeConnection()
         {
             try
@@ -58,7 +58,7 @@ namespace TTT
 
         private void LoadUserData()
         {
-            // Use a local connection scope for simple read operations
+            
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
@@ -97,20 +97,20 @@ namespace TTT
             Application.Exit();
         }
 
-        // LoadData uses a local connection scope for simple read operations
+        
         private void LoadData(string query, string tableName)
         {
             currentQuery = query;
             currentTableName = tableName;
 
-            // Dispose previous adapter and table
+            
             if (adapter != null) adapter.Dispose();
             if (currentDataTable != null) currentDataTable.Dispose();
 
             currentDataTable = new DataTable();
             try
             {
-                // Use a local connection for safe, read-only display
+                
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
@@ -118,7 +118,7 @@ namespace TTT
                     adapter.Fill(currentDataTable);
                     dataGridView_admin.DataSource = currentDataTable;
 
-                    // Reset to read-only state after loading
+                   
                     dataGridView_admin.ReadOnly = true;
                     dataGridView_admin.AllowUserToAddRows = false;
                 }
@@ -130,7 +130,7 @@ namespace TTT
             }
         }
 
-        // --- BUTTON HANDLERS ---
+        
 
         private void bhomebooked_Click(object sender, EventArgs e)
         {
@@ -177,7 +177,7 @@ namespace TTT
         private void bsettingsbooked_Click(object sender, EventArgs e)
         {
             change_color_by_click(bsettingsbooked, bhomebooked, bbookticketbooked, breviewsbooked, btransportsbooked, breportsbooked, bulogoutbooked);
-            //MessageBox.Show("Settings form is pending.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+           
             Settings s = new Settings(loggedInUsername);
             s.Show();
             this.Hide();
@@ -190,10 +190,10 @@ namespace TTT
             DialogResult result = MessageBox.Show("Log out?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (result == DialogResult.OK)
             {
-                // Close the active connection before switching forms
+                
                 if (sqlConnection.State == ConnectionState.Open) sqlConnection.Close();
 
-                // Assuming Form1 is your login/initial form
+                
                 Form1 f = new Form1();
                 f.Show();
                 this.Hide();
@@ -202,11 +202,11 @@ namespace TTT
 
         private void Admin_Load(object sender, EventArgs e)
         {
-            // Initial load of the default view (plane_details)
+           
             bhomebooked_Click(sender, e);
         }
 
-        // 🔍 SMART SEARCH FUNCTION - REVISED
+       
         private void button_search_Click(object sender, EventArgs e)
         {
             string searchValue = textBox_searchfrom.Text.Trim();
@@ -221,13 +221,13 @@ namespace TTT
 
             bool tableFound = false;
 
-            // *** FIX: Clear the state regardless of what button was previously clicked ***
+           
             dataGridView_admin.DataSource = null;
             if (adapter != null) adapter.Dispose();
             if (currentDataTable != null) currentDataTable.Dispose();
             currentTableName = null;
             currentQuery = null;
-            // *************************************************************************
+           
 
             currentDataTable = new DataTable();
 
@@ -239,7 +239,7 @@ namespace TTT
                 {
                     try
                     {
-                        // Dynamic SQL search query
+                       
                         string searchQuery = $@"
                             DECLARE @sql NVARCHAR(MAX) = N'';
                             SELECT @sql = STRING_AGG(
@@ -272,7 +272,7 @@ namespace TTT
                     }
                     catch
                     {
-                        // Ignore tables that fail the dynamic search query
+                       
                         continue;
                     }
                 }
@@ -285,7 +285,7 @@ namespace TTT
             }
         }
 
-        // ✏️ EDIT DATA - Unchanged logic (relies on InitializeConnection())
+       
         private void bdata_edit_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(currentTableName))
@@ -294,31 +294,31 @@ namespace TTT
                 return;
             }
 
-            // Only allow editing/saving for configured tables
+           
             if (currentTableName != "plane_details" && currentTableName != "Reviews" && currentTableName != "Transports" && currentTableName != "Reports" && currentTableName != "regst")
             {
                 MessageBox.Show($"Editing is not allowed for the current view ('{currentTableName}').", "Edit Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            // Ensure the connection is open
+           
             if (!InitializeConnection()) return;
 
-            // Reload the data using the base SELECT query to ensure a clean adapter setup 
+           
             string baseQuery = $"SELECT * FROM [{currentTableName}]";
             try
             {
-                // Dispose previous adapter and table
+                
                 if (adapter != null) adapter.Dispose();
                 if (currentDataTable != null) currentDataTable.Dispose();
                 currentDataTable = new DataTable();
 
-                // Create the adapter using the OPEN class-level connection
+                
                 adapter = new SqlDataAdapter(baseQuery, sqlConnection);
                 adapter.Fill(currentDataTable);
                 dataGridView_admin.DataSource = currentDataTable;
 
-                // Enable editing
+                
                 dataGridView_admin.ReadOnly = false;
                 dataGridView_admin.AllowUserToAddRows = true;
 
@@ -333,7 +333,7 @@ namespace TTT
             }
         }
 
-        // 💾 SAVE DATA - Unchanged logic (relies on InitializeConnection())
+        
         private void button_save_Click(object sender, EventArgs e)
         {
             if (currentDataTable == null || adapter == null || string.IsNullOrEmpty(currentTableName) || dataGridView_admin.ReadOnly == true)
@@ -348,21 +348,21 @@ namespace TTT
                 return;
             }
 
-            // Ensure connection is open just before update
+            
             if (!InitializeConnection()) return;
 
             try
             {
-                // 1. Generate commands (these commands will be automatically assigned the class-level connection)
+                
                 SqlCommandBuilder commandBuilder = new SqlCommandBuilder(adapter);
 
-                // 2. Execute the update using the open connection
+                
                 int rowsAffected = adapter.Update(currentDataTable);
 
-                // 3. Commit changes to the DataTable itself
+                
                 currentDataTable.AcceptChanges();
 
-                // 4. Disable editing after successful save
+                
                 dataGridView_admin.ReadOnly = true;
                 dataGridView_admin.AllowUserToAddRows = false;
 
@@ -371,13 +371,13 @@ namespace TTT
             catch (Exception ex)
             {
                 MessageBox.Show("Error saving data. Ensure the table has a Primary Key and all data types are valid: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                // Keep editing enabled so the user can fix the error
+                
                 dataGridView_admin.ReadOnly = false;
                 dataGridView_admin.AllowUserToAddRows = true;
             }
         }
 
-        // ❌ DELETE DATA - Unchanged logic (relies on InitializeConnection())
+       
         private void bdata_delete_Click(object sender, EventArgs e)
         {
             if (dataGridView_admin.SelectedRows.Count == 0 || currentDataTable == null || dataGridView_admin.ReadOnly == true)
@@ -396,12 +396,12 @@ namespace TTT
 
             if (dialogResult == DialogResult.Yes)
             {
-                // Ensure connection is open just before update
+                
                 if (!InitializeConnection()) return;
 
                 try
                 {
-                    // Mark rows for deletion in the DataTable
+                    
                     int deletedCount = 0;
                     for (int i = dataGridView_admin.SelectedRows.Count - 1; i >= 0; i--)
                     {
@@ -413,14 +413,14 @@ namespace TTT
                         }
                     }
 
-                    // 1. Generate the DELETE command (relies on Primary Key and open connection)
+                    
                     SqlCommandBuilder commandBuilder = new SqlCommandBuilder(adapter);
 
-                    // 2. Update the database with the deletions
+                    
                     int rowsAffected = adapter.Update(currentDataTable);
                     currentDataTable.AcceptChanges();
 
-                    // 3. Revert to read-only state
+                    
                     dataGridView_admin.ReadOnly = true;
                     dataGridView_admin.AllowUserToAddRows = false;
 
