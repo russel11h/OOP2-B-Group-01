@@ -177,7 +177,11 @@ namespace TTT
         private void bsettingsbooked_Click(object sender, EventArgs e)
         {
             change_color_by_click(bsettingsbooked, bhomebooked, bbookticketbooked, breviewsbooked, btransportsbooked, breportsbooked, bulogoutbooked);
-            MessageBox.Show("Settings form is pending.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //MessageBox.Show("Settings form is pending.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Settings s = new Settings(loggedInUsername);
+            s.Show();
+            this.Hide();
+
         }
 
         private void bulogoutbooked_Click(object sender, EventArgs e)

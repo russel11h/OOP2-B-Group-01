@@ -38,7 +38,6 @@
             this.lblregistration = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel_login = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.lblforgetpassword = new System.Windows.Forms.LinkLabel();
             this.tbname = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -149,7 +148,6 @@
             // 
             this.panel_login.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panel_login.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel_login.Controls.Add(this.button1);
             this.panel_login.Controls.Add(this.lblforgetpassword);
             this.panel_login.Controls.Add(this.tbname);
             this.panel_login.Controls.Add(this.label3);
@@ -166,16 +164,6 @@
             this.panel_login.Size = new System.Drawing.Size(391, 397);
             this.panel_login.TabIndex = 13;
             this.panel_login.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(285, 205);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Move";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblforgetpassword
             // 
@@ -278,7 +266,6 @@
         private System.Windows.Forms.TextBox tbname;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
     }
 }
